@@ -5,8 +5,8 @@
         <title>Produtos</title>
     </head>
     <body>
-        Produto:<?=$nome?><br>
-        Descrição:<?=$descricao?><br>
-        Preço:<?=$preco?>
+        Produto: <?=$nome?><br>
+        Descrição: <?=$descricao?><br>
+        Preço: <?=$preco?>
     </body>
 </html>
