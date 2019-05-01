@@ -7,6 +7,10 @@ function index(){
         $senhaCliente= $_POST["senhaCliente"];
         $confirmaSenhaCliete= $_POST["confirmaSenhaCliente"];
         
+        
+        
+        
+        
         echo $nomeCliente."<br>"; 
         echo $emailCliente."<br>";
         echo $senhaCliente."<br>";
