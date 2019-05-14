@@ -1,5 +1,7 @@
 <?php
 
+require_once "modelo/produtoModelo.php";
+
 function visualizar(){
     $passarDados= array();
     $passarDados['nome']= "Kahuna";
@@ -13,14 +15,14 @@ function visualizar(){
 function adicionar(){
     if (ehPost()){
         $nomeProduto=$_POST['nomeProduto'];
-        $descricao=$_POST['descricao'];
-        $preco=$_POST['preco'];
+        $descricaoProduto=$_POST['descricaoProduto'];
+        $precoProduto=$_POST['precoProduto'];
         
-        echo $nomeProduto."<br>";
-        echo $descricao."<br>";
-        echo $preco."<br>";
+        $mensagem = addProduto($nomeProduto, $descricaoProduto, $precoProduto);
+        
+        echo $mensagem;
         
     }else{
-        exibir("produtos/formulario");
+        exibir("produtos/cadastroProduto");
     }
 }

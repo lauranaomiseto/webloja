@@ -16,3 +16,25 @@ DEFAULT CHARACTER SET = utf8
 
 INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('admin', '123', 'admin@admin', 'admin');
 INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('usuario', '123', 'usuario@usuario', 'usuario');
+
+///////meu///////
+
+create table cliente(
+idCliente int not null auto_increment,
+nomeCompleto varchar(100) not null,
+email varchar(60) not null,
+senha varchar(12) not null,
+primary key(idCliente)
+);
+
+create table newsletter(
+email varchar (60) not null
+);
+
+create table produto(
+idProduto int not null auto_increment,
+nomeProduto varchar(100) not null,
+descricaoProduto varchar(500) not null,
+precoProduto double (10,2) not null,
+primary key(idProduto)
+);
