@@ -1,4 +1,4 @@
-<h2>Listar usuários todos</h2>
+<h2>Lista de todos o susuário</h2>
 
 <table class="table">
     <thead>

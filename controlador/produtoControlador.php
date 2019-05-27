@@ -26,3 +26,11 @@ function adicionar(){
         exibir("produtos/cadastroProduto");
     }
 }
+
+
+
+function listar(){
+    $dados= array();
+    $dados["produtos"]= pegarTodosProdutos();
+    exibir("produtos/listarProdutos", $dados);
+}

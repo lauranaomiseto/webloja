@@ -21,3 +21,13 @@ function newsLetterModelo($email){
     }
     return 'Você receberá novidades da loja!';
 }
+
+function pegarTodosClientes(){
+    $comando="select * from cliente";
+    $cnx=conn();
+    $resul = mysqli_query($cnx, $comando);
+    while ($cliente = mysqli_fetch_assoc($resul)){
+        $clientes[]=$cliente;
+    }
+    return $clientes;
+}

@@ -85,3 +85,12 @@ function newsLetter(){
     }
 }
 
+
+
+
+function listarClientes(){
+    $dados = array();
+    $dados["clientes"]= pegarTodosClientes();
+    exibir("usuario/listarClientes", $dados);
+    
+}
