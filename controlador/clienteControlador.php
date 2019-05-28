@@ -69,7 +69,7 @@ function login(){
 
 function newsLetter(){
     if (ehPost()){
-        $email=$_POST['email'];
+        $email=$_POST['emailNewsLetter'];
         $contErro=0;
         
         if(strlen(trim($email))==0){
