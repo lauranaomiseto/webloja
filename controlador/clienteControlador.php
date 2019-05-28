@@ -94,3 +94,12 @@ function listarClientes(){
     exibir("usuario/listarClientes", $dados);
     
 }
+
+
+
+function listarNewsLetters(){
+    $dados = array();
+    $dados["newsLetters"]= pegarTodasNewsLetters();
+    exibir("usuario/listarNewsLetters", $dados);
+}
+

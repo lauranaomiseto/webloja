@@ -31,3 +31,14 @@ function pegarTodosClientes(){
     }
     return $clientes;
 }
+
+
+function pegarTodasNewsLetters(){
+    $comando="select * from newsLetter";
+    $cnx=conn();
+    $resul = mysqli_query($cnx, $comando);
+    while ($newsLetter = mysqli_fetch_assoc($resul)){
+        $newsLetters[]=$newsLetter;
+    }
+    return $newsLetters;
+}

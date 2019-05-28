@@ -1,12 +1,12 @@
 <table>
     <tr>
-        <td>Email</td>
+        <th>Email</th>
     </tr>
-    <?php foreach($newsLetters as $newLetter): ?>
+    <?php foreach($newsLetters as $newsLetter): ?>
     <tr>
-        <th><?=$newsLetters["newsLetter"] ?></th>
+        <td><?=$newsLetter["email"] ?></td>
     </tr>
     <?php endforeach; ?>
 </table>
 <br><br>
-<a href="cliente/cadastro">Receba novidades sem compromisso!</a>
+<a href="cliente/newsLetter">Receba novidades sem compromisso!</a>
