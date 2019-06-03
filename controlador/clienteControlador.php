@@ -103,3 +103,11 @@ function listarNewsLetters(){
     exibir("usuario/listarNewsLetters", $dados);
 }
 
+
+
+
+function verClienteId($id){
+    $dados= array();
+    $dados["cliente"] = pegarClienteId($id);
+    exibir("usuario/detalharCliente", $dados);
+}

@@ -42,3 +42,12 @@ function pegarTodasNewsLetters(){
     }
     return $newsLetters;
 }
+
+
+function pegarClienteId($id){
+    $comando="select * from cliente where idCliente=$id";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    $cliente= mysqli_fetch_assoc($resul);
+    return $cliente;
+}
