@@ -20,3 +20,12 @@
     }
     return $produtos;
 }
+
+
+function pegarProdutoId($id){
+    $comando= "select * from produto where idProduto= $id;";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    $produto= mysqli_fetch_assoc($resul);
+    return $produto;
+}

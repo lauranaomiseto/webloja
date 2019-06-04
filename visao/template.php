@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="./publico/css/app.css">
     </head>
     <body class="container">
-
+        
+        <a href="./cliente/listarClientes">Lista de Clientes</a><br>
+        <a href="./produto/listarProdutos">Lista de Produtos</a><br><br><br>
+        
         <main class="container">
             <?php require $viewFilePath; ?>
         </main>

@@ -9,28 +9,31 @@ function cadastro(){
         $senhaCliente= $_POST["senhaCliente"];
         $confirmaSenhaCliente= $_POST["confirmaSenhaCliente"];
         $contErro=0;
-    
+        $erros= array();
+        
         if (strlen(trim($nomeCompletoCliente))== 0){
-                echo"Informe um nome válido.<br>";
-                $contErro=$contErro+1;
+                $erros[]="Informe um nome válido.<br>";
             }
         if (strlen(trim($emailCliente))== 0){
-                echo"Informe um email válido.<br>";
-                $contErro=$contErro+1;
+                $erros[]="Informe um email válido.<br>";
             }
         if ((strlen($senhaCliente)<=6)||(strlen($senhaCliente)>12)){
-                echo"Sua senha deve conter mais de 6 caracteres.<br>";
-                $contErro=$contErro+1;
+                $erros[]="Sua senha deve conter mais de 6 caracteres.<br>";
             }
         if ($senhaCliente != $confirmaSenhaCliente){
-                echo"Erro ao confirmar a senha.<br>";
-                $contErro=$contErro+1;
+                $erros[]="Erro ao confirmar a senha.<br>";
             }
             
             
-        if ($contErro==0){
-            $mensagem= addCliente($nomeCompletoCliente, $emailCliente, $senhaCliente);
-            echo $mensagem;
+        if (count($erros)==0){
+            $erros[]= addCliente($nomeCompletoCliente, $emailCliente, $senhaCliente);
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("login/formularioCadastro", $dados);
+        }else{
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("login/formularioCadastro", $dados);
         }
         
     }else{
@@ -70,15 +73,16 @@ function login(){
 function newsLetter(){
     if (ehPost()){
         $email=$_POST['emailNewsLetter'];
-        $contErro=0;
+        $erros= array();
         
         if(strlen(trim($email))==0){
-            echo"Email inválido";
-            $contErro=$cotErro+1;
+            $erros[]="Email inválido";
         }
-        if ($contErro==0){
+        if (count($erros)==0){
             $mensagem = newsLetterModelo($email);
             echo $mensagem;
+        }else{
+            
         }
     }else{
         exibir("login/formularioNewsLetter");
@@ -111,3 +115,8 @@ function verClienteId($id){
     $dados["cliente"] = pegarClienteId($id);
     exibir("usuario/detalharCliente", $dados);
 }
+
+
+
+
+

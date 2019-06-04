@@ -2,17 +2,14 @@
 
 <table>
     <tr>
-        <th>ID</th>
         <th>Produto</th>
-        <th>Descrição</th>
         <th>Preço</th>
     </tr>
     <?php foreach($produtos as $produto): ?>
     <tr>
-        <td><?=$produto['idProduto'] ?></td>
         <td><?=$produto['nomeProduto'] ?></td>
-        <td><?=$produto['descricaoProduto'] ?></td>
         <td><?=$produto['precoProduto'] ?></td>
+        <td><a href="./produto/verProdutoId/<?=$produto["idProduto"] ?>">Detalhar</a></td>
     </tr>
     <?php endforeach; ?>
 </table>

@@ -1,4 +1,11 @@
-
+<?php 
+    if(ehPost()){
+        foreach($erros as $erro){
+            echo "*$erro<br>";
+        }
+    }
+?>
+<br>
     <form action="" method="POST">
         Nome completo: <input type="text" name="nomeCompletoCliente"><br><br>
         Email: <input type="text" name="emailCliente"><br><br>

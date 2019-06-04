@@ -29,8 +29,15 @@ function adicionar(){
 
 
 
-function listar(){
+function listarProdutos(){
     $dados= array();
     $dados["produtos"]= pegarTodosProdutos();
     exibir("produtos/listarProdutos", $dados);
+}
+
+
+function verProdutoId($id){
+    $dados= array();
+    $dados["produto"]= pegarProdutoId($id);
+    exibir("produtos/detalharProduto", $dados);
 }
