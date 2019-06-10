@@ -5,6 +5,7 @@
     <?php foreach($newsLetters as $newsLetter): ?>
     <tr>
         <td><?=$newsLetter["email"] ?></td>
+        <td><a href="./cliente/deletarN/<?=$newsLetter["email"]?>">Deletar</a></td>
     </tr>
     <?php endforeach; ?>
 </table>

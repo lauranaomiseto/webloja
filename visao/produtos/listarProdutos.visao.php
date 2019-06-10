@@ -10,6 +10,7 @@
         <td><?=$produto['nomeProduto'] ?></td>
         <td><?=$produto['precoProduto'] ?></td>
         <td><a href="./produto/verProdutoId/<?=$produto["idProduto"] ?>">Detalhar</a></td>
+        <td><a href="./produto/deletar/<?=$produto["idProduto"] ?>">Deletar</a></td>
     </tr>
     <?php endforeach; ?>
 </table>

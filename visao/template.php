@@ -8,7 +8,8 @@
     <body class="container">
         
         <a href="./cliente/listarClientes">Lista de Clientes</a><br>
-        <a href="./produto/listarProdutos">Lista de Produtos</a><br><br><br>
+        <a href="./produto/listarProdutos">Lista de Produtos</a><br>
+        <a href="./cliente/listarNewsletters">Lista de News Letters</a><br><br>
         
         <main class="container">
             <?php require $viewFilePath; ?>

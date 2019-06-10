@@ -29,3 +29,14 @@ function pegarProdutoId($id){
     $produto= mysqli_fetch_assoc($resul);
     return $produto;
 }
+
+
+function deletarProduto($id){
+    $comando= "delete from produto where idProduto= $id;";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return "Produto deletado";
+}

@@ -51,3 +51,25 @@ function pegarClienteId($id){
     $cliente= mysqli_fetch_assoc($resul);
     return $cliente;
 }
+
+function deletarCliente($id){
+    $comando="delete from cliente where idCliente=$id";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    
+    return "Cliente deletado";
+}
+
+function deletarNewsLetter($email){
+    $comando="delete from newsletter where email='$email';";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    
+    return "Email deletado";
+}

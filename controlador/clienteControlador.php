@@ -8,7 +8,6 @@ function cadastro(){
         $emailCliente= $_POST["emailCliente"];
         $senhaCliente= $_POST["senhaCliente"];
         $confirmaSenhaCliente= $_POST["confirmaSenhaCliente"];
-        $contErro=0;
         $erros= array();
         
         if (strlen(trim($nomeCompletoCliente))== 0){
@@ -79,16 +78,19 @@ function newsLetter(){
             $erros[]="Email inválido";
         }
         if (count($erros)==0){
-            $mensagem = newsLetterModelo($email);
-            echo $mensagem;
+            $erros[] = newsLetterModelo($email);
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("login/formularioNewsLetter", $dados);
         }else{
-            
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("login/formularioCadastro", $dados);
         }
     }else{
         exibir("login/formularioNewsLetter");
     }
 }
-
 
 
 
@@ -109,7 +111,6 @@ function listarNewsLetters(){
 
 
 
-
 function verClienteId($id){
     $dados= array();
     $dados["cliente"] = pegarClienteId($id);
@@ -118,5 +119,12 @@ function verClienteId($id){
 
 
 
+function deletarC($id){
+    $msg= deletarCliente($id);
+    redirecionar("cliente/listarClientes");
+}
 
-
+function deletarN($email){
+    $msg= deletarNewsLetter($email);
+    redirecionar("cliente/listarNewsLetters");
+}
