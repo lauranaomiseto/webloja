@@ -85,7 +85,7 @@ function newsLetter(){
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("login/formularioCadastro", $dados);
+            exibir("login/formularioNewsLetter", $dados);
         }
     }else{
         exibir("login/formularioNewsLetter");

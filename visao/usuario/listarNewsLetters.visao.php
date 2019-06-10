@@ -1,3 +1,5 @@
+<h2>Lista de todos os emails cadastrados na News Letters</h2>
+
 <table>
     <tr>
         <th>Email</th>

@@ -39,6 +39,12 @@ precoProduto double (10,2) not null,
 primary key(idProduto)
 );
 
+create table categoria(
+idCategoria int not null auto_increment,
+nomeCategoria varchar(100) not null,
+descricaoCategoria varchar(500) not null,
+primary key(idCategoria)
+);
 
 //////GDB//////
 

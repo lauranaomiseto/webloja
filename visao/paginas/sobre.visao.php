@@ -1,7 +1,4 @@
 
 <title>Sobre Nós</title>
-<h1>Hamburgueria Best Taste Burger</h1>
-<p>A Best Taste Burguer oferece à Itapetininga o melhor serviço de hamburgueria da região,
-contando com um cardápio que agrada a todos os <i>tastes</i>, variando desde deliciosos hamburgueres 
-defumados e grelhados até saborosas sobremesas com sorvetes e acompanhamentos.</p>
-<p>Nossa loja física se encontra no IF, venha nos conhecer e aproveitar nossos <i>Best Taste Burgers</i>.</p>
+<h1>Galeria Para Sempre Nunca Mais</h1>
+<p>Este site foi criado com objetivos acadêmicos, utilizando as obras do artista Susano Correia.</p>

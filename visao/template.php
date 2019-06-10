@@ -7,8 +7,10 @@
     </head>
     <body class="container">
         
+        <a href="./">Página Inicial</a><br>
         <a href="./cliente/listarClientes">Lista de Clientes</a><br>
         <a href="./produto/listarProdutos">Lista de Produtos</a><br>
+        <a href="./produto/listarCategorias">Lista de Categorias</a><br>
         <a href="./cliente/listarNewsletters">Lista de News Letters</a><br><br>
         
         <main class="container">

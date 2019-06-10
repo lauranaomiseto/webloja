@@ -40,3 +40,45 @@ function deletarProduto($id){
     }
     return "Produto deletado";
 }
+
+
+
+function addCategoria($nomeCategoria, $descricaoCategoria){
+    $comando= "insert into categoria (nomeCategoria, descricaoCategoria) "
+            . "values ('$nomeCategoria', '$descricaoCategoria');";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return 'Categoria cadastrada com sucesso!';
+}
+
+function pegarTodasCategorias(){
+    $comando= "select * from categoria";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    while ($categoria = mysqli_fetch_assoc($resul)){
+        $categorias[]=$categoria; 
+    }
+    return $categorias;
+}
+
+function pegarCategoriaId($id){
+    $comando="select * from categoria where idCategoria= $id;";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    $categoria= mysqli_fetch_assoc($resul);
+    return $categoria;
+}
+
+
+function deletarCategoria($id){
+    $comando= "delete from categoria where idCategoria=$id;";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return "Categoria deletada";
+}
