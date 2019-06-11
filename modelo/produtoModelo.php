@@ -1,4 +1,4 @@
-<?php
+            <?php
  function addProduto($nomeProduto, $descricaoProduto, $precoProduto){
      $comando="insert into produto (nomeProduto, descricaoProduto, precoProduto)"
              . "values ('$nomeProduto','$descricaoProduto','$precoProduto')";
@@ -15,6 +15,7 @@
     $comando="select * from produto";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
+    $produtos = array();
     while ($produto = mysqli_fetch_assoc($resul)){
         $produtos[]=$produto; 
     }
@@ -58,6 +59,7 @@ function pegarTodasCategorias(){
     $comando= "select * from categoria";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
+    $categorias = array();
     while ($categoria = mysqli_fetch_assoc($resul)){
         $categorias[]=$categoria; 
     }

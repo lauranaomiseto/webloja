@@ -1,4 +1,108 @@
 body {
+    margin: 0px;
+}
+
+p{
+	color: #6d6b6a;
+	font-family: 'Cardo', serif;
+	font-size: 14px;
+}
+.banner{
+	width: 100%;
+}
+
+
+#menu a:link{
+	color: #6d6b6a;
+	text-decoration: none;
+}
+#menu a:visited{
+	color: #6d6b6a;
+}
+#menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+#menu div{
+	width: 30%;
+}
+#menu img{
+	width: 70%;
+	margin-left: 15%;
+}
+#opcoes{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	text-align: right;
+}
+#opcoes div{
+	width: 45%;
+}
+#menu h3{
+	font-family: 'Cinzel', serif;
+}
+
+#infos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 10px;
+        margin-bottom: 10px;
+	align-items: center;
+}
+#infos div{
+	width: 30%;
+}
+#info1 img{
+	width: 70%;
+	margin-left: 15%;
+}
+#info2 div{
+	display: flex;
+	flex-direction: row;
+	height: 32px;
+	margin-bottom: 5px;
+}
+#info2 div p{
+	margin: 5px;
+}
+#texto1{
+	margin-top:0px;
+}
+#info3 h3{
+	color: #6d6b6a;
+	text-align: center;
+	font-family: 'Cinzel', serif;
+	margin-top:0px;
+}
+#info3 form{
+	color: #efe8c2;
+	text-align: center;
+}
+.caixaEntraInfo{
+	border: solid 2px #efe8c2;
+	color: #6d6b6a;
+	font-family: 'Cardo', serif;
+	width: 200px;
+	height: 25px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+.botao{
+	background-color:#efe8c2;
+	color: #6d6b6a;
+	border: none;
+	font-family: 'Cardo', serif;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	font-size: 15px;
+}
+
+#conteudodaaula{
     font-family: Arial, Helvetica, sans-serif;
     width: 80%;
     margin: auto;

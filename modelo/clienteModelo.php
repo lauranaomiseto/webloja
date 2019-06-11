@@ -26,6 +26,7 @@ function pegarTodosClientes(){
     $comando="select * from cliente";
     $cnx=conn();
     $resul = mysqli_query($cnx, $comando);
+    $clientes = array();
     while ($cliente = mysqli_fetch_assoc($resul)){
         $clientes[]=$cliente;
     }
@@ -37,6 +38,7 @@ function pegarTodasNewsLetters(){
     $comando="select * from newsLetter";
     $cnx=conn();
     $resul = mysqli_query($cnx, $comando);
+    $newsLetters = array();
     while ($newsLetter = mysqli_fetch_assoc($resul)){
         $newsLetters[]=$newsLetter;
     }
