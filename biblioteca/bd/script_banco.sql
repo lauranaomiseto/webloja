@@ -24,6 +24,10 @@ idCliente int not null auto_increment,
 nomeCompleto varchar(100) not null,
 email varchar(60) not null,
 senha varchar(12) not null,
+cpf varchar(60),
+datadenascimento varchar(10),
+sexo varchar(60),
+tipoususario varchar(5),
 primary key(idCliente)
 );
 
@@ -36,6 +40,8 @@ idProduto int not null auto_increment,
 nomeProduto varchar(100) not null,
 descricaoProduto varchar(500) not null,
 precoProduto double (10,2) not null,
+estoque_minimo int,
+estoque_maximo int,
 primary key(idProduto)
 );
 
@@ -44,6 +50,13 @@ idCategoria int not null auto_increment,
 nomeCategoria varchar(100) not null,
 descricaoCategoria varchar(500) not null,
 primary key(idCategoria)
+);
+
+create table cupom(
+idCupom int not null auto_increment,
+nomeCupom varchar(60) not null,
+desconto int not null,
+primary key(idCupom)
 );
 
 //////GDB//////
