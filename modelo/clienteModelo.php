@@ -35,7 +35,7 @@ function pegarTodosClientes(){
 
 
 function pegarTodasNewsLetters(){
-    $comando="select * from newsLetter";
+    $comando="select * from newsletter";
     $cnx=conn();
     $resul = mysqli_query($cnx, $comando);
     $newsLetters = array();
