@@ -154,23 +154,6 @@ dados varchar(1000) not null,
 primary key (id_log)
 );
 
-(0-ADM, 1-CLENTE, 2-VENDEDOR, 3-GERENTE)
-insert into cliente values (1, "Ana", "ana@gmail", "1234567", "12345", "2000-01-01", "f", "1");
-insert into cliente values (2, "Jorge", "jorge@gmail", "1234567", "22345", "2000-02-02", "m", "1");
-insert into cliente values (3, "Maria", "maria@gmail", "1234567", "32345", "2000-03-03", "f", "1");
-insert into cliente values (4, "Mario", "mario@gmail", "1234567", "42345", "2000-04-04", "m", "0");
-insert into cliente values (5, "Julia", "julia@gmail", "1234567", "52345", "2000-05-05", "f", "0");
-
-insert into endereco values (1, 1, "Ana rua", "111", "casa", "Ana bairro", "Ana cidade", "12345678");
-insert into endereco values (2, 2, "Jorge rua", "112", "ap", "Jorge bairro", "Jorge cidade", "22345678");
-insert into endereco values (3, 3, "Maria rua", "221", "casa", "Maria bairro", "Maria cidade", "32345678");
-insert into endereco values (4, 4, "Mario rua", "222", "ap", "Mario bairro", "Mario cidade", "42345678");
-insert into endereco values (5, 5, "Julia rua", "331", "casa", "Julia bairro", "Julia cidade", "52345678");
-
-
-
-
-
 
 
 
