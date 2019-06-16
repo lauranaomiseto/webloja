@@ -31,6 +31,19 @@ tipoususario varchar(5),
 primary key(idCliente)
 );
 
+create table endereco (
+idEndereco int not null auto_increment,
+idCliente int not null,
+logradouro varchar(60) not null,
+numero varchar(7) not null,
+complemento varchar(60) not null,
+bairro varchar(60) not null,
+cidade varchar(60)not null,
+cep varchar(60) not null,
+primary key (idEndereco),
+foreign key (idCliente) references cliente (idCliente) on delete cascade on update cascade
+);
+
 create table newsletter(
 email varchar (60) not null
 );
