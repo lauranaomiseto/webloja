@@ -1,4 +1,4 @@
-<h2>Lista de todos os usuários</h2>
+<h2>Lista de todos os produtos</h2>
 
 <table>
     <tr>
