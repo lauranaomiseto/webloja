@@ -113,5 +113,5 @@ function verCategoriaId($id){
 
 function deletarC($id){
     $msg= deletarCategoria($id);
-    redirecionar("produto/listarCategorias");
+    redirecionar("produto/listarCategoria");
 }
