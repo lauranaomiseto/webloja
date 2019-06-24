@@ -60,9 +60,11 @@ primary key(idProduto)
 
 create table categoria(
 idCategoria int not null auto_increment,
+idProduto int not null auto_increment,
 nomeCategoria varchar(100) not null,
 descricaoCategoria varchar(500) not null,
-primary key(idCategoria)
+primary key(idCategoria),
+foreign key (idProduto) references produto (idProduto) on delete cascade on update cascade
 );
 
 create table cupom(
