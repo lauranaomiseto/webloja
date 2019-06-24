@@ -146,7 +146,7 @@ desconto int not null,
 primary key (idcupom)
 );
 
-create table log_porduto(
+create table log_produto(
 id_log int not null auto_increment, 
 tabela varchar(45) not null,
 usuario varchar(45) not null,
