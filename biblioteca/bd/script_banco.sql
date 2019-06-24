@@ -60,7 +60,7 @@ primary key(idProduto)
 
 create table categoria(
 idCategoria int not null auto_increment,
-idProduto int not null auto_increment,
+idProduto int not null,
 nomeCategoria varchar(100) not null,
 descricaoCategoria varchar(500) not null,
 primary key(idCategoria),
