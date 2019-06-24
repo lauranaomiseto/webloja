@@ -63,7 +63,7 @@ function verProdutoId($id){
 
 function deletarP($id){
     $msg= deletarProduto($id);
-    redirecionar("produtos/listarProdutos");
+    redirecionar("produto/listarProdutos");
 }
 
 
@@ -84,15 +84,15 @@ function adicionarCategoria(){
             $erros[]= addCategoria($nomeCategoria, $descricaoCategoria);
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("produtos/cadastroCategorias", $dados);
+            exibir("produto/cadastroCategorias", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("produtos/cadastroCategorias", $dados);
+            exibir("produto/cadastroCategorias", $dados);
         }
         
     }else{
-        exibir("produtos/cadastroCategorias");
+        exibir("produto/cadastroCategorias");
     }
 }
 
@@ -113,5 +113,5 @@ function verCategoriaId($id){
 
 function deletarC($id){
     $msg= deletarCategoria($id);
-    redirecionar("produtos/listarCategorias");
+    redirecionar("produto/listarCategorias");
 }
