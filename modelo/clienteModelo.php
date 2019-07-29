@@ -75,3 +75,15 @@ function deletarNewsLetter($email){
     
     return "Email deletado";
 }
+
+
+
+function editarCliente($id, $nomeCompleto, $email, $senha){
+    $comando="update cliente set nomeCompleto='$nomeCompleto', email='$email', senha='$senha' where idCliente='$id'";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return 'Dados atualizados com sucesso!';
+}

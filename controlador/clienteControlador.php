@@ -128,3 +128,42 @@ function deletarN($email){
     $msg= deletarNewsLetter($email);
     redirecionar("cliente/listarNewsLetters");
 }
+
+
+
+function editarC($id){
+    if (ehPost()){
+        $nomeCompletoCliente= $_POST["nomeCompletoCliente"];
+        $emailCliente= $_POST["emailCliente"];
+        $senhaCliente= $_POST["senhaCliente"];
+        $confirmaSenhaCliente= $_POST["confirmaSenhaCliente"];
+        $erros= array();
+        
+        if (strlen(trim($nomeCompletoCliente))== 0){
+                $erros[]="Informe um nome válido.<br>";
+            }
+        if (strlen(trim($emailCliente))== 0){
+                $erros[]="Informe um email válido.<br>";
+            }
+        if ((strlen($senhaCliente)<=6)||(strlen($senhaCliente)>12)){
+                $erros[]="Sua senha deve conter mais de 6 caracteres.<br>";
+            }
+        if ($senhaCliente != $confirmaSenhaCliente){
+                $erros[]="Erro ao confirmar a senha.<br>";
+            }
+            
+            
+        if (count($erros)==0){
+            editarCliente($id, $nomeCompletoCliente, $emailCliente, $senhaCliente);
+            redirecionar("cliente/listarClientes");
+        }else{
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("login/formularioCadastro", $dados);
+        }
+        
+    }else{
+        $dados["cliente"]= pegarClienteId($id);
+        exibir("login/formularioCadastro", $dados);
+    }
+}

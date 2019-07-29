@@ -8,6 +8,7 @@
     <tr>
         <td><?=$cliente['nomeCompleto'] ?></td>
         <td><a href="./cliente/verClienteId/<?=$cliente["idCliente"] ?>">Detalhar</a></td>
+        <td><a href="./cliente/editarC/<?=$cliente["idCliente"] ?>">Editar</a></td>
         <td><a href="./cliente/deletarC/<?=$cliente["idCliente"] ?>">Deletar</a></td>
     </tr>
     <?php endforeach; ?>
