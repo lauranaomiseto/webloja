@@ -1,15 +1,15 @@
 <?php
     if (ehPost()){
         foreach ($erros as $erro){
-            echo "*".$erro."<br>";
+            echo "<br>*$erro";
         }
     }
 ?>
 <br>
 <form action="" method="POST">
-    Nome da categoria:<input type="text" name="nomeCategoria" value="<?=@$categoria["nomeCategoria"]?>"><br><br>
-    Descrição da categoria:<input type="text" name="descricaoCategoria" value="<?=@$categoria["descricaoCategoria"]?>"><br><br>
-    <input type="submit">
+    <input type="text" placeholder="Categoria" class="caixaEntraInfo" name="nomeCategoria" value="<?=@$categoria["nomeCategoria"]?>"><br><br>
+    <input type="text" placeholder="Descrição" name="descricaoCategoria" class="caixaEntraInfo" value="<?=@$categoria["descricaoCategoria"]?>"><br><br>
+    <button class="botao">Cadastrar</button>
 </form>
 <a href="./produto/listarCategorias">Voltar</a>
 

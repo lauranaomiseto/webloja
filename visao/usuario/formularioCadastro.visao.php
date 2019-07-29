@@ -1,7 +1,7 @@
 <?php 
     if(ehPost()){
         foreach($erros as $erro){
-            echo "*$erro<br>";
+            echo "<br>*$erro";
         }
     }
 ?>

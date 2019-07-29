@@ -108,7 +108,7 @@ function adicionarCategoria(){
         $erros= array();
         
         if (strlen(trim($nomeCategoria))== 0){
-                $erros[]="O campo NOME é obrigatório.<br>";
+                $erros[]="O campo CATEGORIA é obrigatório.<br>";
             }
         if (strlen(trim($descricaoCategoria))== 0){
                 $erros[]="O campo DEESCRIÇÃO é obrigatório.<br>";

@@ -1,8 +1,8 @@
 <html>
     <head>
-        <title>template MVC</title>
+        <title>Galeria</title>
         <base href="<?= URL_BASE ?>"><!--Esta instrução é super importante e não deve ser mudada!-->
-        <link rel="shortcut icon" href="./publico/imagens/icones/logo.png">
+        <link rel="shortcut icon" href="http://localhost/webloja/publico/imagens/icones/logo.png">
 	<link href="https://fonts.googleapis.com/css?family=Cardo|Cinzel" rel="stylesheet">
         <link rel="stylesheet" href="./publico/css/app.css">
     </head>

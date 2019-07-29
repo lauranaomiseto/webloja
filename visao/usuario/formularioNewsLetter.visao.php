@@ -1,13 +1,13 @@
 <?php 
     if(ehPost()){
         foreach($erros as $erro){
-            echo "*$erro<br>";
+            echo "<br>*$erro";
         }
     }
 ?>
 <br>
 <form action="" method="POST">
-    Email:<input type="text" name="emailNewsLetter"><br><br>
-    <input type="submit">
+    <input type="text" placeholder="Email" class="caixaEntraInfo" name="emailNewsLetter"><br><br>
+    <button class="botao">Cadastrar</button>
 </form>
 <a href="./cliente/listarNewsLetters">Voltar</a>
