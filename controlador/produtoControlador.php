@@ -67,6 +67,40 @@ function deletarP($id){
 }
 
 
+function editarP($id){
+    if (ehPost()){
+        $nomeProduto=$_POST['nomeProduto'];
+        $descricaoProduto=$_POST['descricaoProduto'];
+        $precoProduto=$_POST['precoProduto'];
+        $erros= array();
+        
+        if (strlen(trim($nomeProduto))== 0){
+                $erros[]="O campo NOME é obrigatório.<br>";
+            }
+        if (strlen(trim($descricaoProduto))== 0){
+                $erros[]="O campo DEESCRIÇÃO é obrigatório.<br>";
+            }
+        if (strlen(trim($precoProduto))==0){
+                $erros[]="O campo PREÇO é obrigatório.<br>";
+            }
+            
+        if (count($erros)==0){
+            editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto);
+            redirecionar("produto/listarProdutos");
+        }else{
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("produtos/cadastroProduto", $dados);
+        }
+        
+    }else{
+        $dados["produto"]= pegarProdutoId($id);
+        exibir("produtos/cadastroProduto", $dados);
+    }
+}
+
+
+
 function adicionarCategoria(){
     if (ehPost()){
         $nomeCategoria=$_POST['nomeCategoria'];
@@ -84,15 +118,15 @@ function adicionarCategoria(){
             $erros[]= addCategoria($nomeCategoria, $descricaoCategoria);
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("produto/cadastroCategorias", $dados);
+            exibir("produtos/cadastroCategoria", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("produto/cadastroCategorias", $dados);
+            exibir("produtos/cadastroCategoria", $dados);
         }
         
     }else{
-        exibir("produto/cadastroCategorias");
+        exibir("produtos/cadastroCategoria");
     }
 }
 
@@ -107,11 +141,40 @@ function listarCategorias(){
 function verCategoriaId($id){
     $dados= array();
     $dados["categoria"]= pegarCategoriaId($id);
-    exibir("produtos/detalharCategorias", $dados);
+    exibir("produtos/detalharCategoria", $dados);
 }
 
 
 function deletarC($id){
     $msg= deletarCategoria($id);
     redirecionar("produto/listarCategorias");
+}
+
+
+function editarC($id){
+    if (ehPost()){
+        $nomeCategoria=$_POST['nomeCategoria'];
+        $descricaoCategoria=$_POST['descricaoCategoria'];
+        $erros= array();
+        
+        if (strlen(trim($nomeCategoria))== 0){
+                $erros[]="O campo NOME é obrigatório.<br>";
+            }
+        if (strlen(trim($descricaoCategoria))== 0){
+                $erros[]="O campo DEESCRIÇÃO é obrigatório.<br>";
+            }
+            
+        if (count($erros)==0){
+            editarCategoria($id, $nomeCategoria, $descricaoCategoria);
+            redirecionar("produto/listarCategorias");
+        }else{
+            $dados= array();
+            $dados["erros"]= $erros;
+            exibir("produtos/cadastroCategoria", $dados);
+        }
+        
+    }else{
+        $dados["categoria"]= pegarCategoriaId($id);
+        exibir("produtos/cadastroCategoria",  $dados);
+    }
 }

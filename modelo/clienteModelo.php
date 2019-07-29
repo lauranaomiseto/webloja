@@ -78,8 +78,8 @@ function deletarNewsLetter($email){
 
 
 
-function editarCliente($id, $nomeCompleto, $email, $senha){
-    $comando="update cliente set nomeCompleto='$nomeCompleto', email='$email', senha='$senha' where idCliente='$id'";
+function editarCliente($idCliente, $nomeCompleto, $email, $senha){
+    $comando="update cliente set nomeCompleto='$nomeCompleto', email='$email', senha='$senha' where idCliente='$idCliente'";
     $cnx=conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){

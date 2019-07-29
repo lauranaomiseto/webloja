@@ -9,8 +9,9 @@
     <tr>
         <td><?=$produto['nomeProduto'] ?></td>
         <td><?=$produto['precoProduto'] ?></td>
-        <td><a href="./produto/verProdutoId/<?=$produto["idProduto"]?>">Detalhar</a></td>
-        <td><a href="./produto/deletarP/<?=$produto["idProduto"] ?>">Deletar</a></td>
+        <td><a href="./produto/verProdutoId/<?=$produto["idProduto"]?>"><button class="botao">Detalhar</button></a></td>
+        <td><a href="./produto/editarP/<?=$produto["idProduto"] ?>"><button class="botao">Editar</button></a></td>
+        <td><a href="./produto/deletarP/<?=$produto["idProduto"] ?>"><button class="botao">Deletar</button></a></td>
     </tr>
     <?php endforeach; ?>
 </table>

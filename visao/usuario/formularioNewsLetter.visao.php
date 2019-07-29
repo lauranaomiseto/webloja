@@ -10,3 +10,4 @@
     Email:<input type="text" name="emailNewsLetter"><br><br>
     <input type="submit">
 </form>
+<a href="./cliente/listarNewsLetters">Voltar</a>

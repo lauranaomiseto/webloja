@@ -14,3 +14,5 @@
         <td><?=$produto['precoProduto'] ?></td>
     </tr>
 </table>
+<br>
+<a href="./produto/listarProdutos"><button class="botao">Voltar</button></a>

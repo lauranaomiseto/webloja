@@ -43,6 +43,18 @@ function deletarProduto($id){
 }
 
 
+function editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto){
+    $comando="update produto set nomeProduto='$nomeProduto', descricaoProduto='$descricaoProduto', precoProduto='$precoProduto' where idProduto='$id';";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return "Dados atualizados com sucesso!";
+}
+
+
+
 
 function addCategoria($nomeCategoria, $descricaoCategoria){
     $comando= "insert into categoria (nomeCategoria, descricaoCategoria) "
@@ -52,7 +64,7 @@ function addCategoria($nomeCategoria, $descricaoCategoria){
     if(!$resul){
         die(mysqli_error($cnx));
     }
-    return 'Categoria cadastrada com sucesso!';
+    return "Categoria cadastrada com sucesso!";
 }
 
 function pegarTodasCategorias(){
@@ -83,4 +95,14 @@ function deletarCategoria($id){
         die(mysqli_error($cnx));
     }
     return "Categoria deletada";
+}
+
+function editarCategoria($id, $nomeCategoria, $descricaoCategoria){
+    $comando="update categoria set nomeCategoria='$nomeCategoria', descricaoCategoria='$descricaoCategoria' where idCategoria='$id';";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return "Dados atualizados com sucesso!";
 }

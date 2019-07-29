@@ -12,3 +12,5 @@
         <td><?=$cliente['email'] ?></td>
     </tr>
 </table>
+<br>
+<a href="./cliente/listarClientes"><button class="botao">Voltar</button></a>

@@ -12,4 +12,5 @@
         <td><?=$categoria['descricaoCategoria'] ?></td>
     </tr>
 </table>
-
+<br>
+<a href="./produto/listarCategorias"><button class="botao">Voltar</button></a>

@@ -28,15 +28,15 @@ function cadastro(){
             $erros[]= addCliente($nomeCompletoCliente, $emailCliente, $senhaCliente);
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("login/formularioCadastro", $dados);
+            exibir("usuario/formularioCadastro", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("login/formularioCadastro", $dados);
+            exibir("usuario/formularioCadastro", $dados);
         }
         
     }else{
-        exibir("login/formularioCadastro");
+        exibir("usuario/formularioCadastro");
     }
 }
 
@@ -81,14 +81,14 @@ function newsLetter(){
             $erros[] = newsLetterModelo($email);
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("login/formularioNewsLetter", $dados);
+            exibir("usuario/formularioNewsLetter", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("login/formularioNewsLetter", $dados);
+            exibir("usuario/formularioNewsLetter", $dados);
         }
     }else{
-        exibir("login/formularioNewsLetter");
+        exibir("usuario/formularioNewsLetter");
     }
 }
 
@@ -159,11 +159,11 @@ function editarC($id){
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("login/formularioCadastro", $dados);
+            exibir("usuario/formularioCadastro", $dados);
         }
         
     }else{
         $dados["cliente"]= pegarClienteId($id);
-        exibir("login/formularioCadastro", $dados);
+        exibir("usuario/formularioCadastro", $dados);
     }
 }
