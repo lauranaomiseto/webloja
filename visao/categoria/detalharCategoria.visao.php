@@ -4,13 +4,11 @@
     <tr>
         <th>ID</th>
         <th>Categoria</th>
-        <th>Descrição</th>
     </tr>
     <tr>
         <td><?=$categoria['idCategoria'] ?></td>
         <td><?=$categoria['nomeCategoria'] ?></td>
-        <td><?=$categoria['descricaoCategoria'] ?></td>
     </tr>
 </table>
 <br>
-<a href="./produto/listarCategorias"><button class="botao">Voltar</button></a>
+<a href="./categoria/listarCategorias"><button class="botao">Voltar</button></a>

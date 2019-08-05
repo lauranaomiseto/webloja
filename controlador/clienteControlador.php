@@ -28,15 +28,15 @@ function cadastro(){
             $erros[]= addCliente($nomeCompletoCliente, $emailCliente, $senhaCliente);
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("usuario/formularioCadastro", $dados);
+            exibir("cliente/formularioCadastro", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("usuario/formularioCadastro", $dados);
+            exibir("cliente/formularioCadastro", $dados);
         }
         
     }else{
-        exibir("usuario/formularioCadastro");
+        exibir("cliente/formularioCadastro");
     }
 }
 
@@ -69,44 +69,11 @@ function login(){
 
 
 
-function newsLetter(){
-    if (ehPost()){
-        $email=$_POST['emailNewsLetter'];
-        $erros= array();
-        
-        if(strlen(trim($email))==0){
-            $erros[]="Email inválido";
-        }
-        if (count($erros)==0){
-            $erros[] = newsLetterModelo($email);
-            $dados= array();
-            $dados["erros"]= $erros;
-            exibir("usuario/formularioNewsLetter", $dados);
-        }else{
-            $dados= array();
-            $dados["erros"]= $erros;
-            exibir("usuario/formularioNewsLetter", $dados);
-        }
-    }else{
-        exibir("usuario/formularioNewsLetter");
-    }
-}
-
-
-
 function listarClientes(){
     $dados = array();
     $dados["clientes"]= pegarTodosClientes();
-    exibir("usuario/listarClientes", $dados);
+    exibir("cliente/listarClientes", $dados);
     
-}
-
-
-
-function listarNewsLetters(){
-    $dados = array();
-    $dados["newsLetters"]= pegarTodasNewsLetters();
-    exibir("usuario/listarNewsLetters", $dados);
 }
 
 
@@ -114,7 +81,7 @@ function listarNewsLetters(){
 function verClienteId($id){
     $dados= array();
     $dados["cliente"] = pegarClienteId($id);
-    exibir("usuario/detalharCliente", $dados);
+    exibir("cliente/detalharCliente", $dados);
 }
 
 
@@ -123,12 +90,6 @@ function deletarC($id){
     $msg= deletarCliente($id);
     redirecionar("cliente/listarClientes");
 }
-
-function deletarN($email){
-    $msg= deletarNewsLetter($email);
-    redirecionar("cliente/listarNewsLetters");
-}
-
 
 
 function editarC($id){
@@ -159,11 +120,11 @@ function editarC($id){
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("usuario/formularioCadastro", $dados);
+            exibir("cliente/formularioCadastro", $dados);
         }
         
     }else{
         $dados["cliente"]= pegarClienteId($id);
-        exibir("usuario/formularioCadastro", $dados);
+        exibir("cliente/formularioCadastro", $dados);
     }
 }

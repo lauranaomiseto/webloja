@@ -50,18 +50,19 @@ email varchar (60) not null
 
 create table produto(
 idProduto int not null auto_increment,
+idCategoria int not null,
 nomeProduto varchar(100) not null,
 descricaoProduto varchar(500) not null,
 precoProduto double (10,2) not null,
 estoque_minimo int,
 estoque_maximo int,
-primary key(idProduto)
+primary key(idProduto),
+foreign key (idCategoria) references categoria (idCategoria) on delete cascade on update cascade
 );
 
 create table categoria(
 idCategoria int not null auto_increment,
 nomeCategoria varchar(100) not null,
-descricaoCategoria varchar(500) not null,
 primary key(idCategoria)
 );
 
@@ -111,13 +112,15 @@ foreign key (idendereco) references endereco (idendereco) on delete cascade on u
 
 create table produto(
 idproduto int not null auto_increment,
+idcategoria int not null,
 nomeproduto varchar(100) not null,
 descricaoproduto varchar(60) not null,
 precoproduto double (10,2) not null,
 tamanho varchar(60) not null,
 estoque_minimo int not null,
 estoque_maximo int not null,
-primary key(idproduto)
+primary key(idproduto),
+foreign key (idcategoria) references categoria (idcategoria) on delete cascade on update cascade
 );
 
 create table categoria(

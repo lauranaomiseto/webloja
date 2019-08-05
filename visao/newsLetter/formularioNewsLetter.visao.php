@@ -10,4 +10,4 @@
     <input type="text" placeholder="Email" class="caixaEntraInfo" name="emailNewsLetter"><br><br>
     <button class="botao">Cadastrar</button>
 </form>
-<a href="./cliente/listarNewsLetters">Voltar</a>
+<a href="./newsLetter/listarNewsLetters">Voltar</a>

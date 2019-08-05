@@ -11,17 +11,6 @@ function addCliente($nomeCompleto, $email, $senha){
 }
 
 
-function newsLetterModelo($email){
-    $comando="insert into newsletter (email)"
-            . "values ('$email')";
-    $cnx=conn();
-    $resul = mysqli_query($cnx, $comando);
-    if(!$resul){
-        die(mysqli_error($cnx));
-    }
-    return 'Você receberá novidades da loja!';
-}
-
 function pegarTodosClientes(){
     $comando="select * from cliente";
     $cnx=conn();
@@ -31,18 +20,6 @@ function pegarTodosClientes(){
         $clientes[]=$cliente;
     }
     return $clientes;
-}
-
-
-function pegarTodasNewsLetters(){
-    $comando="select * from newsletter";
-    $cnx=conn();
-    $resul = mysqli_query($cnx, $comando);
-    $newsLetters = array();
-    while ($newsLetter = mysqli_fetch_assoc($resul)){
-        $newsLetters[]=$newsLetter;
-    }
-    return $newsLetters;
 }
 
 
@@ -64,18 +41,6 @@ function deletarCliente($id){
     
     return "Cliente deletado";
 }
-
-function deletarNewsLetter($email){
-    $comando="delete from newsletter where email='$email';";
-    $cnx=conn();
-    $resul= mysqli_query($cnx, $comando);
-    if(!$resul){
-        die(mysqli_error($cnx));
-    }
-    
-    return "Email deletado";
-}
-
 
 
 function editarCliente($idCliente, $nomeCompleto, $email, $senha){
