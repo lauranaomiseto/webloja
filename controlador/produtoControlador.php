@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/produtoModelo.php";
+require_once "modelo/categoriaModelo.php";
 
 function visualizar(){
     $passarDados= array();
@@ -17,6 +18,8 @@ function adicionar(){
         $nomeProduto=$_POST['nomeProduto'];
         $descricaoProduto=$_POST['descricaoProduto'];
         $precoProduto=$_POST['precoProduto'];
+        $idCategoria=$_POST['categoriaProduto'];
+        
         $erros= array();
         
         if (strlen(trim($nomeProduto))== 0){
@@ -28,11 +31,15 @@ function adicionar(){
         if (strlen(trim($precoProduto))==0){
                 $erros[]="O campo PREÇO é obrigatório.<br>";
             }
+        if ($idCategoria=="verificação"){
+            $erros[]="Selecione uma CATEGORIA.<br>";
+        }
             
         if (count($erros)==0){
-            $erros[]= addProduto($nomeProduto, $descricaoProduto, $precoProduto);
+            $erros[]= addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria);
             $dados= array();
             $dados["erros"]= $erros;
+            $dados["categorias"]= pegarTodasCategorias();
             exibir("produtos/cadastroProduto", $dados);
         }else{
             $dados= array();
@@ -41,7 +48,8 @@ function adicionar(){
         }
         
     }else{
-        exibir("produtos/cadastroProduto");
+        $dados["categorias"]= pegarTodasCategorias();
+        exibir("produtos/cadastroProduto", $dados);
     }
     
 }

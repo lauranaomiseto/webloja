@@ -13,4 +13,5 @@
     </tr>
 </table>
 <br>
+<a href="./endereco/adicionarEndereco/<?=$cliente["idCliente"]?>">Adicionar endereço</a><br><br>
 <a href="./cliente/listarClientes"><button class="botao">Voltar</button></a>

@@ -1,7 +1,7 @@
-            <?php
- function addProduto($nomeProduto, $descricaoProduto, $precoProduto){
-     $comando="insert into produto (nomeProduto, descricaoProduto, precoProduto)"
-             . "values ('$nomeProduto','$descricaoProduto','$precoProduto')";
+<?php
+ function addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria){
+     $comando="insert into produto (nomeProduto, descricaoProduto, precoProduto, idCategoria)"
+             . "values ('$nomeProduto','$descricaoProduto','$precoProduto', '$idCategoria')";
      $cnx= conn();
      $resul= mysqli_query($cnx, $comando);
      if(!$resul){

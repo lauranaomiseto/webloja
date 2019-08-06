@@ -4,12 +4,14 @@
     <tr>
         <th>ID</th>
         <th>Produto</th>
+        <th>Categoria</th>
         <th>Descrição</th>
         <th>Preço</th>
     </tr>
     <tr>
         <td><?=$produto['idProduto'] ?></td>
         <td><?=$produto['nomeProduto'] ?></td>
+        <td><?=$produto['idCategoria'] ?></td>
         <td><?=$produto['descricaoProduto'] ?></td>
         <td><?=$produto['precoProduto'] ?></td>
     </tr>
