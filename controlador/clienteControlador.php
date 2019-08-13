@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/clienteModelo.php";
+require_once "modelo/enderecoModelo.php";
 
 function cadastro(){
     if (ehPost()){
@@ -81,6 +82,8 @@ function listarClientes(){
 function verClienteId($id){
     $dados= array();
     $dados["cliente"] = pegarClienteId($id);
+    $dados["enderecos"] = pegarTodosEnderecosId($id);
+    
     exibir("cliente/detalharCliente", $dados);
 }
 

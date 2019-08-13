@@ -9,3 +9,14 @@
     }
     return 'Endereço cadastrado com sucesso!';
  }
+ 
+ function pegarTodosEnderecosId($id){
+    $comando="select * from endereco where idCliente=$id";
+    $cnx=conn();
+    $resul = mysqli_query($cnx, $comando);
+    $enderecos = array();
+    while ($endereco = mysqli_fetch_assoc($resul)){
+        $enderecos[]=$endereco;
+    }
+    return $enderecos;
+}
