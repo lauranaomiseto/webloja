@@ -21,6 +21,16 @@
     return $enderecos;
 }
 
+
+function pegarEnderecoId($id){
+    $comando="select * from endereco where idEndereco=$id";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    $endereco= mysqli_fetch_assoc($resul);
+    return $endereco;
+}
+
+
 function deletarEndereco($id){
     $comando="delete from endereco where idEndereco=$id";
     $cnx= conn();
@@ -30,4 +40,15 @@ function deletarEndereco($id){
     }
     
     return "Endereco deletado";
+}
+
+function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idEndereco){
+    $comando="update endereco set logradouro='$logradouro', numero=$numero, complemento='$complemento', bairro='$bairro', "
+            . "cidade='$cidade', cep='$cep' where idEndereco='$idEndereco'";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return 'Dados atualizados com sucesso!';
 }

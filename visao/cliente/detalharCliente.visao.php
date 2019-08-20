@@ -34,8 +34,8 @@
         <td><?=$endereco['bairro'] ?></td>
         <td><?=$endereco['cidade'] ?></td>
         <td><?=$endereco['cep'] ?></td>
+        <td><a href="./endereco/editarE/<?=$endereco["idEndereco"] ?>"><button class="botao">Editar</button></a></td>
         <td><a href="./endereco/deletarE/<?=$endereco['idEndereco'] ?>"><button class="botao">Deletar</button></a></td>
-        
     </tr>
     <?php endforeach; ?>
 </table>

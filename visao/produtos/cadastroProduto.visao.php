@@ -6,7 +6,7 @@
     }
 ?>
 
-<br>
+<br><br>
     <form action="" method="POST">
         <input type="text" placeholder="Produto" class="caixaEntraInfo" name="nomeProduto" value="<?=@$produto['nomeProduto']?>"><br><br>
         <select class="caixaEntraInfo" name="categoriaProduto">

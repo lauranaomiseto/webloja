@@ -38,7 +38,6 @@ function deletarCliente($id){
     if(!$resul){
         die(mysqli_error($cnx));
     }
-    
     return "Cliente deletado";
 }
 
