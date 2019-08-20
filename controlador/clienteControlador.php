@@ -131,3 +131,4 @@ function editarC($id){
         exibir("cliente/formularioCadastro", $dados);
     }
 }
+

@@ -49,3 +49,8 @@ function adicionarEndereco($idCliente){
     }
     
 }
+
+function deletarE($id){
+    $msg = deletarEndereco($id);
+    redirecionar("cliente/listarClientes");
+}

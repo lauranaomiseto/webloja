@@ -20,3 +20,14 @@
     }
     return $enderecos;
 }
+
+function deletarEndereco($id){
+    $comando="delete from endereco where idEndereco=$id";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    
+    return "Endereco deletado";
+}
