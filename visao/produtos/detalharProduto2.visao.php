@@ -9,7 +9,7 @@
             <?=$produto['descricaoProduto'] ?>
         </p>
         <h2><?=$produto['precoProduto'] ?></h2>
-        <button><a href="./carrinho/addNoCarrinho/<?=$produto['idProduto']?>">Comprar</a></button>
+        <button><a href="./carrinho/comprar/<?=$produto['idProduto']?>">Comprar</a></button>
     </div>     	
 </div>	
 

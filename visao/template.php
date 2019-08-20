@@ -18,7 +18,7 @@
 		</div>
 		<div id="opcoes">
                     <div>
-			<a href="carrinho.html"><h3>carrinho</h3></a>
+			<a href="./carrinho/exibirCarrinho"><h3>carrinho</h3></a>
                     </div>
                     <div>
 			<a href="./cliente/cadastro"><h3>minha conta</h3></a>
