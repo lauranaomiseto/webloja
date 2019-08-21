@@ -5,14 +5,21 @@ require_once "modelo/enderecoModelo.php";
 
 function cadastro(){
     if (ehPost()){
-        $nomeCompletoCliente= $_POST["nomeCompletoUsuario"];
-        $emailCliente= $_POST["emailUsuario"];
-        $senhaCliente= $_POST["senhaUsuario"];
-        $confirmaSenhaCliente= $_POST["confirmaSenhaUsuario"];
+        $nomeCompletoUsuario= $_POST["nomeCompletoUsuario"];
+        $cpf= $_POST["cpf"];
+        $emailUsuario= $_POST["emailUsuario"];
+        $senhaUsuario= $_POST["senhaUsuario"];
+        $confirmaSenhaUsuario= $_POST["confirmaSenhaUsuario"];
         $erros= array();
         
         if (strlen(trim($nomeCompletoUsuario))== 0){
                 $erros[]="O campo NOME COMPLETO é obrigatório.<br>";
+            }
+        if (strlen(trim($cpf))== 0){
+                $erros[]="O campo CPF é obrigatório.<br>";
+            }
+        if (strlen(trim($cpf))!= 11){
+                $erros[]="Informe um CPF válido.<br>";
             }
         if (strlen(trim($emailUsuario))== 0){
                 $erros[]="O campo EMAIL é obrigatório.<br>";
@@ -26,7 +33,7 @@ function cadastro(){
             
             
         if (count($erros)==0){
-            $erros[]= addCliente($nomeCompletoUsuario, $emailUsuario, $senhaUsuario);
+            $erros[]= addUsuario($nomeCompletoUsuario, $cpf, $emailUsuario, $senhaUsuario);
             $dados= array();
             $dados["erros"]= $erros;
             exibir("usuario/formularioCadastro", $dados);
@@ -63,7 +70,7 @@ function verUsuarioId($id){
 
 function deletarU($id){
     $msg= deletarUsuario($id);
-    redirecionar("usuario/listarUsuario");
+    redirecionar("usuario/listarUsuarios");
 }
 
 
