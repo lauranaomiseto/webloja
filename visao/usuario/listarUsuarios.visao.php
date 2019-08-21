@@ -14,5 +14,5 @@
     <?php endforeach; ?>
 </table>
 <br><br>
-<a href="usuario/cadastro">Adicionar Novo Usuário</a>
+<a href="usuario/cadastroUsuario">Adicionar Novo Usuário</a>
 

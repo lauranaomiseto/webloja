@@ -11,4 +11,4 @@
     </tr>
 </table>
 <br>
-<a href="./formaPagamento/listarFormaPagamentos"><button class="botao">Voltar</button></a>
+<a href="./formaPagamento/listarFormasPagamento"><button class="botao">Voltar</button></a>

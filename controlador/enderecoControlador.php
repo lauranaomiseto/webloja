@@ -50,7 +50,11 @@ function adicionarEndereco($idUsuario){
     
 }
 
-
+function verEnderecoId($id){
+    $dados= array();
+    $dados['endereco']= pegarEnderecoId($id);
+    exibir("endereco/detalharEndereco", $dados);
+}
 
 function deletarE($id){
     $msg = deletarEndereco($id);

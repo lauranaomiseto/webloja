@@ -3,7 +3,7 @@
 require_once "modelo/usuarioModelo.php";
 require_once "modelo/enderecoModelo.php";
 
-function cadastro(){
+function cadastroUsuario(){
     if (ehPost()){
         $nomeCompletoUsuario= $_POST["nomeCompletoUsuario"];
         $cpf= $_POST["cpf"];
@@ -17,9 +17,6 @@ function cadastro(){
             }
         if (strlen(trim($cpf))== 0){
                 $erros[]="O campo CPF é obrigatório.<br>";
-            }
-        if (strlen(trim($cpf))!= 11){
-                $erros[]="Informe um CPF válido.<br>";
             }
         if (strlen(trim($emailUsuario))== 0){
                 $erros[]="O campo EMAIL é obrigatório.<br>";
@@ -36,15 +33,15 @@ function cadastro(){
             $erros[]= addUsuario($nomeCompletoUsuario, $cpf, $emailUsuario, $senhaUsuario);
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("usuario/formularioCadastro", $dados);
+            exibir("usuario/cadastroUsuario", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("usuario/formularioCadastro", $dados);
+            exibir("usuario/cadastroUsuario", $dados);
         }
         
     }else{
-        exibir("usuario/formularioCadastro");
+        exibir("usuario/cadastroUsuario");
     }
 }
 
@@ -62,7 +59,6 @@ function verUsuarioId($id){
     $dados= array();
     $dados["usuario"] = pegarUsuarioId($id);
     $dados["enderecos"] = pegarTodosEnderecosId($id);
-    
     exibir("usuario/detalharUsuario", $dados);
 }
 
@@ -102,12 +98,12 @@ function editarU($id){
         }else{
             $dados= array();
             $dados["erros"]= $erros;
-            exibir("usuario/formularioCadastro", $dados);
+            exibir("usuario/cadastroUsuario", $dados);
         }
         
     }else{
         $dados["usuario"]= pegarUsuarioId($id);
-        exibir("usuario/formularioCadastro", $dados);
+        exibir("usuario/cadastroUsuario", $dados);
     }
 }
 

@@ -19,23 +19,18 @@
 <h2>Endereços cadastrados:</h2>
 <table>
     <tr>
-        <th>ID</th>
         <th>Logradouro</th>
         <th>Número</th>
-        <th>Complemento</th>
         <th>Bairro</th>
         <th>Cidade</th>
-        <th>CEP</th>
     </tr>
     <?php foreach($enderecos as $endereco): ?>
     <tr>
-        <td><?=$endereco['idEndereco'] ?></td>
         <td><?=$endereco['logradouro'] ?></td>
         <td><?=$endereco['numero'] ?></td>
-        <td><?=$endereco['complemento'] ?></td>
         <td><?=$endereco['bairro'] ?></td>
         <td><?=$endereco['cidade'] ?></td>
-        <td><?=$endereco['cep'] ?></td>
+        <td><a href="./endereco/verEnderecoId/<?=$endereco['idEndereco'] ?>"><button class="botao">Detalhar</button></a></td>
         <td><a href="./endereco/editarE/<?=$endereco["idEndereco"] ?>"><button class="botao">Editar</button></a></td>
         <td><a href="./endereco/deletarE/<?=$endereco['idEndereco'] ?>"><button class="botao">Deletar</button></a></td>
     </tr>
