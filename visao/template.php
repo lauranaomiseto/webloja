@@ -34,6 +34,8 @@
                 <a href="./usuario/listarUsuarios">lista de usuarios</a><br>
                 <a href="./produto/listarProdutos">lista de produtos</a><br>
                 <a href="./categoria/listarCategorias">lista de categorias</a><br>
+                <a href="./cupom/listarCupons">lista de cupons</a><br>
+                <a href="./formaPagamento/listarFormasPagamento">lista de formas de pagamento</a><br>
                 <a href="./newsLetter/listarNewsletters">lista de news letters</a><br>
             </div>
             <?php require $viewFilePath; ?>

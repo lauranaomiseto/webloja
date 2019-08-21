@@ -67,12 +67,11 @@ primary key(idCategoria)
 create table pedido_produto (
 idProduto int not null,
 idPedido int not null,
-quantidade int not,
+quantidade int not null,
 primary key (idProduto, idPedido),
 foreign key (idProduto) references pedido (idPedido) on delete cascade on update cascade,
 foreign key (idPedido) references produto (idProduto) on delete cascade on update cascade
 );
-
 
 create table formaPagamento (
 idFormaPagamento int not null auto_increment,

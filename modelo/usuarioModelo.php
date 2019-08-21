@@ -1,13 +1,13 @@
 <?php
-function addUsuario($nomeCompleto, $email, $senha){
-    $comando="insert into usuario (nomeCompleto, email, senha) "
-            . "values ('$nomeCompleto', '$email', '$senha');";
+function addUsuario($nomeCompleto, $cpf, $email, $senha){
+    $comando="insert into usuario (nomeCompleto, cpf, email, senha) "
+            . "values ('$nomeCompleto', '$cpf', '$email', '$senha');";
     $cnx = conn();
     $resul = mysqli_query($cnx, $comando);
     if(!$resul){
         die(mysqli_error($cnx));
     }
-    return 'Cliente cadastrado com sucesso!';
+    return 'Usuario cadastrado com sucesso!';
 }
 
 
@@ -42,8 +42,8 @@ function deletarUsuario($id){
 }
 
 
-function editarUsuario($idUsuario, $nomeCompleto, $email, $senha){
-    $comando="update cliente set nomeCompleto='$nomeCompleto', email='$email', senha='$senha' where idUsuario='$idUsuario'";
+function editarUsuario($idUsuario, $nomeCompleto, $cpf, $email, $senha){
+    $comando="update cliente set nomeCompleto='$nomeCompleto', cpf='$cpf', email='$email', senha='$senha' where idUsuario='$idUsuario'";
     $cnx=conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){

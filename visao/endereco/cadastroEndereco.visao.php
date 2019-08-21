@@ -17,5 +17,5 @@
         <button class="botao">Cadastrar</button>
     </form>
 
-<a href="./cliente/listarClientes">Voltat</a>
+<a href="./usuario/listarUsuarios">Voltat</a>
 

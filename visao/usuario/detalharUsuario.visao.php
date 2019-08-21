@@ -4,12 +4,14 @@
     <tr>
         <th>ID</th>
         <th>Nome</th>
+        <th>CPF</th>
         <th>Email</th>
     </tr>
     <tr>
-        <td><?=$cliente['idUsuario'] ?></td>
-        <td><?=$cliente['nomeCompleto'] ?></td>
-        <td><?=$cliente['email'] ?></td>
+        <td><?=$usuario['idUsuario'] ?></td>
+        <td><?=$usuario['nomeCompleto'] ?></td>
+        <td><?=$usuario['cpf'] ?></td>
+        <td><?=$usuario['email'] ?></td>
     </tr>
 </table>
 <br>
@@ -41,5 +43,5 @@
 </table>
 <br>
 
-<a href="./endereco/adicionarEndereco/<?=$cliente["idCliente"]?>">Adicionar endereço</a><br><br>
+<a href="./endereco/adicionarEndereco/<?=$usuario["idUsuario"]?>">Adicionar endereço</a><br><br>
 <a href="./usuario/listarUsuarios"><button class="botao">Voltar</button></a>
