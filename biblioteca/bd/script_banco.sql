@@ -19,21 +19,21 @@ INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('usuari
 
 ///////meu///////
 
-create table cliente(
-idCliente int not null auto_increment,
+create table usuario(
+idUsuario int not null auto_increment,
 nomeCompleto varchar(100) not null,
 email varchar(60) not null,
 senha varchar(12) not null,
 cpf varchar(60),
-datadenascimento varchar(10),
+dataNascimento varchar(10),
 sexo varchar(60),
-tipoususario varchar(5),
-primary key(idCliente)
+tipoUsusario varchar(5),
+primary key(idUsuario)
 );
 
 create table endereco (
 idEndereco int not null auto_increment,
-idCliente int not null,
+idUsuario int not null,
 logradouro varchar(60) not null,
 numero varchar(7) not null,
 complemento varchar(60) not null,
@@ -41,11 +41,7 @@ bairro varchar(60) not null,
 cidade varchar(60)not null,
 cep varchar(60) not null,
 primary key (idEndereco),
-foreign key (idCliente) references cliente (idCliente) on delete cascade on update cascade
-);
-
-create table newsletter(
-email varchar (60) not null
+foreign key (idUsuario) references usuario (idUsuario) on delete cascade on update cascade
 );
 
 create table produto(
@@ -56,6 +52,8 @@ descricaoProduto varchar(500) not null,
 precoProduto double (10,2) not null,
 estoque_minimo int,
 estoque_maximo int,
+imagem varchar(60),
+quant_estoque integer,
 primary key(idProduto),
 foreign key (idCategoria) references categoria (idCategoria) on delete cascade on update cascade
 );
@@ -66,12 +64,46 @@ nomeCategoria varchar(100) not null,
 primary key(idCategoria)
 );
 
+create table pedido_produto (
+idProduto int not null,
+idPedido int not null,
+quantidade int not,
+primary key (idProduto, idPedido),
+foreign key (idProduto) references pedido (idPedido) on delete cascade on update cascade,
+foreign key (idPedido) references produto (idProduto) on delete cascade on update cascade
+);
+
+
+create table formaPagamento (
+idFormaPagamento int not null auto_increment,
+descricao varchar(45),
+primary key (idFormaPagamento)
+);
+
+create table pedido (
+idPedido int not null auto_increment, 
+idUsuario int not null,
+idEndereco int not null,
+idFormaPagamento int not null,
+dataCompra date not null,
+primary key (idPedido),
+foreign key (idUsuario) references usuario (idUsuario) on delete cascade on update cascade,
+foreign key (idEndereco) references endereco (idEndereco) on delete cascade on update cascade
+);
+
 create table cupom(
 idCupom int not null auto_increment,
 nomeCupom varchar(60) not null,
 desconto int not null,
 primary key(idCupom)
 );
+
+
+create table newsletter(
+email varchar (60) not null
+);
+
+
 
 //////GDB//////
 
@@ -138,13 +170,6 @@ foreign key (idproduto) references pedido (idpedido) on delete cascade on update
 foreign key (idpedido) references produto (idproduto) on delete cascade on update cascade
 );
 
-create table estoque(
-idestoque int not null auto_increment,
-idproduto int not null,
-qtde int not null,
-primary key(idestoque),
-foreign key (idproduto) references produto (idproduto) on delete cascade on update cascade 
-);
 
 create table cupom(
 idcupom int not null auto_increment,

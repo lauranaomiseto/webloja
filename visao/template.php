@@ -31,7 +31,7 @@
         
         <main class="container" id="conteudodaaula">
             <div>
-                <a href="./cliente/listarClientes">lista de clientes</a><br>
+                <a href="./usuario/listarUsuarios">lista de usuarios</a><br>
                 <a href="./produto/listarProdutos">lista de produtos</a><br>
                 <a href="./categoria/listarCategorias">lista de categorias</a><br>
                 <a href="./newsLetter/listarNewsletters">lista de news letters</a><br>

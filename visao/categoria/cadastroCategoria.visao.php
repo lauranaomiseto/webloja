@@ -5,7 +5,7 @@
         }
     }
 ?>
-<br>
+<br><br>
 <form action="" method="POST">
     <input type="text" placeholder="Categoria" class="caixaEntraInfo" name="nomeCategoria" value="<?=@$categoria["nomeCategoria"]?>"><br><br>
     <button class="botao">Cadastrar</button>

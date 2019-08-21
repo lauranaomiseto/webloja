@@ -1,48 +1,53 @@
 <?php
+function addUsuario($nomeCompleto, $email, $senha){
+    $comando="insert into usuario (nomeCompleto, email, senha) "
+            . "values ('$nomeCompleto', '$email', '$senha');";
+    $cnx = conn();
+    $resul = mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return 'Cliente cadastrado com sucesso!';
+}
 
-function pegarTodosUsuarios() {
-    $sql = "SELECT * FROM usuario";
-    $resultado = mysqli_query(conn(), $sql);
+
+function pegarTodosUsuarios(){
+    $comando="select * from usuario";
+    $cnx=conn();
+    $resul = mysqli_query($cnx, $comando);
     $usuarios = array();
-    while ($linha = mysqli_fetch_assoc($resultado)) {
-        $usuarios[] = $linha;
+    while ($usuario = mysqli_fetch_assoc($resul)){
+        $usuarios[]=$usuario;
     }
     return $usuarios;
 }
 
-function pegarUsuarioPorId($id) {
-    $sql = "SELECT * FROM usuario WHERE id= $id";
-    $resultado = mysqli_query(conn(), $sql);
-    $usuario = mysqli_fetch_assoc($resultado);
+
+function pegarUsuarioId($id){
+    $comando="select * from usuario where idUsuario=$id";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    $usuario= mysqli_fetch_assoc($resul);
     return $usuario;
 }
 
-function adicionarUsuario($nome, $email, $senha) {
-    $sql = "INSERT INTO usuario (nome, email, senha) 
-			VALUES ('$nome', '$email', '$senha')";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao cadastrar usuário' . mysqli_error($cnx)); }
-    return 'Usuario cadastrado com sucesso!';
+function deletarUsuario($id){
+    $comando="delete from usuario where idUsuario=$id";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return "Usuario deletado";
 }
 
-function editarUsuario($id, $nome, $email) {
-    $sql = "UPDATE usuario SET nome = '$nome', email = '$email' WHERE id = $id";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao alterar usuário' . mysqli_error($cnx)); }
-    return 'Usuário alterado com sucesso!';
-}
 
-function deletarUsuario($id) {
-    $sql = "DELETE FROM usuario WHERE id = $id";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao deletar usuário' . mysqli_error($cnx)); }
-    return 'Usuario deletado com sucesso!';
-            
-}
-
-function pegarUsuarioPorEmailSenha($email, $senha) {
-    $sql = "SELECT * FROM usuario WHERE email= '$email' and senha = '$senha'";
-    $resultado = mysqli_query(conn(), $sql);
-    $usuario = mysqli_fetch_assoc($resultado);
-    return $usuario;
+function editarUsuario($idUsuario, $nomeCompleto, $email, $senha){
+    $comando="update cliente set nomeCompleto='$nomeCompleto', email='$email', senha='$senha' where idUsuario='$idUsuario'";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    if(!$resul){
+        die(mysqli_error($cnx));
+    }
+    return 'Dados atualizados com sucesso!';
 }

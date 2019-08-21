@@ -1,4 +1,4 @@
-<h2>Dados do cliente <?=$cliente["nomeCompleto"]; ?></h2>
+<h2>Dados do usuário <?=$usuario["nomeCompleto"]; ?></h2>
 
 <table>
     <tr>
@@ -7,7 +7,7 @@
         <th>Email</th>
     </tr>
     <tr>
-        <td><?=$cliente['idCliente'] ?></td>
+        <td><?=$cliente['idUsuario'] ?></td>
         <td><?=$cliente['nomeCompleto'] ?></td>
         <td><?=$cliente['email'] ?></td>
     </tr>
@@ -42,4 +42,4 @@
 <br>
 
 <a href="./endereco/adicionarEndereco/<?=$cliente["idCliente"]?>">Adicionar endereço</a><br><br>
-<a href="./cliente/listarClientes"><button class="botao">Voltar</button></a>
+<a href="./usuario/listarUsuarios"><button class="botao">Voltar</button></a>

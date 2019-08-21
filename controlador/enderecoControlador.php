@@ -1,7 +1,7 @@
 <?php
 require_once "modelo/enderecoModelo.php";
 
-function adicionarEndereco($idCliente){
+function adicionarEndereco($idUsuario){
     if (ehPost()){
         $logradouro=$_POST['logradouro'];
         $numero=$_POST['numero'];
@@ -34,7 +34,7 @@ function adicionarEndereco($idCliente){
          
             
         if (count($erros)==0){
-            $erros[]= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idCliente);
+            $erros[]= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario);
             $dados= array();
             $dados["erros"]= $erros;
             exibir("endereco/cadastroEndereco", $dados);
@@ -54,7 +54,7 @@ function adicionarEndereco($idCliente){
 
 function deletarE($id){
     $msg = deletarEndereco($id);
-    redirecionar("cliente/listarClientes");
+    redirecionar("usuario/listarUsuarios");
 }
 
 function editarE($idEndereco){
@@ -91,7 +91,7 @@ function editarE($idEndereco){
             
         if (count($erros)==0){
             editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idEndereco);
-            redirecionar("cliente/listarClientes");
+            redirecionar("usuario/listarUsuarios");
         }else{
             $dados= array();
             $dados["erros"]= $erros;

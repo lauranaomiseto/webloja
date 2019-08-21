@@ -1,7 +1,7 @@
 <?php
- function addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idCliente){
-     $comando="insert into endereco (logradouro, numero, complemento, bairro, cidade, cep, idCliente)"
-             . "values ('$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$cep', '$idCliente')";
+ function addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario){
+     $comando="insert into endereco (logradouro, numero, complemento, bairro, cidade, cep, idUsuario)"
+             . "values ('$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$cep', '$idUsuario')";
      $cnx= conn();
      $resul= mysqli_query($cnx, $comando);
      if(!$resul){
@@ -11,7 +11,7 @@
  }
  
  function pegarTodosEnderecosId($id){
-    $comando="select * from endereco where idCliente=$id";
+    $comando="select * from endereco where idUsuario=$id";
     $cnx=conn();
     $resul = mysqli_query($cnx, $comando);
     $enderecos = array();
