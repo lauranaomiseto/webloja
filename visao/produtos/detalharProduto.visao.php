@@ -17,4 +17,7 @@
     </tr>
 </table>
 <br>
+<h3>Imagem:</h3>
+<img src="<?=$produto['imagem'] ?>" alt="<?=$produto['nomeProduto'] ?>">
+<br><br>
 <a href="./produto/listarProdutos"><button class="botao">Voltar</button></a>

@@ -52,7 +52,7 @@ descricaoProduto varchar(500) not null,
 precoProduto double (10,2) not null,
 estoque_minimo int,
 estoque_maximo int,
-imagem varchar(60),
+imagem varchar(200),
 quant_estoque integer,
 primary key(idProduto),
 foreign key (idCategoria) references categoria (idCategoria) on delete cascade on update cascade

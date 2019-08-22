@@ -11,6 +11,6 @@
     <input type="text" placeholder="Desconto" class="caixaEntraInfo" name="desconto" value="<?=@$cupom["desconto"]?>"><br><br>
     <button class="botao">Cadastrar</button>
 </form>
-<a href="./cupom/listarCupons">Voltar</a>
+<a href="./cupom/listarCupons"><button class="botao">Voltar</button></a>
 
 

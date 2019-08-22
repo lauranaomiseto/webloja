@@ -5,9 +5,9 @@
         }
     }
 ?>
-<br>
+<br><br>
 <form action="" method="POST">
     <input type="text" placeholder="Email" class="caixaEntraInfo" name="emailNewsLetter"><br><br>
     <button class="botao">Cadastrar</button>
 </form>
-<a href="./newsLetter/listarNewsLetters">Voltar</a>
+<a href="./newsLetter/listarNewsLetters"><button class="botao">Voltar</button></a>

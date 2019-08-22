@@ -30,8 +30,8 @@
         <td><?=$endereco['numero'] ?></td>
         <td><?=$endereco['bairro'] ?></td>
         <td><?=$endereco['cidade'] ?></td>
-        <td><a href="./endereco/verEnderecoId/<?=$endereco['idEndereco'] ?>"><button class="botao">Detalhar</button></a></td>
-        <td><a href="./endereco/editarE/<?=$endereco["idEndereco"] ?>"><button class="botao">Editar</button></a></td>
+        <td><a href="./endereco/verEnderecoId/<?=$endereco['idEndereco'] ?>/<?=$usuario["idUsuario"]?>"><button class="botao">Detalhar</button></a></td>
+        <td><a href="./endereco/editarE/<?=$endereco["idEndereco"] ?>/<?=$usuario["idUsuario"]?>"><button class="botao">Editar</button></a></td>
         <td><a href="./endereco/deletarE/<?=$endereco['idEndereco'] ?>"><button class="botao">Deletar</button></a></td>
     </tr>
     <?php endforeach; ?>

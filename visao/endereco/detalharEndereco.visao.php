@@ -20,4 +20,4 @@
     </tr>
 </table>
 <br>
-<a href="./usuario/listarUsuarios"><button class="botao">Voltar</button></a>
+<a href="./usuario/verUsuarioId/<?=$idUsuario?>"><button class="botao">Voltar</button></a>

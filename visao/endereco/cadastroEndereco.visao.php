@@ -17,5 +17,5 @@
         <button class="botao">Cadastrar</button>
     </form>
 
-<a href="./usuario/listarUsuarios">Voltat</a>
+<a href="./usuario/verUsuarioId/<?=$idUsuario ?>"><button class="botao">Voltat</button></a>
 

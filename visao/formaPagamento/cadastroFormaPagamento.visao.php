@@ -10,7 +10,7 @@
     <input type="text" placeholder="Forma de pagamento" class="caixaEntraInfo" name="descricao" value="<?=@$formaPagamento["descricao"]?>"><br><br>
     <button class="botao">Cadastrar</button>
 </form>
-<a href="./formaPagamento/listarFormasPagamento">Voltar</a>
+<a href="./formaPagamento/listarFormasPagamento"><button class="botao">Voltar</button></a>
 
 
 

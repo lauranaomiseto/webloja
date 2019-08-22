@@ -2,6 +2,7 @@
 
 require_once "modelo/produtoModelo.php";
 require_once "modelo/categoriaModelo.php";
+require_once "servico/uploadServico.php";
 
 function visualizar(){
     $passarDados= array();
@@ -19,6 +20,10 @@ function adicionar(){
         $descricaoProduto=$_POST['descricaoProduto'];
         $precoProduto=$_POST['precoProduto'];
         $idCategoria=$_POST['categoriaProduto'];
+        $nome_temp=$_FILES['imagem']['tmp_name'];
+        $nome_real=$_FILES['imagem']['name'];
+        
+        $imagem=uploadImagem($nome_temp, $nome_real);
         
         $erros= array();
         
@@ -36,7 +41,7 @@ function adicionar(){
         }
             
         if (count($erros)==0){
-            $erros[]= addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria);
+            $erros[]= addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem);
             $dados= array();
             $dados["erros"]= $erros;
             $dados["categorias"]= pegarTodasCategorias();

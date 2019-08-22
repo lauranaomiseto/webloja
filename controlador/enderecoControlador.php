@@ -37,31 +37,35 @@ function adicionarEndereco($idUsuario){
             $erros[]= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario);
             $dados= array();
             $dados["erros"]= $erros;
+            $dados["idUsuario"]=$idUsuario;
             exibir("endereco/cadastroEndereco", $dados);
         }else{
             $dados= array();
             $dados["erros"]= $erros;
+            $dados["idUsuario"]=$idUsuario;
             exibir("endereco/cadastroEndereco", $dados);
         }
         
     }else{
-        exibir("endereco/cadastroEndereco");
+        $dados["idUsuario"]=$idUsuario;
+        exibir("endereco/cadastroEndereco", $dados);
     }
     
 }
 
-function verEnderecoId($id){
+function verEnderecoId($idEndereco, $idUsuario){
     $dados= array();
-    $dados['endereco']= pegarEnderecoId($id);
+    $dados['endereco']= pegarEnderecoId($idEndereco);
+    $dados['idUsuario']= $idUsuario;
     exibir("endereco/detalharEndereco", $dados);
 }
 
-function deletarE($id){
-    $msg = deletarEndereco($id);
+function deletarE($idEndereco){
+    $msg = deletarEndereco($idEndereco);
     redirecionar("usuario/listarUsuarios");
 }
 
-function editarE($idEndereco){
+function editarE($idEndereco, $idUsuario){
     if (ehPost()){
         $logradouro=$_POST['logradouro'];
         $numero=$_POST['numero'];
@@ -99,11 +103,13 @@ function editarE($idEndereco){
         }else{
             $dados= array();
             $dados["erros"]= $erros;
+            $dados['idUsuario']= $idUsuario;
             exibir("endereco/cadastroEndereco", $dados);
         }
         
     }else{
         $dados["endereco"]= pegarEnderecoId($idEndereco);
+        $dados['idUsuario']= $idUsuario;
         exibir("endereco/cadastroEndereco", $dados);
     }
 }

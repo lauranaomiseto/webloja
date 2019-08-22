@@ -1,7 +1,10 @@
 #conteudodaaula{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cardo', serif;
     padding: 2%;
     text-align: justify;
+}
+#conteudodaaula h2{
+    font-family: 'Cinzel', serif;
 }
 
 
@@ -214,6 +217,7 @@ p{
 	width: 40%;
 	display: flex;
 	flex-direction: row;
+        text-align: left;
 }
 .sobreProduto div{
 	width: 40%;

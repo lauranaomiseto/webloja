@@ -18,10 +18,10 @@
 		</div>
 		<div id="opcoes">
                     <div>
-			<a href="./carrinho/exibirCarrinho"><h3>carrinho</h3></a>
+			<a href="./carrinhoCompra/exibirCarrinho"><h3>carrinho</h3></a>
                     </div>
                     <div>
-			<a href="./cliente/cadastro"><h3>minha conta</h3></a>
+			<a href="./usuario/cadastroUsuario"><h3>minha conta</h3></a>
                     </div>
 		</div>
             </div>
@@ -56,9 +56,9 @@
 			</div>
 			<div id="info3">
                             <h3>Receba nossa newsletter!</h3>
-                            <form>
+                            <form action="" method="POST">
 				<input type="text" placeholder="Email" class="caixaEntraInfo" name="emailNewsLetter"><br><br>
-				<input type="submit" class="botao">
+                                <button class="botao">Cadastrar</button>
                             </form>
 			</div>
 		</div>

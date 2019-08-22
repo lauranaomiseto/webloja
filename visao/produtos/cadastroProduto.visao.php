@@ -7,7 +7,7 @@
 ?>
 
 <br><br>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <input type="text" placeholder="Produto" class="caixaEntraInfo" name="nomeProduto" value="<?=@$produto['nomeProduto']?>"><br><br>
         <select class="caixaEntraInfo" name="categoriaProduto">
             <option value="verificação">Categoria</option>
@@ -17,6 +17,7 @@
         </select><br><br>
         <input type="text" placeholder="Descrição" class="caixaEntraInfo" name="descricaoProduto" value="<?=@$produto['descricaoProduto']?>"><br><br>
         <input type="text" placeholder="Preço" class="caixaEntraInfo" name="precoProduto" value="<?=@$produto['precoProduto']?>"><br><br>
+        <input type="file" placeholder="Imagem" name="imagem" value="<?=@$produto['imagem'] ?>"><br><br>
         <button class="botao">Cadastrar</button>
     </form>
-<a href="./produto/listarProdutos">Voltar</a>
+<a href="./produto/listarProdutos"><button class="botao">Voltar</button></a>

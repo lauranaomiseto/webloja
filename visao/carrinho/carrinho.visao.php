@@ -17,7 +17,7 @@
                             <div class="produtoNoCarrinho">
                                 <div class="sobreProduto">
                                     <div>
-                                        <img src="imagens/produtos/originalHomemFace.jpg" alt="num tem">
+                                        <img src="<?=$produto['imagem'] ?>" alt="num tem">
                                     </div>
                                     <div>
                                         <h4><?=$produto["nomeProduto"] ?><h4>
