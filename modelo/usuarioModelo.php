@@ -1,7 +1,7 @@
 <?php
 function addUsuario($nomeCompleto, $cpf, $email, $senha){
-    $comando="insert into usuario (nomeCompleto, cpf, email, senha) "
-            . "values ('$nomeCompleto', '$cpf', '$email', '$senha');";
+    $comando="insert into usuario (nomeCompleto, cpf, email, senha, tipoUsuario) "
+            . "values ('$nomeCompleto', '$cpf', '$email', '$senha', 'C');";
     $cnx = conn();
     $resul = mysqli_query($cnx, $comando);
     if(!$resul){

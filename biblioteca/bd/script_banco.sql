@@ -27,7 +27,7 @@ senha varchar(12) not null,
 cpf varchar(60) not null,
 dataNascimento varchar(10),
 sexo varchar(60),
-tipoUsusario varchar(5),
+tipoUsuario varchar(5),
 primary key(idUsuario)
 );
 

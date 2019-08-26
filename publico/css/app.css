@@ -101,6 +101,7 @@ p{
 	font-size: 15px;
 	padding-left: 10px;
 }
+
 .botao{
 	background-color:#efe8c2;
 	color: #6d6b6a;
@@ -239,4 +240,13 @@ p{
 	font-size: 15px;
 	padding-left: 10px;
 	
+}
+.caixaEntraInfo1{
+	border: solid 2px #efe8c2;
+	color: #6d6b6a;
+	font-family: 'Cardo', serif;
+	width: 100px;
+	height: 25px;
+	font-size: 15px;
+	padding-left: 10px;
 }

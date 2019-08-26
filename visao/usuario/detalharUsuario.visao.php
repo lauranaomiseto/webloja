@@ -6,12 +6,14 @@
         <th>Nome</th>
         <th>CPF</th>
         <th>Email</th>
+        <th>Usuário</th>
     </tr>
     <tr>
         <td><?=$usuario['idUsuario'] ?></td>
         <td><?=$usuario['nomeCompleto'] ?></td>
         <td><?=$usuario['cpf'] ?></td>
         <td><?=$usuario['email'] ?></td>
+        <td><?=$usuario['tipoUsuario'] ?></td>
     </tr>
 </table>
 <br>
