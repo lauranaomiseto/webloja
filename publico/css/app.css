@@ -5,6 +5,7 @@
 }
 #conteudodaaula h2{
     font-family: 'Cinzel', serif;
+    color: #6d6b6a;
 }
 
 
@@ -101,6 +102,16 @@ p{
 	font-size: 15px;
 	padding-left: 10px;
 }
+.caixaEntraInfo1{
+	border: solid 2px #efe8c2;
+	color: #6d6b6a;
+	font-family: 'Cardo', serif;
+	width: 100px;
+	height: 25px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+
 
 .botao{
 	background-color:#efe8c2;
@@ -109,6 +120,16 @@ p{
 	font-family: 'Cardo', serif;
 	width: 80px;
 	height: 30px;
+	text-align: center;
+	font-size: 15px;
+}
+.botao1{
+	background-color:#efe8c2;
+	color: #6d6b6a;
+	border: none;
+	font-family: 'Cardo', serif;
+	width: 200px;
+	height: 50px;
 	text-align: center;
 	font-size: 15px;
 }
@@ -185,6 +206,9 @@ p{
 
 
 
+
+
+
 #meuCarrinho{
 	display: flex;
 	flex-direction: column;
@@ -241,12 +265,9 @@ p{
 	padding-left: 10px;
 	
 }
-.caixaEntraInfo1{
-	border: solid 2px #efe8c2;
+#resumo h3{
+	font-family: 'Cinzel', serif;
 	color: #6d6b6a;
-	font-family: 'Cardo', serif;
-	width: 100px;
-	height: 25px;
-	font-size: 15px;
-	padding-left: 10px;
+
 }
+

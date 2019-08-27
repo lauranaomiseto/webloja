@@ -8,7 +8,7 @@
         <p>
             <?=$produto['descricaoProduto'] ?>
         </p>
-        <h2><?=$produto['precoProduto'] ?></h2>
+        <h2><?php echo str_replace(".", ",", $produto['precoProduto'])?></h2>
         <a href="./carrinhoCompra/comprar/<?=$produto['idProduto']?>"><button>Comprar</button></a>
     </div>     	
 </div>	

@@ -97,7 +97,6 @@ desconto int not null,
 primary key(idCupom)
 );
 
-
 create table newsletter(
 email varchar (60) not null
 );

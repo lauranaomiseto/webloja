@@ -15,6 +15,7 @@
 			
 			<?php 
                         $precoTotal=0;
+                        $contProduto=0;
                         foreach($produtos as $produto): ?>
                             <div class="produtoNoCarrinho">
                                 <div class="sobreProduto">
@@ -35,32 +36,25 @@
                                     <a href="./carrinhoCompra/tirar/<?=$produto['idProduto']?>"><button class="botao">Remover</button></a>
                                 </div>
                                 <div class="outroSobre">
-                                    <h4><?=$produto["precoProduto"] ?></h4>
+                                    <h4>R$<?php echo str_replace(".", ",", $produto['precoProduto'])?></h4>
                                 </div>
                             </div>
                         <?php 
                         $precoTotal= $produto["precoProduto"]+$precoTotal;
+                        $contProduto= $contProduto+1;
                         endforeach; ?>
-		</div>
+		</div><br>
+                
+                
+                <a href="./"><button class="botao1">Continuar comprando</button></a><br><br>
 
 
                 
                 <h2>Resumo do pedido</h2>
 		<div id="resumo">
-                    <p>Subtotal: R$<?=$precoTotal; ?></p>
-                    <p>Frete: blabla</p>
+                    <p>Subtotal (<?=$contProduto?> produtos): R$<?php echo str_replace(".", ",", $precoTotal)?></p>
+                    <h3>Total: R$ <?php echo str_replace(".", ",", $precoTotal)?></h3>
 		</div>
-		
-		
-		<h2>Finalizar pedido</h2>
-		<div id="finalizar">
-			<div id="valorTotal">
-				<h3>Total: R$<?=$precoTotal; ?></h3>
-			</div>
-			<div>
-				<form>
-					<input type="text" placeholder="Cupom de desconto" class="caixaEntraInfo">
-					<button class="botao">Continuar</button>
-				</form>
-			</div>
-		</div>
+                
+                <button class="botao1">Finalizar Compra</button>
+				

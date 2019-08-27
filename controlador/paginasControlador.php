@@ -11,6 +11,7 @@ function index() {
     $dados["produtos"]= pegarTodosProdutos();
     
     exibir("paginas/inicial", $dados);
+    
     echo "<img class='banner' src='./publico/imagens/banners/banner4.jpg'>";
 }
 
