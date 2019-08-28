@@ -179,16 +179,14 @@ p{
 #colecoes{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+        flex-wrap: wrap;
+	justify-content: flex-start;
 	text-align: center;
-}
-#colecoes h3{
 	color: #6d6b6a;
-	text-align: center;
 	font-family: 'Cinzel', serif;
 }
 #colecoes div{
-	width: 18%;
+	width: 20%;
 }
 #colecoes img{
 	width: 100%;

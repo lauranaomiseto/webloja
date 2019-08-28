@@ -58,7 +58,7 @@
                             <h3>Receba nossa newsletter!</h3>
                             <form action="" method="POST">
 				<input type="text" placeholder="Email" class="caixaEntraInfo" name="emailNewsLetter"><br><br>
-                                <button class="botao">Cadastrar</button>
+                                <a href="./newsLetter/newsLetter"><button class="botao">Cadastrar</button></a>
                             </form>
 			</div>
 		</div>
