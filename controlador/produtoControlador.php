@@ -120,3 +120,10 @@ function editarP($id){
 }
 
 
+
+function pesquisaProduto (){
+    $pesquisa =$_POST['pesquisa'];
+    $dados['produtos']= pegarProdutoPesquisa($pesquisa);
+    exibir("produtos/resultadoPesquisaProduto", $dados);
+}
+

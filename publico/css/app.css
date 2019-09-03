@@ -98,7 +98,7 @@ p{
 	color: #6d6b6a;
 	font-family: 'Cardo', serif;
 	width: 200px;
-	height: 25px;
+	height: 30px;
 	font-size: 15px;
 	padding-left: 10px;
 }
@@ -179,14 +179,15 @@ p{
 #colecoes{
 	display: flex;
 	flex-direction: row;
-        flex-wrap: wrap;
-	justify-content: flex-start;
+        justify-content: start;
+	flex-wrap: wrap;
 	text-align: center;
 	color: #6d6b6a;
 	font-family: 'Cinzel', serif;
 }
 #colecoes div{
-	width: 20%;
+	width: 18%;
+        margin-left: 30px;
 }
 #colecoes img{
 	width: 100%;

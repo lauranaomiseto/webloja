@@ -19,11 +19,7 @@ function exibirCarrinho() {
     exibir("carrinho/carrinho", $dados);
 }
 
-function tirar($idProduto) {    
-    
-    
-    
-    
+function tirar($idProduto) {        
     for ($i=0;$i<=count($_SESSION["carrinho"]);$i++){
         if ($_SESSION["carrinho"][$i]==$idProduto){
             $indice=$i;

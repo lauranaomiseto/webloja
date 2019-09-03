@@ -54,5 +54,15 @@ function editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto){
 }
 
 
-
-
+function pegarProdutoPesquisa($pesquisa){
+    $comando="select * from produto "
+            . "inner join categoria on produto.idCategoria=categoria.idCategoria"
+            . " where produto.nomeProduto like '%$pesquisa%' or descricaoProduto like '%$pesquisa%' or categoria.nomeCategoria like '%$pesquisa%'";
+    $cnx=conn();
+    $resul= mysqli_query($cnx, $comando);
+    $produtos = array();
+    while ($produto = mysqli_fetch_assoc($resul)){
+        $produtos[]=$produto; 
+    }
+    return $produtos;
+}

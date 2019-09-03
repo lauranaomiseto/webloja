@@ -12,4 +12,4 @@
     <?php endforeach; ?>
 </table>
 <br><br>
-<a href="newsLetter/newsLetter">Receba novidades sem compromisso!</a>
+<a href="#info3">Receba novidades sem compromisso!</a>

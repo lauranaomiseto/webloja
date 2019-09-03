@@ -1,11 +1,10 @@
-<h2>Produtos da loja</h2>
+<h2>Resultado da pesquisa</h2>
 
 <form action="./produto/pesquisaProduto" method="POST">
     <input type="text" class="caixaEntraInfo" placeholder="Produto" name="pesquisa">
     <button class="botao" type="submit">Buscar</button>
 </form>
 <br><br>
-
 
 <div id="colecoes">
     <?php foreach($produtos as $produto): ?>
