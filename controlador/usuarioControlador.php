@@ -74,6 +74,7 @@ function editarU($id){
     if (ehPost()){
         $nomeCompletoUsuario= $_POST["nomeCompletoUsuario"];
         $emailUsuario= $_POST["emailUsuario"];
+        $cpf= $_POST["cpf"];
         $senhaUsuario= $_POST["senhaUsuario"];
         $confirmaSenhaUsuario= $_POST["confirmaSenhaUsuario"];
         $erros= array();
@@ -93,8 +94,8 @@ function editarU($id){
             
             
         if (count($erros)==0){
-            editarUsuario($id, $nomeCompletoUsuario, $emailUsuario, $senhaUsuario);
-            redirecionar("usuario/listarUsuario");
+            editarUsuario($id, $nomeCompletoUsuario, $cpf, $emailUsuario, $senhaUsuario);
+            redirecionar("usuario/listarUsuarios");
         }else{
             $dados= array();
             $dados["erros"]= $erros;
