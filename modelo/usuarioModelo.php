@@ -43,7 +43,7 @@ function deletarUsuario($id){
 
 
 function editarUsuario($idUsuario, $nomeCompleto, $cpf, $email, $senha){
-    $comando="update cliente set nomeCompleto='$nomeCompleto', cpf='$cpf', email='$email', senha='$senha' where idUsuario='$idUsuario'";
+    $comando="update usuario set nomeCompleto='$nomeCompleto', cpf='$cpf', email='$email', senha='$senha' where idUsuario='$idUsuario'";
     $cnx=conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){
