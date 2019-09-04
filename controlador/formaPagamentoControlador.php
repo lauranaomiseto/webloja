@@ -50,7 +50,7 @@ function deletarF($id){
 
 function editarF($id){
     if (ehPost()){
-        $descricao=$_POST['desricao'];
+        $descricao=$_POST['descricao'];
         $erros= array();
         
         if (strlen(trim($descricao))== 0){
