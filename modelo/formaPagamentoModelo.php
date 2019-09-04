@@ -42,7 +42,7 @@ function deletarFormaPagamento($id){
 }
 
 function editarFormaPagamento($id, $descricao){
-    $comando="update formaPagamento set descricao='$decricao' where idFormaPagamento='$id';";
+    $comando="update formaPagamento set descricao='$descricao' where idFormaPagamento='$id';";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){
