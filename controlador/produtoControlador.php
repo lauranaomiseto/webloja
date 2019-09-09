@@ -92,6 +92,11 @@ function editarP($id){
         $nomeProduto=$_POST['nomeProduto'];
         $descricaoProduto=$_POST['descricaoProduto'];
         $precoProduto=$_POST['precoProduto'];
+        $nome_temp=$_FILES['imagem']['tmp_name'];
+        $nome_real=$_FILES['imagem']['name'];
+        
+        $imagem=uploadImagem($nome_temp, $nome_real);
+        
         $erros= array();
         
         if (strlen(trim($nomeProduto))== 0){
