@@ -43,8 +43,8 @@ function deletarProduto($id){
 }
 
 
-function editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto){
-    $comando="update produto set nomeProduto='$nomeProduto', descricaoProduto='$descricaoProduto', precoProduto='$precoProduto' where idProduto='$id';";
+function editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto, $imagem){
+    $comando="update produto set nomeProduto='$nomeProduto', descricaoProduto='$descricaoProduto', precoProduto='$precoProduto', imagem='$imagem' where idProduto='$id';";
     $cnx=conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){

@@ -92,6 +92,7 @@ function editarP($id){
         $nomeProduto=$_POST['nomeProduto'];
         $descricaoProduto=$_POST['descricaoProduto'];
         $precoProduto=$_POST['precoProduto'];
+        $idCategoria=$_POST['categoriaProduto'];
         $nome_temp=$_FILES['imagem']['tmp_name'];
         $nome_real=$_FILES['imagem']['name'];
         
@@ -108,18 +109,24 @@ function editarP($id){
         if (strlen(trim($precoProduto))==0){
                 $erros[]="O campo PREÇO é obrigatório.<br>";
             }
+        if ($idCategoria=="verificação"){
+            $erros[]="Selecione uma CATEGORIA.<br>";
+        }
             
         if (count($erros)==0){
-            editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto);
+            editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto, $imagem);
+            $dados["categorias"]= pegarTodasCategorias();
             redirecionar("produto/listarProdutos");
         }else{
             $dados= array();
             $dados["erros"]= $erros;
+            $dados["categorias"]= pegarTodasCategorias();
             exibir("produtos/cadastroProduto", $dados);
         }
         
     }else{
         $dados["produto"]= pegarProdutoId($id);
+        $dados["categorias"]= pegarTodasCategorias();
         exibir("produtos/cadastroProduto", $dados);
     }
 }
