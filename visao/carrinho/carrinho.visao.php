@@ -28,7 +28,12 @@
                                     </div>
                                 </div>
                                 <div class="outroSobre">
-                                    <input type="number" class="caixaEntraInfo2"><br><br>
+                                    <select class="caixaEntraInfo2" name="quantidade">
+                                    <?php for($i=1;$i<=5;$i++){ ?>
+                                        <option value="<?=$i?>"><?=$i ?></option>
+                                    <?php }; ?> 
+                                        <option value="x>5">+ de 5</option>
+                                    </select><br><br>
                                     <a href="./carrinhoCompra/tirar/<?=$produto['idProduto']?>"><button class="botao">Remover</button></a>
                                 </div>
                                 <div class="outroSobre">
