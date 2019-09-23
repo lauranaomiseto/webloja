@@ -2,7 +2,7 @@
 #cadastroLogin{
 	width: 100%;
 	height: 650px;
-	background-image: url("imagens/banners/fundoCadastro.jpg");
+	background-image: url("publico/imagens/banners/fundoCadastro.jpg");
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -55,18 +55,21 @@
             <h2>Quero me cadastrar!</h2>
             <?php 
                 if(ehPost()){
-                    echo"<br>";
                     foreach($erros as $erro){
                     echo "*$erro";
                     }
                 }
             ?>
+            
+            
+            
+            
             <form method="POST" action="">
-                <input type="text" placeholder="Nome completo" name="nomeCompletoUsuario" value="<?=@$usuario['nomeCompleto']?>" class="caixaEntraInfo"><br><br>
-                <input type="text" placeholder="CPF" name="cpf" value="<?=@$usuario['email']?>" class="caixaEntraInfo"><br><br>
-                <input type="text" placeholder="Email" name="emailUsuario" value="<?=@$usuario['email']?>" class="caixaEntraInfo"><br><br>
-                <input type="password" placeholder="Senha" name="senhaUsuario" value="<?=@$usuario['senha']?>" class="caixaEntraInfo"><br><br>
-                <input type="password" placeholder="Confirme sua senha" class="caixaEntraInfo"  name="confirmaSenhaUsuario"><br><br>
+                <input type="text" placeholder="*Nome completo" name="nomeCompletoUsuario" value="<?=@$usuario['nomeCompleto']?>" class="caixaEntraInfo"><br><br>
+                <input type="text" placeholder="*CPF" name="cpf" value="<?=@$usuario['email']?>" class="caixaEntraInfo"><br><br>
+                <input type="text" placeholder="*Email" name="emailUsuario" value="<?=@$usuario['email']?>" class="caixaEntraInfo"><br><br>
+                <input type="password" placeholder="*Senha" name="senhaUsuario" value="<?=@$usuario['senha']?>" class="caixaEntraInfo"><br><br>
+                <input type="password" placeholder="*Confirme sua senha" class="caixaEntraInfo"  name="confirmaSenhaUsuario"><br><br>
     
                 <button class="botao">Cadastrar</button>
             </form>

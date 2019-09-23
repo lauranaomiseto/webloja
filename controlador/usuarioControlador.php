@@ -13,24 +13,24 @@ function cadastroUsuario(){
         $erros= array();
         
         if (strlen(trim($nomeCompletoUsuario))== 0){
-                $erros[]="O campo NOME COMPLETO é obrigatório.<br>";
+                $erros['nomeCompletoUsuario']="O campo NOME COMPLETO é obrigatório.<br>";
             }
         if (strlen(trim($cpf))== 0){
-                $erros[]="O campo CPF é obrigatório.<br>";
+                $erros['cpf']="O campo CPF é obrigatório.<br>";
             }
         if (strlen(trim($emailUsuario))== 0){
-                $erros[]="O campo EMAIL é obrigatório.<br>";
+                $erros['emailUsuario']="O campo EMAIL é obrigatório.<br>";
             }
         if ((strlen($senhaUsuario)<=6)||(strlen($senhaUsuario)>12)){
-                $erros[]="O campo SENHA é obrigatório e deve conter mais de 6 caracteres.<br>";
+                $erros['senhaUsuario']="O campo SENHA é obrigatório e deve conter mais de 6 caracteres.<br>";
             }
         if ($senhaUsuario != $confirmaSenhaUsuario){
-                $erros[]="Erro ao confirmar a senha.<br>";
+                $erros['confirmaSenhaUsuario']="Erro ao confirmar a senha.<br>";
             }
             
             
         if (count($erros)==0){
-            $erros[]= addUsuario($nomeCompletoUsuario, $cpf, $emailUsuario, $senhaUsuario);
+            $erros['sucesso']= addUsuario($nomeCompletoUsuario, $cpf, $emailUsuario, $senhaUsuario);
             $dados= array();
             $dados["erros"]= $erros;
             exibir("usuario/cadastroUsuario", $dados);
