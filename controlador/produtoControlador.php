@@ -4,16 +4,7 @@ require_once "modelo/produtoModelo.php";
 require_once "modelo/categoriaModelo.php";
 require_once "servico/uploadServico.php";
 
-function visualizar(){
-    $passarDados= array();
-    $passarDados['nome']= "Kahuna";
-    $passarDados['descricao']= "Hambúrguer de 200g de fraldinha, pão preto (australiano), mix de cogumelos, queijo cheddar e maionese de ervas.";
-    $passarDados['preco']= "20,00";
-    
-    exibir("produtos/visualizar", $passarDados);
-}
-
-
+/** A */
 function adicionar(){
     if (ehPost()){
         $nomeProduto=$_POST['nomeProduto'];
@@ -59,34 +50,34 @@ function adicionar(){
     
 }
 
-
+/** A */
 function listarProdutos(){
     $dados= array();
     $dados["produtos"]= pegarTodosProdutos();
     exibir("produtos/listarProdutos", $dados);
 }
 
-
+/** A */
 function verProdutoId($id){
     $dados= array();
     $dados["produto"]= pegarProdutoId($id);
     exibir("produtos/detalharProduto", $dados);
 }
 
-
+/** anon */
 function verProdutoId2($id){
     $dados= array();
     $dados["produto"]= pegarProdutoId($id);
     exibir("produtos/detalharProduto2", $dados);
 }
 
-
+/** A */
 function deletarP($id){
     $msg= deletarProduto($id);
     redirecionar("produto/listarProdutos");
 }
 
-
+/** A */
 function editarP($id){
     if (ehPost()){
         $nomeProduto=$_POST['nomeProduto'];
@@ -132,7 +123,7 @@ function editarP($id){
 }
 
 
-
+/** anon */
 function pesquisaProduto (){
     $pesquisa =$_POST['pesquisa'];
     $dados['produtos']= pegarProdutoPesquisa($pesquisa);

@@ -3,6 +3,12 @@
 require_once "modelo/usuarioModelo.php";
 require_once "modelo/enderecoModelo.php";
 
+function index() {
+    $dados["usuarios"] = pegarTodosUsuarios();
+    exibir("usuario/listarUsuarios", $dados);
+}
+
+/** anon */
 function cadastroUsuario(){
     if (ehPost()){
         $nomeCompletoUsuario= $_POST["nomeCompletoUsuario"];
@@ -46,6 +52,7 @@ function cadastroUsuario(){
 }
 
 
+/** A */
 function listarUsuarios(){
     $dados = array();
     $dados["usuarios"]= pegarTodosUsuarios();
@@ -55,6 +62,7 @@ function listarUsuarios(){
 
 
 
+/** A */
 function verUsuarioId($id){
     $dados= array();
     $dados["usuario"] = pegarUsuarioId($id);
@@ -64,12 +72,14 @@ function verUsuarioId($id){
 
 
 
+/** A */
 function deletarU($id){
     $msg= deletarUsuario($id);
     redirecionar("usuario/listarUsuarios");
 }
 
 
+/** A, C */
 function editarU($id){
     if (ehPost()){
         $nomeCompletoUsuario= $_POST["nomeCompletoUsuario"];

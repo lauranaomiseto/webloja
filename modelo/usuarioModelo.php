@@ -51,3 +51,11 @@ function editarUsuario($idUsuario, $nomeCompleto, $cpf, $email, $senha){
     }
     return 'Dados atualizados com sucesso!';
 }
+
+
+function pegarUsuarioPorEmailSenha($email, $senha) {
+    $sql = "SELECT * FROM usuario WHERE email= '$email' and senha = '$senha'";
+    $resultado = mysqli_query(conn(), $sql);
+    $usuario = mysqli_fetch_assoc($resultado);
+    return $usuario;
+}

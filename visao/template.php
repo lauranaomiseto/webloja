@@ -18,10 +18,13 @@
 		</div>
 		<div id="opcoes">
                     <div>
-			<a href="./carrinhoCompra/exibirCarrinho"><h3>carrinho</h3></a>
+			<a href="./login"><h3>login</h3></a>
                     </div>
                     <div>
-			<a href="./usuario/cadastroUsuario"><h3>minha conta</h3></a>
+			<a href="./usuario/cadastroUsuario"><h3>cadastro</h3></a>
+                    </div>
+                    <div>
+			<a href="./carrinhoCompra/exibirCarrinho"><h3>carrinho</h3></a>
                     </div>
 		</div>
             </div>

@@ -2,11 +2,13 @@
 
 require_once "modelo/produtoModelo.php";
 
+/** anon */
 function comprar($idProduto) {    
     $_SESSION["carrinho"][] = $idProduto;
     redirecionar("./carrinhoCompra/exibirCarrinho");
 }
 
+/** anon */
 function exibirCarrinho() {
     $listaDeProdutos= array();
     
@@ -19,6 +21,7 @@ function exibirCarrinho() {
     exibir("carrinho/carrinho", $dados);
 }
 
+/** anon */
 function tirar($idProduto) {        
     for ($i=0;$i<=count($_SESSION["carrinho"]);$i++){
         if ($_SESSION["carrinho"][$i]==$idProduto){
