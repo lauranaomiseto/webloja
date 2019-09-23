@@ -13,7 +13,7 @@ function exibir($view, $data = array()) {
 }
 
 function redirecionar($path) {
-    $finalPath = URL_BASE .  "/" . $path;
+    $finalPath = URL_BASE . $path;
     header("location: $finalPath");
     die();
 }
