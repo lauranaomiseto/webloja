@@ -30,6 +30,13 @@ function acessoPegarPapelDoUsuario() {
     }
 }
 
+function acessoUsuarioAdmin() {
+    if (acessoUsuarioEstaLogado()) {
+        return $_SESSION["acesso"]["tipoUsuario"] == "A";
+    }
+    return false;
+}
+
 function acessoPegarUsuarioLogado() {
     if (acessoUsuarioEstaLogado()) {
         return $_SESSION["acesso"]["email"];
