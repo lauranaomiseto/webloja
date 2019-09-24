@@ -103,5 +103,5 @@ email varchar (60) not null
 
 
 
-update usuario set tipoUsuario="A" where idusuario=2; 
+update usuario set tipoUsuario="A" where idusuario=1; 
 

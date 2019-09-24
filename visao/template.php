@@ -10,13 +10,18 @@
 
         <div id="topo">
             <div id="menu">
-                <div>
+                <div id="opcoes">
                     <a href="#rodape"><h3>sobre</h3></a>
+                    <?php if (acessoUsuarioAdmin()): ?>
+                    <div>
+                        <a href="./adm/dash"><h3>Administrador</h3></a>
+                    </div>
+                    <?php endif; ?> 
                 </div>
                 <div>
                     <a href="./"><img src="./publico/imagens/icones/logoCortado.png"></a>
                 </div>
-                <div id="opcoes">
+                <div id="opcoes1">
                     <div>
                         <a href="./login"><h3>login</h3></a>
                     </div>
@@ -26,6 +31,7 @@
                     <div>
                         <a href="./carrinhoCompra/exibirCarrinho"><h3>carrinho</h3></a>
                     </div>
+                    
                 </div>
             </div>
             <img class="banner" src="./publico/imagens/banners/banner1.jpg">
@@ -33,14 +39,6 @@
 
 
         <main class="container" id="conteudodaaula">
-
-            <?php if (acessoUsuarioEstaLogado()): ?>
-                Bem vindo <?= acessoPegarUsuarioLogado() ?>
-                <a href="./login/logout">Sair</a>
-            <?php else: ?>
-                <a href="./login">Entrar</a>
-            <?php endif; ?>
-
 
             <?php if (acessoUsuarioAdmin()): ?>
                 <div>
@@ -52,7 +50,7 @@
                     <a href="./newsLetter/listarNewsletters">lista de news letters</a><br>
                 </div>
             <?php else: ?>
-                <h1>NAO sou admin!</h1>
+
             <?php endif; ?>    
 
 

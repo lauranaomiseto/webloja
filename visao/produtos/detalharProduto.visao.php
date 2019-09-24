@@ -1,4 +1,4 @@
-<h2>Dados do produto <?=$produto["nomeProduto"]; ?></h2>
+<h2>Dados do produto "<?=$produto["nomeProduto"]; ?>"</h2>
 
 <table>
     <tr>
@@ -20,4 +20,5 @@
 <h3>Imagem:</h3>
 <img src="<?=$produto['imagem'] ?>" alt="<?=$produto['nomeProduto'] ?>">
 <br><br>
+
 <a href="./produto/listarProdutos"><button class="botao">Voltar</button></a>

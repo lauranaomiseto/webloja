@@ -16,3 +16,4 @@ function index() {
     echo "<img class='banner' src='./publico/imagens/banners/banner4.jpg'>";
 }
 
+

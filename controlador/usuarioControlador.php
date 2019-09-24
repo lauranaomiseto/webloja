@@ -117,4 +117,3 @@ function editarU($id){
         exibir("usuario/cadastroUsuario", $dados);
     }
 }
-
