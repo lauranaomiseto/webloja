@@ -15,12 +15,16 @@
         font-family: 'Cinzel', serif;
         margin-top: 0px;
     }
-
     #infosUsuario{
         background-color: white;
-        height: 70%;
-        width: 60%;
+        height: 60%;
+        width: 40%;
         padding: 35px;
+    }
+    #infosUsuario div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 </style>
 
@@ -28,6 +32,7 @@
 <div id="caixaInfosUsuario" >
     <div id="infosUsuario">
         <h3>visualize suas informações abaixo:</h3>
+        <hr size="" width="100%">
         <p>
             Nome completo: <?= $usuario['nomeCompleto'] ?>
         </p>
@@ -37,10 +42,15 @@
         <p>
             Email de login: <?= $usuario['email'] ?>
         </p>
+        <hr size="" width="100%">
         <br>
-        <td><a href="./usuario/editarU/<?=$usuario["idUsuario"] ?>"><button class="botao1">Editar informações</button></a></td>
-        <a href="./usuario/meusEnderecos<?= $usuario["idUsuario"] ?>"><button class="botao1">Meus Endereços</button></a>
-        <td><a href="./usuario/deletarU/<?=$usuario["idUsuario"] ?>"><button class="botao1">Deletar conta</button></a></td><br><br>
+        <div>
+            <a href="./usuario/editarU/<?=$usuario["idUsuario"] ?>"><button class="botao1">Editar informações</button></a>
+            <a href="./usuario/meusEnderecos/<?= $usuario["idUsuario"] ?>"><button class="botao1">Meus Endereços</button></a>
+        </div>
+        <br>
+        <hr size="" width="100%">
+        <br>
         <a href="login/logout"><button class="botao">Logout</button></a>
     </div>
 </div>

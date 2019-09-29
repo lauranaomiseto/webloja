@@ -4,7 +4,7 @@
     <tr>
         <th>ID</th>
         <th>Produto</th>
-        <th>Categoria</th>
+        <th>ID Categoria</th>
         <th>Descrição</th>
         <th>Preço</th>
     </tr>

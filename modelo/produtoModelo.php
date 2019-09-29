@@ -12,7 +12,7 @@
  
  
  function pegarTodosProdutos(){
-    $comando="select * from produto order by idCategoria";
+    $comando="select * from produto";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
     $produtos = array();

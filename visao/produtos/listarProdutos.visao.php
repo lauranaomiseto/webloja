@@ -1,98 +1,85 @@
 <style>
-    #produtosLoja{
+#listaProdutos{
 	display: flex;
 	flex-direction: column;
-	width: 70%;
+	width: 60%;
 	margin: auto;
 	font-family: 'Cinzel', serif;
 	color: #6d6b6a;
-}
-#produtosLoja h4{
-	margin-top: 0px;
 }
 #campos{
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 20px;
 }
-#campoProduto{
-	width: 40%;
+#campoNomeProduto{
+	width: 35%;
 }
-.outroCampo{
+#campoPrecoProduto{
+        width: 35%;
+	text-align: left;
+}
+#campoOperacoesProduto{
 	width: 30%;
 	text-align: right;
 }
-.produto{
+.cadaProduto{
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	margin-bottom: 10px;
 }
-.sobreProduto{
-	width: 40%;
+.sobreNomeProduto{
+	width: 35%;
 	display: flex;
 	flex-direction: row;
 }
-.sobreProduto div{
-	width: 40%;
-	margin-right: 5%;
+.sobrePrecoProduto{
+        width: 35%;
+	text-align: left;
 }
-.sobreProduto img{
-	width: 100%;
-}
-.outroSobre{
+.sobreOperacoesProduto{
 	width: 30%;
-	text-align: right;
-}
-.quantidade{
-	border: solid 2px #efe8c2;
-	color: #6d6b6a;
-	font-family: 'Cardo', serif;
-	width: 80px;
-	height: 25px;
-	font-size: 15px;
-	padding-left: 10px;
-	
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 }
 </style>
 
 
 
 <h2>Lista de produtos</h2>	
-<div id="produtosLoja">
+<div id="listaProdutos">
 
     <div id="campos">
-        <div id="campoProduto">
+        <div id="campoNomeProduto">
             <h3>Produto</h3>
         </div>
-        <div class="outroCampo">
+        <div id="campoPrecoProduto">
             <h3>Preço</h3>
         </div>
-        <div class="outroCampo">
+        <div id="campoOperacoesProduto">
             <h3>Operações</h3>
         </div>
     </div>
-
+<hr size="" width="100%">
 <?php foreach ($produtos as $produto): ?>
-    <div class="produto">
-        <div class="sobreProduto">
+    <div class="cadaProduto">
+        <div class="sobreNomeProduto">
             <div>
-                <img src="<?=$produto['imagem']?>">
-            </div>
-            <div>
-                <h4><i><?=$produto['nomeProduto'] ?></i><h4>
+                <p><?=$produto['nomeProduto'] ?></p>
             </div>
         </div>
-        <div class="outroSobre">
-            <h4><?= $produto['precoProduto'] ?></h4>
+        <div class="sobrePrecoProduto">
+            <p><?= $produto['precoProduto'] ?></p>
         </div>
-        <div class="outroSobre">
-            <a href="./produto/verProdutoId/<?= $produto["idProduto"] ?>"><button class="botao">Detalhar</button></a><br><br>
-            <a href="./produto/editarP/<?= $produto["idProduto"] ?>"><button class="botao">Editar</button></a><br><br>
-            <a href="./produto/deletarP/<?= $produto["idProduto"] ?>"><button class="botao">Deletar</button></a><br><br>
+        <div class="sobreOperacoesProduto">
+            <a href="./produto/verProdutoId/<?= $produto["idProduto"] ?>"><button class="botao">Detalhar</button></a>
+            <a href="./produto/editarP/<?= $produto["idProduto"] ?>"><button class="botao">Editar</button></a>
+            <a href="./produto/deletarP/<?= $produto["idProduto"] ?>"><button class="botao">Deletar</button></a>
         </div>
     </div>
+    <hr size="" width="100%">
 <?php endforeach; ?>
 </div><br>
 <a href="produto/adicionar"><button class="botao1">Novo Produto</button></a><br><br>
-<a href="usuario/dashAdm"><button class="botao1">Voltar</button></a><br><br>
+<a href="usuario/dashAdm"><button class="botao">Voltar</button></a><br><br>

@@ -1,7 +1,7 @@
 <style>
     #cadastroLogin{
 	width: 100%;
-	height: 820px;
+	height: 750px;
 	background-image: url("publico/imagens/banners/fundoCadastro.jpg");
 	display: flex;
 	flex-direction: row;
@@ -44,6 +44,5 @@
                 <input type="text" placeholder="CEP" class="caixaEntraInfo" name="cep" value="<?=@$endereco['cep']?>"><br><br>
                 <button class="botao">Cadastrar</button>
             </form>
-            <a href="./usuario/verUsuarioId/<?=$idUsuario ?>"><button class="botao">Voltat</button></a>
 	</div>
 </div>

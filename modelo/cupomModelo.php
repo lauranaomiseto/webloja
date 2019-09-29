@@ -12,7 +12,7 @@ function addCupom($nomeCupom, $desconto){
 }
 
 function pegarTodosCupons(){
-    $comando= "select * from cupom order by nomeCupom";
+    $comando= "select * from cupom";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
     $cupons = array();

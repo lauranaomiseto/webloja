@@ -1,4 +1,4 @@
-<h2>Resultado da pesquisa</h2>
+<h2>Resultados da pesquisa</h2>
 
 <form action="./produto/pesquisaProduto" method="POST">
     <input type="text" class="caixaEntraInfo" placeholder="Produto" name="pesquisa">
