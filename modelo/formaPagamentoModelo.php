@@ -12,7 +12,7 @@ function addFormaPagamento($descricao){
 }
 
 function pegarTodasFormasPagamento(){
-    $comando= "select * from formaPagamento";
+    $comando= "select * from formaPagamento order by descricao";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
     $formasPagamento = array();

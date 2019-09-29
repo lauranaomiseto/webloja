@@ -40,5 +40,5 @@
 </table>
 <br>
 
-<a href="./endereco/adicionarEndereco/<?=$usuario["idUsuario"]?>">Adicionar endereço</a><br><br>
+<a href="./endereco/adicionarEndereco/<?=$usuario["idUsuario"]?>"><button class="botao1">Novo endereço</button></a><br><br>
 <a href="./usuario/listarUsuarios"><button class="botao">Voltar</button></a>

@@ -14,4 +14,5 @@
     <?php endforeach; ?>
 </table>
 <br><br>
-<a href="categoria/adicionarCategoria">Adicionar Nova Categoria</a>
+<a href="categoria/adicionarCategoria"><button class="botao1">Nova Categoria</button></a><br><br>
+<a href="usuario/dashAdm"><button class="botao1">Voltar</button></a><br><br>

@@ -1,6 +1,7 @@
 <?php
 require_once "modelo/enderecoModelo.php";
 
+/** A, C */
 function adicionarEndereco($idUsuario){
     if (ehPost()){
         $logradouro=$_POST['logradouro'];
@@ -53,6 +54,8 @@ function adicionarEndereco($idUsuario){
     
 }
 
+
+/** A, C */
 function verEnderecoId($idEndereco, $idUsuario){
     $dados= array();
     $dados['endereco']= pegarEnderecoId($idEndereco);
@@ -60,11 +63,14 @@ function verEnderecoId($idEndereco, $idUsuario){
     exibir("endereco/detalharEndereco", $dados);
 }
 
+/** A, C */
 function deletarE($idEndereco){
     $msg = deletarEndereco($idEndereco);
     redirecionar("usuario/listarUsuarios");
 }
 
+
+/** A, C */
 function editarE($idEndereco, $idUsuario){
     if (ehPost()){
         $logradouro=$_POST['logradouro'];

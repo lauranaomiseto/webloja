@@ -22,7 +22,7 @@ p{
 	width: 100%;
 }
 
-
+/*Cabeçalho*/ 
 #menu a:link{
 	color: #6d6b6a;
 	text-decoration: none;
@@ -65,12 +65,12 @@ p{
 	font-family: 'Cinzel', serif;
 }
 
+
+/* Rodapé */
 #infos{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	margin-top: 10px;
-        margin-bottom: 10px;
 	align-items: center;
 }
 #infos div{
@@ -80,28 +80,26 @@ p{
 	width: 70%;
 	margin-left: 15%;
 }
-#info2 div{
-	display: flex;
-	flex-direction: row;
-	height: 32px;
-	margin-bottom: 5px;
-}
+
 #info2 div p{
 	margin: 5px;
 }
-#texto1{
-	margin-top:0px;
+#info3{
+    display: flex;
+    flex-direction: row;
 }
-#info3 h3{
-	color: #6d6b6a;
-	text-align: center;
-	font-family: 'Cinzel', serif;
-	margin-top:0px;
+#info3 div{
+	display: flex;
+	flex-direction: row;
+	height: 32px;
 }
-#info3 form{
-	color: #efe8c2;
-	text-align: center;
+#info3 div p{
+	
 }
+
+
+
+/*Caixas de entrada*/
 .caixaEntraInfo{
 	border: solid 2px #efe8c2;
 	color: #6d6b6a;
@@ -131,6 +129,8 @@ p{
 }
 
 
+
+/*Botões*/
 .botao{
 	background-color:#efe8c2;
 	color: #6d6b6a;

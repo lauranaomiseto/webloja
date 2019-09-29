@@ -14,6 +14,7 @@
     <?php endforeach; ?>
 </table>
 <br><br>
-<a href="cupom/adicionarCupom">Adicionar Novo Cupom</a>
+<a href="cupom/adicionarCupom"><button class="botao1">Novo Cupom</button></a><br><br>
+<a href="usuario/dashAdm"><button class="botao1">Voltar</button></a><br><br>
 
 

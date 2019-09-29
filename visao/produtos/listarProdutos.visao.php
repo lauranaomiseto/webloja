@@ -69,7 +69,7 @@
             <h3>Preço</h3>
         </div>
         <div class="outroCampo">
-            <h3>Opções</h3>
+            <h3>Operações</h3>
         </div>
     </div>
 
@@ -87,11 +87,12 @@
             <h4><?= $produto['precoProduto'] ?></h4>
         </div>
         <div class="outroSobre">
-            <a href="./produto/verProdutoId/<?= $produto["idProduto"] ?>"><button class="botao">Detalhar</button></a>
-            <a href="./produto/editarP/<?= $produto["idProduto"] ?>"><button class="botao">Editar</button></a>
-            <a href="./produto/deletarP/<?= $produto["idProduto"] ?>"><button class="botao">Deletar</button></a>
+            <a href="./produto/verProdutoId/<?= $produto["idProduto"] ?>"><button class="botao">Detalhar</button></a><br><br>
+            <a href="./produto/editarP/<?= $produto["idProduto"] ?>"><button class="botao">Editar</button></a><br><br>
+            <a href="./produto/deletarP/<?= $produto["idProduto"] ?>"><button class="botao">Deletar</button></a><br><br>
         </div>
     </div>
 <?php endforeach; ?>
-</div>
-<a href="produto/adicionar"><button class="botao1">Adicionar Produto</button></a><br><br>
+</div><br>
+<a href="produto/adicionar"><button class="botao1">Novo Produto</button></a><br><br>
+<a href="usuario/dashAdm"><button class="botao1">Voltar</button></a><br><br>

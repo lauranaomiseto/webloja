@@ -14,4 +14,5 @@
     <?php endforeach; ?>
 </table>
 <br><br>
-<a href="./formaPagamento/adicionarFormaPagamento">Adicionar Nova Forma de Pagamento</a>
+<a href="./formaPagamento/adicionarFormaPagamento"><button class="botao1">Nova Forma de Pagamento</button></a><br><br>
+<a href="usuario/dashAdm"><button class="botao1">Voltar</button></a><br><br>

@@ -13,25 +13,31 @@
                 <div id="opcoes">
                     <a href="#rodape"><h3>sobre</h3></a>
                     <?php if (acessoUsuarioAdmin()): ?>
-                    <div>
-                        <a href="./adm/dash"><h3>Administrador</h3></a>
-                    </div>
-                    <?php endif; ?> 
+                        <div>
+                            <a href="./usuario/dashAdm"><h3>administrador</h3></a>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div>
                     <a href="./"><img src="./publico/imagens/icones/logoCortado.png"></a>
                 </div>
                 <div id="opcoes1">
-                    <div>
-                        <a href="./login"><h3>login</h3></a>
-                    </div>
-                    <div>
-                        <a href="./usuario/cadastroUsuario"><h3>cadastro</h3></a>
-                    </div>
+                    <?php if (acessoUsuarioCliente()):?>
+                        <div>
+                            <a href="./usuario/minhaConta"><h3>minha conta</h3></a>
+                        </div>
+                    <?php else: ?>
+                        <div>
+                            <a href="./login"><h3>login</h3></a>
+                        </div>
+                        <div>
+                            <a href="./usuario/cadastroUsuario"><h3>cadastro</h3></a>
+                        </div>
+                    <?php endif;?>
                     <div>
                         <a href="./carrinhoCompra/exibirCarrinho"><h3>carrinho</h3></a>
                     </div>
-                    
+
                 </div>
             </div>
             <img class="banner" src="./publico/imagens/banners/banner1.jpg">
@@ -39,25 +45,6 @@
 
 
         <main class="container" id="conteudodaaula">
-
-            <?php if (acessoUsuarioAdmin()): ?>
-                <div>
-                    <a href="./usuario/listarUsuarios">lista de usuarios</a><br>
-                    <a href="./produto/listarProdutos">lista de produtos</a><br>
-                    <a href="./categoria/listarCategorias">lista de categorias</a><br>
-                    <a href="./cupom/listarCupons">lista de cupons</a><br>
-                    <a href="./formaPagamento/listarFormasPagamento">lista de formas de pagamento</a><br>
-                    <a href="./newsLetter/listarNewsletters">lista de news letters</a><br>
-                </div>
-            <?php else: ?>
-
-            <?php endif; ?>    
-
-
-
-
-
-
             <?php require $viewFilePath; ?>
         </main>
 
@@ -69,17 +56,20 @@
                     <a href="./"><img src="./publico/imagens/icones/logoCortado.png"></a>
                 </div>
                 <div id="info2">
-                    <p id="texto1">Este site foi criado com ojetivos acadêmicos.<br>
-                        Se deseja conhecer o artista Susano Correia, acesse suas redes sociais:</p>
-                    <div><img src="./publico/imagens/icones/instagram.png"><p>susanocorreia</p></div>
-                    <div><img src="./publico/imagens/icones/twitter.png"><p>susanocorreia</p></div>
+                    <p>
+                        Este site foi criado com ojetivos acadêmicos.<br>
+                        Se deseja conhecer o artista Susano Correia, acesse suas redes sociais.
+                    </p>
                 </div>
                 <div id="info3">
-                    <h3>Receba nossa newsletter!</h3>
-                    <form action="./newsletter/newsLetter" method="POST">
-                        <input type="text" placeholder="Email" class="caixaEntraInfo" name="emailNewsLetter"><br><br>
-                        <a href="./newsLetter/newsLetter"><button class="botao" type="submit">Cadastrar</button></a>
-                    </form>
+                    <div>
+                        <img src="./publico/imagens/icones/instagram.png">
+                        <p>susanocorreia</p>
+                    </div>
+                    <div>
+                        <img src="./publico/imagens/icones/twitter.png">
+                        <p>susanocorreia</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ function addUsuario($nomeCompleto, $cpf, $email, $senha){
 
 
 function pegarTodosUsuarios(){
-    $comando="select * from usuario";
+    $comando="select * from usuario order by nomeCompleto";
     $cnx=conn();
     $resul = mysqli_query($cnx, $comando);
     $usuarios = array();

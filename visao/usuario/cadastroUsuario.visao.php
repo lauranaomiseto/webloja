@@ -43,7 +43,7 @@
             <h2>Quero me cadastrar!</h2>
             <form method="POST" action="">
                 <input type="text" placeholder="Nome completo" name="nomeCompletoUsuario" value="<?=@$usuario['nomeCompleto']?>" class="caixaEntraInfo"><br><br>
-                <input type="text" placeholder="CPF" name="cpf" value="<?=@$usuario['email']?>" class="caixaEntraInfo"><br><br>
+                <input type="text" placeholder="CPF" name="cpf" value="<?=@$usuario['cpf']?>" class="caixaEntraInfo"><br><br>
                 <input type="text" placeholder="Email" name="emailUsuario" value="<?=@$usuario['email']?>" class="caixaEntraInfo"><br><br>
                 <input type="password" placeholder="Senha" name="senhaUsuario" value="<?=@$usuario['senha']?>" class="caixaEntraInfo"><br><br>
                 <input type="password" placeholder="Confirme sua senha" class="caixaEntraInfo"  name="confirmaSenhaUsuario"><br><br>
