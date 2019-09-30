@@ -52,18 +52,14 @@ function deletarC($id){
 function editarC($id){
     if (ehPost()){
         $nomeCategoria=$_POST['nomeCategoria'];
-        $descricaoCategoria=$_POST['descricaoCategoria'];
         $erros= array();
         
         if (strlen(trim($nomeCategoria))== 0){
-                $erros[]="O campo NOME é obrigatório.<br>";
-            }
-        if (strlen(trim($descricaoCategoria))== 0){
-                $erros[]="O campo DEESCRIÇÃO é obrigatório.<br>";
+                $erros[]="O campo CATEGORIA é obrigatório.<br>";
             }
             
         if (count($erros)==0){
-            editarCategoria($id, $nomeCategoria, $descricaoCategoria);
+            editarCategoria($id, $nomeCategoria);
             redirecionar("categoria/listarCategorias");
         }else{
             $dados= array();
