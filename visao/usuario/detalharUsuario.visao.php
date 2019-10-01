@@ -21,6 +21,7 @@
 <h2>Endereços cadastrados:</h2>
 <table>
     <tr>
+        <th>Nome Endereço</th>
         <th>Logradouro</th>
         <th>Número</th>
         <th>Bairro</th>
@@ -28,6 +29,7 @@
     </tr>
     <?php foreach($enderecos as $endereco): ?>
     <tr>
+        <td><?=$endereco['nomeEndereco'] ?></td>
         <td><?=$endereco['logradouro'] ?></td>
         <td><?=$endereco['numero'] ?></td>
         <td><?=$endereco['bairro'] ?></td>

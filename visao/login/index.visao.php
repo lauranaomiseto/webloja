@@ -39,6 +39,7 @@
             <input type="password" placeholder="Senha" class="caixaEntraInfo"  name="senha"><br><br>
             <button class="botao">Entrar</button>
             <a href=""><p>Esqueci minha senha</p></a>
+            <p>Não tem cadastro? <a href="./usuario/cadastroUsuario">Cadastre-se</p></a>
         </form>
     </div>
 </div>

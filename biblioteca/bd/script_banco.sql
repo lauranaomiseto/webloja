@@ -40,6 +40,7 @@ complemento varchar(60) not null,
 bairro varchar(60) not null,
 cidade varchar(60)not null,
 cep varchar(60) not null,
+nomeEndereco varchar(100) not null,
 primary key (idEndereco),
 foreign key (idUsuario) references usuario (idUsuario) on delete cascade on update cascade
 );

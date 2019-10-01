@@ -123,5 +123,5 @@
     <h3>Total: R$ <?php echo str_replace(".", ",", $precoTotal) ?></h3>
 </div>
 
-<button class="botao1">Finalizar Compra</button>
+<a href="./pedido/finalizarPedido"><button class="botao1">Finalizar Pedido</button></a>
 

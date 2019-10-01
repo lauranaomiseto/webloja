@@ -10,6 +10,7 @@ function adicionarEndereco($idUsuario){
         $bairro=$_POST['bairro'];
         $cidade=$_POST['cidade'];
         $cep=$_POST['cep'];
+        $nomeEndereco=$_POST['nomeEndereco'];
         
         
         $erros= array();
@@ -31,11 +32,15 @@ function adicionarEndereco($idUsuario){
             }
         if (strlen(trim($cep))== 0){
                 $erros[]="O campo CEP é obrigatório.<br>";
-            }   
+            }
+        if (strlen(trim($nomeEndereco))== 0){
+                $erros[]="O campo NOME ENDEREÇO é obrigatório.<br>";
+            }
+       
          
             
         if (count($erros)==0){
-            $erros[]= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario);
+            $erros[]= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario, $nomeEndereco);
             $dados= array();
             $dados["erros"]= $erros;
             $dados["idUsuario"]=$idUsuario;
@@ -79,7 +84,7 @@ function editarE($idEndereco, $idUsuario){
         $bairro=$_POST['bairro'];
         $cidade=$_POST['cidade'];
         $cep=$_POST['cep'];
-        
+        $nomeEndereco=$_POST['nomeEndereco'];
         
         $erros= array();
         
@@ -101,10 +106,13 @@ function editarE($idEndereco, $idUsuario){
         if (strlen(trim($cep))== 0){
                 $erros[]="O campo CEP é obrigatório.<br>";
             }   
+        if (strlen(trim($nomeEndereco))== 0){
+                $erros[]="O campo NOME ENDEREÇO é obrigatório.<br>";
+            }
          
             
         if (count($erros)==0){
-            editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idEndereco);
+            editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idEndereco, $nomeEndereco);
             redirecionar("usuario/listarUsuarios");
         }else{
             $dados= array();

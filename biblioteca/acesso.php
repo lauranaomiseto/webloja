@@ -7,7 +7,8 @@ function acessoLogar($usuario) {
         $_SESSION["acesso"] = array( //cria a sessao acesso com os dados do usuario
             "email" => $usuario["email"], 
             "tipoUsuario" => $usuario["tipoUsuario"],
-            "idUsuario" => $usuario["idUsuario"]
+            "idUsuario" => $usuario["idUsuario"],
+            "cpf" => $usuario["cpf"]
         );
         return true; 
     }
@@ -34,6 +35,11 @@ function acessoPegarPapelDoUsuario() {
 function acessoPegarIdDoUsuario() {
     if (acessoUsuarioEstaLogado()) {
         return $_SESSION["acesso"]["idUsuario"];
+    }
+}
+function acessoPegarCpfDoUsuario() {
+    if (acessoUsuarioEstaLogado()) {
+        return $_SESSION["acesso"]["cpf"];
     }
 }
 

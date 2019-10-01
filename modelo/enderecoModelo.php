@@ -1,7 +1,7 @@
 <?php
- function addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario){
-     $comando="insert into endereco (logradouro, numero, complemento, bairro, cidade, cep, idUsuario)"
-             . "values ('$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$cep', '$idUsuario')";
+ function addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario, $nomeEndereco){
+     $comando="insert into endereco (logradouro, numero, complemento, bairro, cidade, cep, idUsuario, nomeEndereco)"
+             . "values ('$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$cep', '$idUsuario', '$nomeEndereco')";
      $cnx= conn();
      $resul= mysqli_query($cnx, $comando);
      if(!$resul){
@@ -42,9 +42,9 @@ function deletarEndereco($id){
     return "Endereco deletado";
 }
 
-function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idEndereco){
+function editarEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idEndereco, $nomeEndereco){
     $comando="update endereco set logradouro='$logradouro', numero=$numero, complemento='$complemento', bairro='$bairro', "
-            . "cidade='$cidade', cep='$cep' where idEndereco='$idEndereco'";
+            . "cidade='$cidade', cep='$cep', nomeEndereco='$nomeEndereco' where idEndereco='$idEndereco'";
     $cnx=conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){
