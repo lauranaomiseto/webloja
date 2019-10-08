@@ -1,14 +1,16 @@
 <?php
 
-/*function conn() {
-    $cnx = mysqli_connect("sql111.epizy.com", "epiz_24452752", "KRVpTdOkgrkR", "epiz_24452752_webloja");
-    if (!$cnx) die('Deu errado a conexao!');
-    return $cnx;
-}*/
-
 function conn() {
-    $cnx = mysqli_connect("localhost", "root", "", "webloja");
-    if (!$cnx) die('Deu errado a conexao!');
+    $arq = fopen("./biblioteca/local.txt", "a+");
+    
+        $infos = fgets($arq);
+        $infoss = explode(";", $infos);
+    
+    $cnx = mysqli_connect("$infoss[0]", "$infoss[1]", "$infoss[2]", "$infoss[3]");
+    if (!$cnx)
+        die('Deu errado a conexao!');
+    fclose($arq);
     return $cnx;
 }
+
 

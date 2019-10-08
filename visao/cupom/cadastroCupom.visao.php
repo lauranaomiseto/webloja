@@ -8,7 +8,7 @@
 <br><br>
 <form action="" method="POST">
     <input type="text" placeholder="Cupom" class="caixaEntraInfo" name="nomeCupom" value="<?=@$cupom["nomeCupom"]?>"><br><br>
-    <input type="text" placeholder="Desconto" class="caixaEntraInfo" name="desconto" value="<?=@$cupom["desconto"]?>"><br><br>
+    <input type="text" placeholder="Desconto em %" class="caixaEntraInfo" name="desconto" value="<?=@$cupom["desconto"]?>"><br><br>
     <button class="botao">Cadastrar</button>
 </form>
 <a href="./cupom/listarCupons"><button class="botao">Voltar</button></a>
