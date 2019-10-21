@@ -4,24 +4,25 @@ require_once "modelo/enderecoModelo.php";
 require_once "modelo/produtoModelo.php";
 require_once "modelo/cupomModelo.php";
 require_once "modelo/formaPagamentoModelo.php";
+require_once "modelo/pedidoModelo.php";
 
 function finalizarPedido() {
     if (acessoUsuarioEstaLogado()) {
-        
-        if (ehPost()){
+
+        if (ehPost()) {
             $nomeCupom = $_POST['nomeCupom'];
             $cupom = aplicarDescontoCupom($nomeCupom);
-            
-            $erros= array();
-            if($cupom == null){
-                $erros[]="Cupom inválido";
-            }else{
-                $erros[]="Cupom aplicado!";
-                $dados['cupom']=$cupom;
+
+            $erros = array();
+            if ($cupom == null) {
+                $erros[] = "Cupom inválido";
+            } else {
+                $erros[] = "Cupom aplicado!";
+                $dados['cupom'] = $cupom;
             }
-            $dados['erros']= $erros;
-        }        
-        
+            $dados['erros'] = $erros;
+        }
+
         $idUsuario = acessoPegarIdDoUsuario();
         $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
         $dados['formasPagamento'] = pegarTodasFormasPagamento();
@@ -42,12 +43,79 @@ function finalizarPedido() {
         $dados['contProdutos'] = $contProdutos;
         $dados['subtotal'] = $subtotal;
 
-        exibir("finalizarPedido/finalizarPedido", $dados);
+        exibir("pedido/finalizarPedido", $dados);
     } else {
         exibir("login");
     }
 }
 
-function addPedido(){
-    
+function salvarPedido() {
+    if (ehPost()) {
+        $idUsuario = acessoPegarIdDoUsuario();
+        $idEndereco = $_POST['enderecoEntrega'];
+        $idFormaPagamento = $_POST['formaPagamento'];
+
+        $erros = array();
+        if ($idEndereco == "verificação") {
+            $erros[] = "Selecione um ENDEREÇO de entrega.<br>";
+        }
+        if ($idFormaPagamento == "verificação") {
+            $erros[] = "Selecione uma FORMA DE PAGAMENTO.<br>";
+        }
+
+        if (count($erros) == 0) {
+            $erros[] = addPedido($idUsuario, $idEndereco, $idFormaPagamento);
+            $dados = array();
+            $dados["erros"] = $erros;
+            
+            $idUsuario = acessoPegarIdDoUsuario();
+            $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
+            $dados['formasPagamento'] = pegarTodasFormasPagamento();
+            
+            $listaDeProdutos = array();
+            for ($i = 0; $i < count($_SESSION["carrinho"]); $i++) {
+                $id = $_SESSION["carrinho"][$i];
+                $produto = pegarProdutoId($id);
+                $listaDeProdutos[] = $produto;
+            }
+
+            $subtotal = 0;
+            $contProdutos = 0;
+            foreach ($listaDeProdutos as $produto):
+                $subtotal += $produto['precoProduto'];
+                $contProdutos += 1;
+            endforeach;
+            $dados['contProdutos'] = $contProdutos;
+            $dados['subtotal'] = $subtotal;
+
+            exibir("pedido/finalizarPedido", $dados);
+        } else {
+            $dados = array();
+            $dados["erros"] = $erros;
+
+            $idUsuario = acessoPegarIdDoUsuario();
+            $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
+            $dados['formasPagamento'] = pegarTodasFormasPagamento();
+            
+            $listaDeProdutos = array();
+            for ($i = 0; $i < count($_SESSION["carrinho"]); $i++) {
+                $id = $_SESSION["carrinho"][$i];
+                $produto = pegarProdutoId($id);
+                $listaDeProdutos[] = $produto;
+            }
+
+            $subtotal = 0;
+            $contProdutos = 0;
+            foreach ($listaDeProdutos as $produto):
+                $subtotal += $produto['precoProduto'];
+                $contProdutos += 1;
+            endforeach;
+            $dados['contProdutos'] = $contProdutos;
+            $dados['subtotal'] = $subtotal;
+
+            exibir("pedido/finalizarPedido", $dados);
+        }
+    }else {
+        redirecionar("pedido/finalizarPedido");
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-function fecharPedido(){
+function addPedido($idUsuario, $idEndereco, $idFormaPagamento){
     $comando="insert into pedido (idUsuario, idEndereco, idFormapagamento, dataCompra)"
              . "values ('$idUsuario','$idEndereco','$idFormaPagamento', 'now()')";
      $cnx= conn();
@@ -8,5 +8,5 @@ function fecharPedido(){
      if(!$resul){
         die(mysqli_error($cnx));
     }
-    return 'Produto cadastrado com sucesso!';
+    return 'Pedido salvo com sucesso com sucesso!';
 }

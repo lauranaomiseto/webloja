@@ -22,7 +22,7 @@ function adicionar(){
                 $erros[]="O campo NOME é obrigatório.<br>";
             }
         if (strlen(trim($descricaoProduto))== 0){
-                $erros[]="O campo DEESCRIÇÃO é obrigatório.<br>";
+                $erros[]="O campo DESCRIÇÃO é obrigatório.<br>";
             }
         if (strlen(trim($precoProduto))==0){
                 $erros[]="O campo PREÇO é obrigatório.<br>";
