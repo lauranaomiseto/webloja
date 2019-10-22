@@ -19,7 +19,7 @@
         width: 40%;
     }
     .outroCampo{
-        width: 30%;
+        width: 20%;
         text-align: right;
     }
     .produtoNoCarrinho{
@@ -42,7 +42,7 @@
         width: 100%;
     }
     .outroSobre{
-        width: 30%;
+        width: 20%;
         text-align: right;
     }
     .quantidade{
@@ -75,6 +75,9 @@
         <div class="outroCampo">
             <h3>Valor unitário</h3>
         </div>
+        <div class="outroCampo">
+            <h3>Total</h3>
+        </div>
     </div>
 
     <?php
@@ -93,21 +96,33 @@
                 </div>
             </div>
             <div class="outroSobre">
-                <select class="caixaEntraInfo2" name="quantidade">
-                    <?php for ($i = 1; $i <= 5; $i++) { ?>
-                        <option value="<?= $i ?>"><?= $i ?></option>
-                    <?php }; ?> 
-                    <option value="x>5">+ de 5</option>
-                </select><br><br>
+                <form method="POST" action="./carrinhoCompra/alterarQuantidade">
+                    <select class="caixaEntraInfo2" name="quantidade">
+                        <option value="<?=@$produto['quantidade']  ?>"><?=@$produto['quantidade'] ?></option>
+                        <?php for ($i = 1; $i = 5; $i++) { ?>
+                            <option value="<?= $i ?>"><?= $i ?></option>
+                        <?php }; ?> 
+                    </select><br><br>
+                    <input type="hidden" name="idProduto" value="<?=$produto['idProduto']?>">
+                    <button class="botao">Alterar</button><br>
+                </form>
                 <a href="./carrinhoCompra/tirar/<?= $produto['idProduto'] ?>"><button class="botao">Remover</button></a>
             </div>
             <div class="outroSobre">
                 <h4>R$<?php echo str_replace(".", ",", $produto['precoProduto']) ?></h4>
             </div>
+            <div class="outroSobre">
+                <h4>R$
+                    <?php 
+                        $totalProduto= $produto['precoProduto']*$produto['quantidade'];
+                        echo str_replace(".", ",", $totalProduto);
+                    ?>
+                </h4>
+            </div>
         </div>
         <?php
-        $precoTotal = $produto["precoProduto"] + $precoTotal;
-        $contProduto = $contProduto + 1;
+        $precoTotal = $totaProduto + $precoTotal;
+        $contProduto = $contProduto + $produto['quantidade'];
     endforeach;
     ?>
 </div><br>

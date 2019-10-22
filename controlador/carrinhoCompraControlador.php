@@ -3,18 +3,23 @@
 require_once "modelo/produtoModelo.php";
 
 /** anon */
-function comprar($idProduto) {    
-    $_SESSION["carrinho"][] = $idProduto;
+function comprar($idProduto) {   
+    $produto= array();
+    $produto["idProduto"]= $idProduto;
+    $produto["quantidade"]= 1;
+    $_SESSION["carrinho"][] = $produto;
     redirecionar("./carrinhoCompra/exibirCarrinho");
 }
 
 /** anon */
 function exibirCarrinho() {
     $listaDeProdutos= array();
+    $quantidadePorProduto= array();
     
     for($i=0; $i<count($_SESSION["carrinho"]); $i++){
-        $id=$_SESSION["carrinho"][$i];
+        $id=$_SESSION["carrinho"][$i]["idProduto"];
         $produto = pegarProdutoId($id);
+        $produto["quantidade"] = $_SESSION["carrinho"][$i]["quantidade"];
         $listaDeProdutos[]=$produto;
     }
     $dados["produtos"] = $listaDeProdutos;
@@ -24,7 +29,7 @@ function exibirCarrinho() {
 /** anon */
 function tirar($idProduto) {        
     for ($i=0;$i<=count($_SESSION["carrinho"]);$i++){
-        if ($_SESSION["carrinho"][$i]==$idProduto){
+        if ($_SESSION["carrinho"][$i]["idProduto"]==$idProduto){
             $indice=$i;
         }
     }
@@ -35,3 +40,18 @@ function tirar($idProduto) {
     redirecionar("./carrinhoCompra/exibirCarrinho");
 }
 
+/** anon */
+function alterarQuantidade(){
+    $quantidade=$_POST['quantidade'];
+    $idProduto=$_POST['idProduto'];
+    
+    for($i=0; $i<count($_SESSION["carrinho"]); $i++){
+        $id=$_SESSION["carrinho"][$i]["idProduto"];
+   
+        if ($id == $idProduto){
+            $_SESSION["carrinho"][$i]["quantidade"]=$quantidade;
+        }
+        
+    }
+    redirecionar("./carrinhoCompra/exibirCarrinho");
+}
