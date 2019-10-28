@@ -99,7 +99,7 @@
                 <form method="POST" action="./carrinhoCompra/alterarQuantidade">
                     <select class="caixaEntraInfo2" name="quantidade">
                         <option value="<?=@$produto['quantidade']  ?>"><?=@$produto['quantidade'] ?></option>
-                        <?php for ($i = 1; $i = 5; $i++) { ?>
+                        <?php for ($i = 1; $i <= 5; $i++) { ?>
                             <option value="<?= $i ?>"><?= $i ?></option>
                         <?php }; ?> 
                     </select><br><br>
@@ -121,7 +121,7 @@
             </div>
         </div>
         <?php
-        $precoTotal = $totaProduto + $precoTotal;
+        $precoTotal = $totalProduto + $precoTotal;
         $contProduto = $contProduto + $produto['quantidade'];
     endforeach;
     ?>

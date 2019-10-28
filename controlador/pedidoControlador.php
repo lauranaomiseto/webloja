@@ -29,16 +29,18 @@ function finalizarPedido() {
 
         $listaDeProdutos = array();
         for ($i = 0; $i < count($_SESSION["carrinho"]); $i++) {
-            $id = $_SESSION["carrinho"][$i];
+            $id = $_SESSION["carrinho"][$i]["idProduto"];
+            $quantidade = $_SESSION["carrinho"][$i]["quantidade"];
             $produto = pegarProdutoId($id);
+            $produto["quantidade"] = $quantidade;
             $listaDeProdutos[] = $produto;
         }
 
         $subtotal = 0;
         $contProdutos = 0;
         foreach ($listaDeProdutos as $produto):
-            $subtotal += $produto['precoProduto'];
-            $contProdutos += 1;
+            $subtotal = $produto['precoProduto'] * $produto["quantidade"] + $subtotal;
+            $contProdutos += $produto["quantidade"];
         endforeach;
         $dados['contProdutos'] = $contProdutos;
         $dados['subtotal'] = $subtotal;
@@ -67,23 +69,25 @@ function salvarPedido() {
             $erros[] = addPedido($idUsuario, $idEndereco, $idFormaPagamento);
             $dados = array();
             $dados["erros"] = $erros;
-            
+
             $idUsuario = acessoPegarIdDoUsuario();
             $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
             $dados['formasPagamento'] = pegarTodasFormasPagamento();
-            
+
             $listaDeProdutos = array();
             for ($i = 0; $i < count($_SESSION["carrinho"]); $i++) {
-                $id = $_SESSION["carrinho"][$i];
+                $id = $_SESSION["carrinho"][$i]["idProduto"];
+                $quantidade = $_SESSION["carrinho"][$i]["quantidade"];
                 $produto = pegarProdutoId($id);
+                $produto["quantidade"] = $quantidade;
                 $listaDeProdutos[] = $produto;
             }
 
             $subtotal = 0;
             $contProdutos = 0;
             foreach ($listaDeProdutos as $produto):
-                $subtotal += $produto['precoProduto'];
-                $contProdutos += 1;
+                $subtotal = $produto['precoProduto'] * $produto["quantidade"] + $subtotal;
+                $contProdutos += $produto["quantidade"];
             endforeach;
             $dados['contProdutos'] = $contProdutos;
             $dados['subtotal'] = $subtotal;
@@ -96,19 +100,21 @@ function salvarPedido() {
             $idUsuario = acessoPegarIdDoUsuario();
             $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
             $dados['formasPagamento'] = pegarTodasFormasPagamento();
-            
+
             $listaDeProdutos = array();
             for ($i = 0; $i < count($_SESSION["carrinho"]); $i++) {
-                $id = $_SESSION["carrinho"][$i];
+                $id = $_SESSION["carrinho"][$i]["idProduto"];
+                $quantidade = $_SESSION["carrinho"][$i]["quantidade"];
                 $produto = pegarProdutoId($id);
+                $produto["quantidade"] = $quantidade;
                 $listaDeProdutos[] = $produto;
             }
 
             $subtotal = 0;
             $contProdutos = 0;
             foreach ($listaDeProdutos as $produto):
-                $subtotal += $produto['precoProduto'];
-                $contProdutos += 1;
+                $subtotal = $produto['precoProduto'] * $produto["quantidade"] + $subtotal;
+                $contProdutos += $produto["quantidade"];
             endforeach;
             $dados['contProdutos'] = $contProdutos;
             $dados['subtotal'] = $subtotal;
