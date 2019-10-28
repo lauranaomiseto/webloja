@@ -51,3 +51,4 @@ if (ehPost()) {
     <br>
     <button class="botao1">Finalizar Pedido</button>
 </form>
+<a href="carrinhoCompra/exibirCarrinho"><button class="botao">Cancelar</button></a><br><br>

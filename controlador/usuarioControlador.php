@@ -143,5 +143,6 @@ function minhaConta() {
 /** A, C */
 function meusEnderecos($idUsuario) {
     $dados["enderecos"] = pegarTodosEnderecosId($idUsuario);
+    $dados["idUsuario"] = acessoPegarIdDoUsuario();
     exibir("cliente/meusEnderecos", $dados);
 }
