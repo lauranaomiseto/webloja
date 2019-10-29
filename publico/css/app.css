@@ -151,6 +151,16 @@ p{
 	text-align: center;
 	font-size: 15px;
 }
+.botao2{
+	background-color:#efe8c2;
+	color: #6d6b6a;
+	border: none;
+	font-family: 'Cardo', serif;
+	width: 120px;
+	height: 50px;
+	text-align: center;
+	font-size: 15px;
+}
 
 
 /* utilizado nas visões: paginas/inicial; produtos/resultadoPesquisaProduto */

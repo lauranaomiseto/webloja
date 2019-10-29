@@ -22,5 +22,16 @@ function addPedido($idUsuario, $idEndereco, $idFormaPagamento) {
     }
 }
 
-
-
+function pegarPedidoIdUsuario($id){
+    $comando= "select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao"
+            . " from pedido"
+            . " inner join formaPagamento on pedido.idFormaPagamento=formaPagamento.idFormaPagamento"
+            . " where pedido.idUsuario=$id";
+    $cnx= conn();
+    $resul= mysqli_query($cnx, $comando);
+    $pedidos = array();
+    while ($pedido = mysqli_fetch_assoc($resul)){
+        $pedidos[]=$pedido; 
+    }
+    return $pedidos;
+}

@@ -50,11 +50,11 @@
     <hr size="" width="100%">
     <h4>Gerar relatórios:</h4>
     <div id="listaRelatorios">
-        <a href=""><button class="botao1">Produto por quantidade de estoque</button></a>
-        <a href=""><button class="botao1">Produtos por categoria</button></a>
-        <a href=""><button class="botao1">Pedidos por intervalo de tempo</button></a>
-        <a href=""><button class="botao1">Pedidos por localização</button></a>
-        <a href=""><button class="botao1">Total de faturamento por período</button></a>
+        <a href=""><button class="botao1">Produto / qnt de estoque</button></a>
+        <a href=""><button class="botao1">Produtos / categoria</button></a>
+        <a href=""><button class="botao1">Pedidos / intervalo de tempo</button></a>
+        <a href=""><button class="botao1">Pedidos / localização</button></a>
+        <a href=""><button class="botao1">Faturamento / período</button></a>
     </div>
     <br>
     <hr size="" width="100%">

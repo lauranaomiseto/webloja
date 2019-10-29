@@ -101,3 +101,9 @@ function salvarPedido() {
         redirecionar("pedido/finalizarPedido");
     }
 }
+
+function verPedidoIdUsuario($idUsuario){
+    $dados= array();
+    $dados["pedidos"]= pegarPedidoIdUsuario($idUsuario);
+    exibir("pedido/listarPedidos", $dados);
+}
