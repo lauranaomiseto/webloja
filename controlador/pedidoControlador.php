@@ -107,3 +107,9 @@ function verPedidoIdUsuario($idUsuario){
     $dados["pedidos"]= pegarPedidoIdUsuario($idUsuario);
     exibir("pedido/listarPedidos", $dados);
 }
+
+function verPedidoId($id){
+    $dados= array();
+    $dados["pedido"]= pegarPedidoId($id);
+    exibir("pedido/detalharPedido", $dados);
+}

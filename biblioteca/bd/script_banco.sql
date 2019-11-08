@@ -1,32 +1,9 @@
-DROP DATABASE mvcd;
-CREATE DATABASE mvcd;
-
-USE mvcd;
-
-CREATE TABLE IF NOT EXISTS `mvcd`.`usuario` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(100) NOT NULL,
-  `senha` VARCHAR(100) NOT NULL,
-  `email` VARCHAR(100) NOT NULL,
-  `papel` VARCHAR(100) NOT NULL DEFAULT 'usuario'
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 24
-DEFAULT CHARACTER SET = utf8
-
-INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('admin', '123', 'admin@admin', 'admin');
-INSERT INTO `mvcd`.`usuario` (`nome`, `senha`, `email`, `papel`) VALUES ('usuario', '123', 'usuario@usuario', 'usuario');
-
-///////meu///////
-
 create table usuario(
 idUsuario int not null auto_increment,
 nomeCompleto varchar(100) not null,
 email varchar(60) not null,
 senha varchar(12) not null,
 cpf varchar(60) not null,
-dataNascimento varchar(10),
-sexo varchar(60),
 tipoUsuario varchar(5),
 primary key(idUsuario)
 );
@@ -98,8 +75,62 @@ desconto int not null,
 primary key(idCupom)
 );
 
-
-
-
 update usuario set tipoUsuario="A" where idusuario=1; 
 
+/* Tira a quantidade do produto */
+DELIMITER @@
+DROP TRIGGER tgr_grenciaQuantidade @@
+CREATE TRIGGER webloja.tgr_grenciaQuantidade
+AFTER INSERT ON webloja.pedido_produto
+FOR EACH ROW
+BEGIN
+	update produto set quant_estoque = quant_estoque- New.quantidade
+	where produto.idProduto = new.idProduto;
+end @@ 
+DELIMITER ; 
+
+/* Restaura a quatidade do producto */
+DELIMITER @@
+DROP TRIGGER tgr_restauraQuantidade @@
+CREATE TRIGGER webloja.tgr_restauraQuantidade
+AFTER DELETE ON webloja.pedido_produto
+FOR EACH ROW
+begin
+    update produto set  quant_estoque = quant_estoque + old.quantidade
+    where idProduto=old.idProduto;
+end @@ 
+DELIMITER ; 
+
+/* Adiciona pedido */
+DELIMITER @@
+DROP PROCEDURE prc_adicionarPedido @@
+CREATE PROCEDURE webloja.prc_adicionarPedido
+(in oIdUsuario int, oIdEndereco int, oIdFormaPagamento int)
+begin
+    insert into pedido (idUsuario, idEndereco, idFormapagamento, dataCompra) 
+    values (oIdUsuario, oIdEndereco, oIdFormaPagamento, curdate());
+end @@ 
+DELIMITER ; 
+
+/* Adiciona pedido_produto */
+DELIMITER @@
+DROP PROCEDURE prc_adicionarPedidoProduto @@
+CREATE PROCEDURE prc_adicionarPedidoProduto
+(in oIdProduto int, oIdPedido int, aQuantidade int)
+begin
+    insert into pedido_produto (idProduto, idPedido, quantidade)
+    values (oIdProduto, oIdPedido, aQuantidade);
+end @@ 
+DELIMITER ; 
+
+/* Seleciona pedidos dos usuários */
+DELIMITER @@
+DROP PROCEDURE prc_pegarPedidoIdUsuario @@
+CREATE PROCEDURE prc_pegarPedidoIdUsuario
+(in oIdUsuario int)
+begin
+    select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao from pedido 
+    inner join formaPagamento on pedido.idFormaPagamento=formaPagamento.idFormaPagamento
+    where pedido.idUsuario=oIdUsuario;
+end @@ 
+DELIMITER ; 

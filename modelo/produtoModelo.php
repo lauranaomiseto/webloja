@@ -1,7 +1,7 @@
 <?php
- function addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem){
-     $comando="insert into produto (nomeProduto, descricaoProduto, precoProduto, idCategoria, imagem)"
-             . "values ('$nomeProduto','$descricaoProduto','$precoProduto', '$idCategoria', '$imagem')";
+ function addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem, $quant_estoque, $estoque_minimo, $estoque_maximo){
+     $comando="insert into produto (nomeProduto, descricaoProduto, precoProduto, idCategoria, imagem, quant_estoque, estoque_minimo, estoque_maximo)"
+             . "values ('$nomeProduto','$descricaoProduto','$precoProduto', '$idCategoria', '$imagem', '$quant_estoque', '$estoque_minimo', '$estoque_maximo')";
      $cnx= conn();
      $resul= mysqli_query($cnx, $comando);
      if(!$resul){
@@ -43,8 +43,9 @@ function deletarProduto($id){
 }
 
 
-function editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto, $imagem){
-    $comando="update produto set nomeProduto='$nomeProduto', descricaoProduto='$descricaoProduto', precoProduto='$precoProduto', imagem='$imagem' where idProduto='$id';";
+function editarProduto($id, $nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem, $quant_estoque, $estoque_minimo, $estoque_maximo){
+    $comando="update produto set nomeProduto='$nomeProduto', descricaoProduto='$descricaoProduto', precoProduto='$precoProduto', "
+            . "idCategoria='$idCategoria', imagem='$imagem', quant_estoque='$quant_estoque', estoque_minimo='$estoque_minimo', estoque_maximo='$estoque_maximo' where idProduto='$id';";
     $cnx=conn();
     $resul= mysqli_query($cnx, $comando);
     if(!$resul){

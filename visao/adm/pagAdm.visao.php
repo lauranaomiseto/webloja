@@ -40,21 +40,21 @@
     <hr size="" width="100%">
     <h4>Lista dos cruds:</h4>
     <div id="listaCrud">
-        <a href="./usuario/listarUsuarios"><button class="botao1">Usuarios</button></a>
-        <a href="./produto/listarProdutos"><button class="botao1">Produtos</button></a>
-        <a href="./categoria/listarCategorias"><button class="botao1">Categorias</button></a>
-        <a href="./cupom/listarCupons"><button class="botao1">Cupons</button></a>
-        <a href="./formaPagamento/listarFormasPagamento"><button class="botao1">Formas de pagamento</button></a>
+        <a href="./usuario/listarUsuarios"><button class="botao2">Usuarios</button></a>
+        <a href="./produto/listarProdutos"><button class="botao2">Produtos</button></a>
+        <a href="./categoria/listarCategorias"><button class="botao2">Categorias</button></a>
+        <a href="./cupom/listarCupons"><button class="botao2">Cupons</button></a>
+        <a href="./formaPagamento/listarFormasPagamento"><button class="botao2">Formas de pagamento</button></a>
     </div>
     <br>
     <hr size="" width="100%">
     <h4>Gerar relatórios:</h4>
     <div id="listaRelatorios">
-        <a href=""><button class="botao1">Produto / qnt de estoque</button></a>
-        <a href=""><button class="botao1">Produtos / categoria</button></a>
-        <a href=""><button class="botao1">Pedidos / intervalo de tempo</button></a>
-        <a href=""><button class="botao1">Pedidos / localização</button></a>
-        <a href=""><button class="botao1">Faturamento / período</button></a>
+        <a href=""><button class="botao2">Produto / qnt de estoque</button></a>
+        <a href=""><button class="botao2">Produtos / categoria</button></a>
+        <a href=""><button class="botao2">Pedidos / intervalo de tempo</button></a>
+        <a href=""><button class="botao2">Pedidos / localização</button></a>
+        <a href=""><button class="botao2">Faturamento / período</button></a>
     </div>
     <br>
     <hr size="" width="100%">

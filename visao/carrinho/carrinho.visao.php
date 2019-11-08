@@ -76,7 +76,7 @@
             <h3>Valor unitário</h3>
         </div>
         <div class="outroCampo">
-            <h3>Total</h3>
+            <h3>Valor total</h3>
         </div>
     </div>
 

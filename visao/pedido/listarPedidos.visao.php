@@ -2,7 +2,7 @@
 #listaPedidos{
 	display: flex;
 	flex-direction: column;
-	width: 60%;
+	width: 70%;
 	margin: auto;
 	font-family: 'Cinzel', serif;
 	color: #6d6b6a;
@@ -60,7 +60,7 @@
 
     <div id="campos">
         <div id="campoNumeroPedido">
-            <h3>Número do pedido</h3>
+            <h3>Pedido</h3>
         </div>        
         <div id="campoFormaPagamento">
             <h3>Forma de pagamento</h3>
@@ -88,7 +88,7 @@
         </div>
         <div class="sobreOperacoesPedido">
             <div>
-                <a href="./pedido/detalharPedio/<?= $pedido["idPedido"] ?>"><button class="botao">Detalhar</button></a>
+                <a href="./pedido/detalharPedido/<?= $pedido["idPedido"] ?>"><button class="botao">Detalhar</button></a>
             </div>
         </div>
     </div>

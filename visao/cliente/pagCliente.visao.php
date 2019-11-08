@@ -45,9 +45,9 @@
         <hr size="" width="100%">
         <br>
         <div>
-            <a href="./usuario/editarU/<?=$usuario["idUsuario"] ?>"><button class="botao1">Editar informações</button></a>
-            <a href="./usuario/meusEnderecos/<?= $usuario["idUsuario"] ?>"><button class="botao1">Meus endereços</button></a>
-            <a href="./pedido/verPedidoIdUsuario/<?= $usuario["idUsuario"] ?>"><button class="botao1">Meus pedidos</button></a>
+            <a href="./usuario/editarU/<?=$usuario["idUsuario"] ?>"><button class="botao2">Editar informações</button></a>
+            <a href="./usuario/meusEnderecos/<?= $usuario["idUsuario"] ?>"><button class="botao2">Meus endereços</button></a>
+            <a href="./pedido/verPedidoIdUsuario/<?= $usuario["idUsuario"] ?>"><button class="botao2">Meus pedidos</button></a>
         </div>
         <br>
         <hr size="" width="100%">

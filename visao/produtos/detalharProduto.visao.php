@@ -7,6 +7,9 @@
         <th>ID Categoria</th>
         <th>Descrição</th>
         <th>Preço</th>
+        <th>Quantidade em estoque</th>
+        <th>Estoque mínimo</th>
+        <th>Estoque máximo</th>
     </tr>
     <tr>
         <td><?=$produto['idProduto'] ?></td>
@@ -14,6 +17,9 @@
         <td><?=$produto['idCategoria'] ?></td>
         <td><?=$produto['descricaoProduto'] ?></td>
         <td><?=$produto['precoProduto'] ?></td>
+        <td><?=$produto['quant_estoque'] ?></td>
+        <td><?=$produto['estoque_minimo'] ?></td>
+        <td><?=$produto['estoque_maximo'] ?></td>
     </tr>
 </table>
 <br>

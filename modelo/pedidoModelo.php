@@ -1,8 +1,7 @@
 <?php
 
 function addPedido($idUsuario, $idEndereco, $idFormaPagamento) {
-    $comando = "insert into pedido (idUsuario, idEndereco, idFormapagamento, dataCompra)"
-            . "values ('$idUsuario','$idEndereco','$idFormaPagamento', curdate())";
+    $comando = "call prc_adicionarPedido($idUsuario, $idEndereco, $idFormaPagamento)";
     $cnx = conn();
     $resul = mysqli_query($cnx, $comando);
     if (!$resul) {
@@ -13,7 +12,7 @@ function addPedido($idUsuario, $idEndereco, $idFormaPagamento) {
         $produto = $_SESSION["carrinho"][$i];
         $id = $produto["idProduto"];
         $quantidade = $produto["quantidade"];
-        $comando = "insert into pedido_produto values ('$id','$idPedido','$quantidade')";
+        $comando = "call prc_adicionarPedidoProduto($id, $idPedido, $quantidade)";
         $cnx = conn();
         $resul = mysqli_query($cnx, $comando);
         if (!$resul) {
@@ -23,10 +22,7 @@ function addPedido($idUsuario, $idEndereco, $idFormaPagamento) {
 }
 
 function pegarPedidoIdUsuario($id){
-    $comando= "select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao"
-            . " from pedido"
-            . " inner join formaPagamento on pedido.idFormaPagamento=formaPagamento.idFormaPagamento"
-            . " where pedido.idUsuario=$id";
+    $comando= "call prc_pegarPedidoIdUsuario($id)";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
     $pedidos = array();
@@ -35,3 +31,5 @@ function pegarPedidoIdUsuario($id){
     }
     return $pedidos;
 }
+
+
