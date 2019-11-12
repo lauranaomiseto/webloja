@@ -13,10 +13,14 @@
 	margin-bottom: 20px;
 }
 #campoNomeProduto{
-	width: 35%;
+	width: 24%;
 }
 #campoPrecoProduto{
-        width: 35%;
+        width: 23%;
+	text-align: left;
+}
+#campoEstoqueProduto{
+        width: 23%;
 	text-align: left;
 }
 #campoOperacoesProduto{
@@ -29,12 +33,16 @@
 	width: 100%;
 }
 .sobreNomeProduto{
-	width: 35%;
+	width: 24%;
 	display: flex;
 	flex-direction: row;
 }
 .sobrePrecoProduto{
-        width: 35%;
+        width: 23%;
+	text-align: left;
+}
+.sobreEstoqueProduto{
+        width: 23%;
 	text-align: left;
 }
 .sobreOperacoesProduto{
@@ -57,6 +65,9 @@
         <div id="campoPrecoProduto">
             <h3>Preço</h3>
         </div>
+        <div id="campoEstoqueProduto">
+            <h3>Estoque</h3>
+        </div>
         <div id="campoOperacoesProduto">
             <h3>Operações</h3>
         </div>
@@ -71,6 +82,9 @@
         </div>
         <div class="sobrePrecoProduto">
             <p><?= $produto['precoProduto'] ?></p>
+        </div>
+        <div class="sobreEstoqueProduto">
+            <p><?= $produto['quant_estoque'] ?></p>
         </div>
         <div class="sobreOperacoesProduto">
             <a href="./produto/verProdutoId/<?= $produto["idProduto"] ?>"><button class="botao">Detalhar</button></a>

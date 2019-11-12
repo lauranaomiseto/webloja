@@ -7,7 +7,14 @@ function addPedido($idUsuario, $idEndereco, $idFormaPagamento) {
     if (!$resul) {
         die(mysqli_error($cnx));
     }
+    
+    
+    $resultado = mysqli_fetch_assoc($resul);
+    var_dump($resultado);
+    
     $idPedido = mysqli_insert_id($cnx);
+    echo $idPedido;
+    die;
     for ($i = 0; $i < count($_SESSION["carrinho"]); $i++) {
         $produto = $_SESSION["carrinho"][$i];
         $id = $produto["idProduto"];
