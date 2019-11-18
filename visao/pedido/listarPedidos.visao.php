@@ -2,7 +2,7 @@
 #listaPedidos{
 	display: flex;
 	flex-direction: column;
-	width: 70%;
+	width: 60%;
 	margin: auto;
 	font-family: 'Cinzel', serif;
 	color: #6d6b6a;
@@ -88,7 +88,8 @@
         </div>
         <div class="sobreOperacoesPedido">
             <div>
-                <a href="./pedido/detalharPedido/<?= $pedido["idPedido"] ?>"><button class="botao">Detalhar</button></a>
+                <a href="./pedido/verPedidoId/<?= $pedido["idPedido"] ?>"><button class="botao">Detalhar</button></a>
+                <a href="./pedido/deletarP/<?= $pedido["idPedido"] ?>"><button class="botao">Cancelar</button></a>
             </div>
         </div>
     </div>

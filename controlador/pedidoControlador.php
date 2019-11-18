@@ -51,6 +51,7 @@ function finalizarPedido() {
     }
 }
 
+/** C, A */
 function salvarPedido() {
     if (ehPost()) {
         $idUsuario = acessoPegarIdDoUsuario();
@@ -110,6 +111,10 @@ function verPedidoIdUsuario($idUsuario){
 
 function verPedidoId($id){
     $dados= array();
-    $dados["pedido"]= pegarPedidoId($id);
+    $dados["produtos"]= pegarPedidoId($id);
     exibir("pedido/detalharPedido", $dados);
+}
+
+function deletarP($id){
+    
 }

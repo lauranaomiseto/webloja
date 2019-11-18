@@ -101,20 +101,6 @@ begin
 end @@ 
 DELIMITER ; 
 
-/* Adiciona pedido */
-DELIMITER @@
-DROP PROCEDURE prc_adicionarPedido @@
-CREATE PROCEDURE webloja.prc_adicionarPedido
-(in oIdUsuario int, oIdEndereco int, oIdFormaPagamento int)
-begin
-    DECLARE ID int(11);
-    insert into pedido (idUsuario, idEndereco, idFormapagamento, dataCompra) 
-    values (oIdUsuario, oIdEndereco, oIdFormaPagamento, curdate());
-    ID = LAST_INSERT_ID();
-    RETURN ID;
-end @@ 
-DELIMITER ; 
-
 /* Adiciona pedido_produto */
 DELIMITER @@
 DROP PROCEDURE prc_adicionarPedidoProduto @@
