@@ -101,6 +101,17 @@ begin
 end @@ 
 DELIMITER ; 
 
+/* Deleta pedido_produto */
+DELIMITER @@
+DROP TRIGGER tgr_deletarPedidoProduto @@
+CREATE TRIGGER webloja.tgr_deletarPedidoProduto
+AFTER DELETE ON webloja.pedido
+FOR EACH ROW
+begin
+    delete from pedido_produto where idPedido=old.idPedido;
+end @@ 
+DELIMITER ; 
+
 /* Adiciona pedido_produto */
 DELIMITER @@
 DROP PROCEDURE prc_adicionarPedidoProduto @@

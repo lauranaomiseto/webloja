@@ -103,18 +103,24 @@ function salvarPedido() {
     }
 }
 
-function verPedidoIdUsuario($idUsuario){
+/** C, A */
+function listarPedidosIdUsuario(){
+    $idUsuario= acessoPegarIdDoUsuario();
     $dados= array();
     $dados["pedidos"]= pegarPedidoIdUsuario($idUsuario);
     exibir("pedido/listarPedidos", $dados);
 }
 
+/** C, A */
 function verPedidoId($id){
     $dados= array();
+    $dados["pedidos_produtos"]= pegarPedidoProduto($id);
     $dados["produtos"]= pegarPedidoId($id);
     exibir("pedido/detalharPedido", $dados);
 }
 
+/** C, A */
 function deletarP($id){
-    
+    $msg = deletarPedido($id);
+    redirecionar("pedido/listarPedidosIdUsuario");
 }

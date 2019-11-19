@@ -131,7 +131,7 @@ function editarP($id) {
     }
 }
 
-/** anon */
+/** anon, C, A */
 function pesquisaProduto() {
     $pesquisa = $_POST['pesquisa'];
     $dados['produtos'] = pegarProdutoPesquisa($pesquisa);

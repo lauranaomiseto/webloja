@@ -22,7 +22,7 @@
                     <a href="./"><img src="./publico/imagens/icones/logoCortado.png"></a>
                 </div>
                 <div id="opcoes1">
-                    <?php if (acessoUsuarioCliente()):?>
+                    <?php if ((acessoUsuarioCliente()) or ( acessoUsuarioAdmin())):?>
                         <div>
                             <a href="./usuario/minhaConta"><h3>minha conta</h3></a>
                         </div>

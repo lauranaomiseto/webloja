@@ -36,11 +36,11 @@ function pegarPedidoIdUsuario($id) {
 
 function pegarPedidoId($id) {
     $comando = "select produto.nomeProduto, produto.descricaoProduto, produto.precoProduto, produto.imagem"
-        . " from pedido_produto"
-        . " inner join produto"
-        . " on produto.idProduto=pedido_produto.idProduto"
-        . " where pedido_produto.idPedido=$id;";
-    
+            . " from pedido_produto"
+            . " inner join produto"
+            . " on produto.idProduto=pedido_produto.idProduto"
+            . " where pedido_produto.idPedido=$id;";
+
     $cnx = conn();
     $resul = mysqli_query($cnx, $comando);
     $produtos = array();
@@ -50,3 +50,24 @@ function pegarPedidoId($id) {
     return $produtos;
 }
 
+function pegarPedidoProduto($id){
+    $comando = "select * from pedido_produto where idPedido=$id";
+    $cnx = conn();
+    $resul = mysqli_query($cnx, $comando);
+    $pedidos_produtos = array();
+    while ($pedido_produto = mysqli_fetch_assoc($resul)) {
+        $pedidos_produtos[] = $pedido_produto;
+    }
+    return $pedidos_produtos;
+}
+
+function deletarPedido($id) {
+    $comando = "call prc_deletarPedido($id);";
+    $cnx = conn();
+    $resul = mysqli_query($cnx, $comando);
+    if (!$resul) {
+        die(mysqli_error($cnx));
+    }
+
+    return "Pedido deletado";
+}
