@@ -70,12 +70,8 @@
             <h3>Produto</h3>
         </div>
         <div class="outroCampo">
-            <h3>Quantidade</h3>
-        </div>
-        <div class="outroCampo">
             <h3>Valor unitário</h3>
         </div>
-
     </div>
 
     <?php
@@ -92,12 +88,6 @@
                 </div>
             </div>
             <div class="outroSobre">
-                <h4><?php foreach ($pedidos_produtos as $pedido_produto):
-                        $pedido_produto["quantidade"];
-                    endforeach;
-                    ?></h4>
-            </div>
-            <div class="outroSobre">
                 <h4>R$<?php echo str_replace(".", ",", $produto['precoProduto']) ?></h4>
             </div>
         </div>
@@ -106,5 +96,5 @@
     ?>
 </div>
 <br>
-<?php $idUsuario = acessoPegarIdDoUsuario(); ?>
+<?php $idUsuario= acessoPegarIdDoUsuario(); ?>
 <a href="./pedido/listarPedidosIdUsuario"><button class="botao">Voltar</button></a>

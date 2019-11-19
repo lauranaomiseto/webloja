@@ -114,7 +114,6 @@ function listarPedidosIdUsuario(){
 /** C, A */
 function verPedidoId($id){
     $dados= array();
-    $dados["pedidos_produtos"]= pegarPedidoProduto($id);
     $dados["produtos"]= pegarPedidoId($id);
     exibir("pedido/detalharPedido", $dados);
 }

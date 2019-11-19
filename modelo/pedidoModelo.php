@@ -50,17 +50,6 @@ function pegarPedidoId($id) {
     return $produtos;
 }
 
-function pegarPedidoProduto($id){
-    $comando = "select * from pedido_produto where idPedido=$id";
-    $cnx = conn();
-    $resul = mysqli_query($cnx, $comando);
-    $pedidos_produtos = array();
-    while ($pedido_produto = mysqli_fetch_assoc($resul)) {
-        $pedidos_produtos[] = $pedido_produto;
-    }
-    return $pedidos_produtos;
-}
-
 function deletarPedido($id) {
     $comando = "call prc_deletarPedido($id);";
     $cnx = conn();
