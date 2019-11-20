@@ -16,31 +16,31 @@ function adicionarEndereco($idUsuario){
         $erros= array();
         
         if (strlen(trim($logradouro))== 0){
-                $erros[]="O campo LOGRADOURO é obrigatório.<br>";
+                $erros['logradouro']="*";
             }
         if (strlen(trim($numero))== 0){
-                $erros[]="O campo NÚMERO é obrigatório.<br>";
+                $erros['numero']="*";
             }
         if (strlen(trim($complemento))== 0){
-                $erros[]="O campo COMPLEMENTO é obrigatório.<br>";
+                $erros['complemento']="*";
             }
         if (strlen(trim($bairro))== 0){
-                $erros[]="O campo BAIRRO é obrigatório.<br>";
+                $erros['bairro']="*";
             }
         if (strlen(trim($cidade))== 0){
-                $erros[]="O campo CIDADE é obrigatório.<br>";
+                $erros['cidade']="*";
             }
         if (strlen(trim($cep))== 0){
-                $erros[]="O campo CEP é obrigatório.<br>";
+                $erros['cep']="*";
             }
         if (strlen(trim($nomeEndereco))== 0){
-                $erros[]="O campo NOME ENDEREÇO é obrigatório.<br>";
+                $erros['nomeEndereco']="*";
             }
        
          
             
         if (count($erros)==0){
-            $erros[]= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario, $nomeEndereco);
+            $erros['sucesso']= addEndereco($logradouro, $numero, $complemento, $bairro, $cidade, $cep, $idUsuario, $nomeEndereco);
             $dados= array();
             $dados["erros"]= $erros;
             $dados["idUsuario"]=$idUsuario;
@@ -89,25 +89,25 @@ function editarE($idEndereco, $idUsuario){
         $erros= array();
         
         if (strlen(trim($logradouro))== 0){
-                $erros[]="O campo LOGRADOURO é obrigatório.<br>";
+                $erros['logradouro']="*";
             }
         if (strlen(trim($numero))== 0){
-                $erros[]="O campo NÚMERO é obrigatório.<br>";
+                $erros['numero']="*";
             }
         if (strlen(trim($complemento))== 0){
-                $erros[]="O campo COMPLEMENTO é obrigatório.<br>";
+                $erros['complemento']="*";
             }
         if (strlen(trim($bairro))== 0){
-                $erros[]="O campo BAIRRO é obrigatório.<br>";
+                $erros['bairro']="*";
             }
         if (strlen(trim($cidade))== 0){
-                $erros[]="O campo CIDADE é obrigatório.<br>";
+                $erros['cidade']="*";
             }
         if (strlen(trim($cep))== 0){
-                $erros[]="O campo CEP é obrigatório.<br>";
+                $erros['cep']="*";
             }   
         if (strlen(trim($nomeEndereco))== 0){
-                $erros[]="O campo NOME ENDEREÇO é obrigatório.<br>";
+                $erros['nomeEndereco']="*";
             }
          
             

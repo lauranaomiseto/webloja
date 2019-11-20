@@ -14,19 +14,19 @@ function cadastroUsuario() {
         $erros = array();
 
         if (strlen(trim($nomeCompletoUsuario)) == 0) {
-            $erros['nomeCompletoUsuario'] = "O campo NOME COMPLETO é obrigatório.<br>";
+            $erros['nome'] = "*";
         }
         if (strlen(trim($cpf)) == 0) {
-            $erros['cpf'] = "O campo CPF é obrigatório.<br>";
+            $erros['cpf'] = "*";
         }
         if (strlen(trim($emailUsuario)) == 0) {
-            $erros['emailUsuario'] = "O campo EMAIL é obrigatório.<br>";
+            $erros['email'] = "*";
         }
-        if ((strlen($senhaUsuario) <= 6) || (strlen($senhaUsuario) > 12)) {
-            $erros['senhaUsuario'] = "O campo SENHA é obrigatório e deve conter mais de 6 caracteres.<br>";
+        if ((strlen($senhaUsuario) <= 6)) {
+            $erros['senha'] = "(deve conter mais de 6 caracteres)";
         }
         if ($senhaUsuario != $confirmaSenhaUsuario) {
-            $erros['confirmaSenhaUsuario'] = "Erro ao confirmar a senha.<br>";
+            $erros['confirma'] = "*";
         }
 
 
@@ -97,16 +97,16 @@ function editarU($id) {
         $erros = array();
 
         if (strlen(trim($nomeCompletoUsuario)) == 0) {
-            $erros[] = "Informe um nome válido.<br>";
+            $erros['nome'] = "*";
         }
         if (strlen(trim($emailUsuario)) == 0) {
-            $erros[] = "Informe um email válido.<br>";
+            $erros['email'] = "*";
         }
-        if ((strlen($senhaUsuario) <= 6) || (strlen($senhaUsuario) > 12)) {
-            $erros[] = "Sua senha deve conter mais de 6 caracteres.<br>";
+        if ((strlen($senhaUsuario) <= 6)) {
+            $erros['senha'] = "(deve conter mais de 6 caracteres)";
         }
         if ($senhaUsuario != $confirmaSenhaUsuario) {
-            $erros[] = "Erro ao confirmar a senha.<br>";
+            $erros['confirma'] = "*";
         }
 
 

@@ -9,11 +9,11 @@ function adicionarCategoria(){
         $erros= array();
         
         if (strlen(trim($nomeCategoria))== 0){
-                $erros[]="O campo CATEGORIA é obrigatório.<br>";
+                $erros['categoria']="*";
             }
             
         if (count($erros)==0){
-            $erros[]= addCategoria($nomeCategoria);
+            $erros['sucesso']= addCategoria($nomeCategoria);
             $dados= array();
             $dados["erros"]= $erros;
             exibir("categoria/cadastroCategoria", $dados);
@@ -55,7 +55,7 @@ function editarC($id){
         $erros= array();
         
         if (strlen(trim($nomeCategoria))== 0){
-                $erros[]="O campo CATEGORIA é obrigatório.<br>";
+                $erros['categoria']="*";
             }
             
         if (count($erros)==0){

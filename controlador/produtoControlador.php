@@ -22,23 +22,23 @@ function adicionar() {
         $erros = array();
 
         if (strlen(trim($nomeProduto)) == 0) {
-            $erros[] = "O campo NOME é obrigatório.<br>";
+            $erros['nome'] = "*";
         }
         if (strlen(trim($descricaoProduto)) == 0) {
-            $erros[] = "O campo DESCRIÇÃO é obrigatório.<br>";
+            $erros['descricao'] = "*";
         }
         if (strlen(trim($precoProduto)) == 0) {
-            $erros[] = "O campo PREÇO é obrigatório.<br>";
+            $erros['preco'] = "*";
         }
         if ($idCategoria == "verificação") {
-            $erros[] = "Selecione uma CATEGORIA.<br>";
+            $erros['categoria'] = "*";
         }
         if (strlen(trim($quant_estoque)) == 0) {
-            $erros[] = "O campo QUANTIDADE EM ESTOQUE é obrigatório.<br>";
+            $erros['qntEstoque'] = "*";
         }
 
         if (count($erros) == 0) {
-            $erros[] = addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem, $quant_estoque, $estoque_minimo, $estoque_maximo);
+            $erros['sucesso'] = addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem, $quant_estoque, $estoque_minimo, $estoque_maximo);
             $dados = array();
             $dados["erros"] = $erros;
             $dados["categorias"] = pegarTodasCategorias();
@@ -99,19 +99,19 @@ function editarP($id) {
         $erros = array();
 
         if (strlen(trim($nomeProduto)) == 0) {
-            $erros[] = "O campo NOME é obrigatório.<br>";
+            $erros['nome'] = "*";
         }
         if (strlen(trim($descricaoProduto)) == 0) {
-            $erros[] = "O campo DEESCRIÇÃO é obrigatório.<br>";
+            $erros['descricao'] = "*";
         }
         if (strlen(trim($precoProduto)) == 0) {
-            $erros[] = "O campo PREÇO é obrigatório.<br>";
+            $erros['preco'] = "*";
         }
         if ($idCategoria == "verificação") {
-            $erros[] = "Selecione uma CATEGORIA.<br>";
+            $erros['categoria'] = "*";
         }
         if (strlen(trim($quant_estoque)) == 0) {
-            $erros[] = "O campo QUANTIDADE EM ESTOQUE é obrigatório.<br>";
+            $erros['qntEstoque'] = "*";
         }
 
         if (count($erros) == 0) {
@@ -137,3 +137,30 @@ function pesquisaProduto() {
     $dados['produtos'] = pegarProdutoPesquisa($pesquisa);
     exibir("produtos/resultadoPesquisaProduto", $dados);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

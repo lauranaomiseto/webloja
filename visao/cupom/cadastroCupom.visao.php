@@ -1,14 +1,9 @@
-<?php
-    if (ehPost()){
-        foreach ($erros as $erro){
-            echo "<br>*$erro";
-        }
-    }
-?>
-<br><br>
+<?= "<p>" . @$erros['sucesso'] . "</p>" ?>
 <form action="" method="POST">
-    <input type="text" placeholder="Cupom" class="caixaEntraInfo" name="nomeCupom" value="<?=@$cupom["nomeCupom"]?>"><br><br>
-    <input type="text" placeholder="Desconto em %" class="caixaEntraInfo" name="desconto" value="<?=@$cupom["desconto"]?>"><br><br>
+    <?= "<label for='nomeCupom'>" . @$erros['cupom'] . "Cupom:</label><br>" ?>
+    <input type="text" class="caixaEntraInfo" name="nomeCupom" value="<?= @$cupom["nomeCupom"] ?>"><br><br>
+    <?= "<label for='desconto'>" . @$erros['desconto'] . "Desconto em %:</label><br>" ?>
+    <input type="text" class="caixaEntraInfo" name="desconto" value="<?= @$cupom["desconto"] ?>"><br><br>
     <button class="botao">Cadastrar</button>
 </form>
 <a href="./cupom/listarCupons"><button class="botao">Voltar</button></a>

@@ -50,7 +50,7 @@
     <hr size="" width="100%">
     <h4>Gerar relatórios:</h4>
     <div id="listaRelatorios">
-        <a href=""><button class="botao2">Produto / qnt de estoque</button></a>
+        <a href=""><button class="botao2">Produto e qnt de estoque</button></a>
         <a href=""><button class="botao2">Produtos / categoria</button></a>
         <a href=""><button class="botao2">Pedidos / intervalo de tempo</button></a>
         <a href=""><button class="botao2">Pedidos / localização</button></a>
