@@ -1,7 +1,7 @@
 <div id="cadastroUsuario">
     <div id="cadastro">
         <h2>Quero me cadastrar!</h2>
-        <?= "<p>" . @$erros['sucesso'] . "</p>" ?>
+        
         <form method="POST" action="">
             <div id="caixaUsuario">
                 <div>
@@ -18,6 +18,7 @@
                     <?= "<label for='confirmaSenhaUsuario'>" . @$erros['confirma'] . "Confirme sua senha:</label><br>" ?>
                     <input type="password" class="caixaEntraInfo"  name="confirmaSenhaUsuario"><br><br>
                     <button class="botao">Cadastrar</button>
+                    <?= "<p>" . @$erros['sucesso'] . "</p>" ?>
                 </div>
             </div>
         </form>

@@ -11,7 +11,7 @@
         <div id="topo">
             <div id="menu">
                 <div id="opcoes">
-                    <a href="#rodape"><h3>sobre</h3></a>
+                    <a href="#rodape"><h3>sobre nós</h3></a>
                     <?php if (acessoUsuarioAdmin()): ?>
                         <div>
                             <a href="./usuario/dashAdm"><h3>administrador</h3></a>

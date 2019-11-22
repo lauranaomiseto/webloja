@@ -1,8 +1,62 @@
+<h2>Detalhe do pedido</h2>
+<div id="meusProdutos">
+
+    <div id="campos">
+        <div id="campoProduto">
+            <h3>Produto</h3>
+        </div>
+        <div class="outroCampo">
+            <h3>Quantidade</h3>
+        </div>
+        <div class="outroCampo">
+            <h3>Unidade</h3>
+        </div>
+        <div class="outroCampo">
+            <h3>Total</h3>
+        </div>
+    </div>
+
+    <?php
+    foreach ($produtos as $produto):
+        ?>
+        <div class="produtoNoPedido">
+            <div class="sobreProduto">
+                <div>
+                    <img src="<?= $produto['imagem'] ?>" alt="<?= $produto['nomeProduto'] ?>">
+                </div>
+                <div>
+                    <h4><?= $produto["nomeProduto"] ?></h4>
+                    <p><?= $produto["descricaoProduto"] ?></p>
+                </div>
+            </div>
+            <div class="outroSobre">
+                <h4><?= $produto['quantidade'] ?></h4>
+            </div>
+            <div class="outroSobre">
+                <h4>R$<?php echo str_replace(".", ",", $produto['precoProduto']) ?></h4>
+            </div>
+            <div class="outroSobre">
+                <h4>R$
+                    <?php
+                    $totalProduto = $produto['precoProduto'] * $produto['quantidade'];
+                    echo str_replace(".", ",", $totalProduto);
+                    ?>
+                </h4>
+            </div>
+        </div>
+        <?php
+    endforeach;
+    ?>
+</div>
+<br>
+<?php $idUsuario = acessoPegarIdDoUsuario(); ?>
+<a href="./pedido/listarPedidosIdUsuario"><button class="botao">Voltar</button></a>
+
 <style>
     #meusProdutos{
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 60%;
         margin: auto;
         font-family: 'Cinzel', serif;
         color: #6d6b6a;
@@ -61,40 +115,3 @@
 
     }
 </style>
-
-<h2>Detalhe do pedido</h2>
-<div id="meusProdutos">
-
-    <div id="campos">
-        <div id="campoProduto">
-            <h3>Produto</h3>
-        </div>
-        <div class="outroCampo">
-            <h3>Valor unitário</h3>
-        </div>
-    </div>
-
-    <?php
-    foreach ($produtos as $produto):
-        ?>
-        <div class="produtoNoPedido">
-            <div class="sobreProduto">
-                <div>
-                    <img src="<?= $produto['imagem'] ?>" alt="<?= $produto['nomeProduto'] ?>">
-                </div>
-                <div>
-                    <h4><?= $produto["nomeProduto"] ?></h4>
-                    <p><?= $produto["descricaoProduto"] ?></p>
-                </div>
-            </div>
-            <div class="outroSobre">
-                <h4>R$<?php echo str_replace(".", ",", $produto['precoProduto']) ?></h4>
-            </div>
-        </div>
-        <?php
-    endforeach;
-    ?>
-</div>
-<br>
-<?php $idUsuario= acessoPegarIdDoUsuario(); ?>
-<a href="./pedido/listarPedidosIdUsuario"><button class="botao">Voltar</button></a>

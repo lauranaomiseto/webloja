@@ -35,11 +35,7 @@ function pegarPedidoIdUsuario($id) {
 }
 
 function pegarPedidoId($id) {
-    $comando = "select produto.nomeProduto, produto.descricaoProduto, produto.precoProduto, produto.imagem"
-            . " from pedido_produto"
-            . " inner join produto"
-            . " on produto.idProduto=pedido_produto.idProduto"
-            . " where pedido_produto.idPedido=$id;";
+    $comando = "call prc_pegarPedidoId($id)";
 
     $cnx = conn();
     $resul = mysqli_query($cnx, $comando);

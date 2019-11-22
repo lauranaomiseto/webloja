@@ -134,3 +134,16 @@ begin
     where pedido.idUsuario=oIdUsuario;
 end @@ 
 DELIMITER ; 
+
+/* Seleciona pedido por idPedido */
+DELIMITER @@
+DROP PROCEDURE prc_pegarPedidoId @@
+CREATE PROCEDURE prc_pegarPedidoId
+(in oIdPedido int)
+begin
+    select produto.nomeProduto, produto.descricaoProduto, produto.precoProduto, produto.imagem, pedido_produto.quantidade
+    from pedido_produto inner join produto 
+    on produto.idProduto=pedido_produto.idProduto 
+    where pedido_produto.idPedido=oIdPedido;
+end @@ 
+DELIMITER ; 

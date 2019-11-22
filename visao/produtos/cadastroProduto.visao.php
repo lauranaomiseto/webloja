@@ -1,7 +1,7 @@
 <div id="cadastroProduto">
     <div id="cadastro">
         <h2>Cadastro de produto</h2>
-        <?= "<p>" . @$erros['sucesso'] . "</p>" ?>
+        
         <form action="" method="POST" enctype="multipart/form-data">
             <div id="caixaProduto">
                 <div>
@@ -27,8 +27,10 @@
                     <input type="text"class="caixaEntraInfo" name="estoque_maximo" value="<?= @$produto['estoque_maximo'] ?>"><br><br>
                     <label for="estoque_minimo">Estoque mínimo:</lbel><br>
                     <input type="text" class="caixaEntraInfo" name="estoque_minimo" value="<?= @$produto['estoque_minimo'] ?>"><br><br>
-                    <button class="botao">Cadastrar</button><br><br>
+                    <button class="botao">Cadastrar</button><br>
+                    <?= "<p>" . @$erros['sucesso'] . "</p>" ?>
                     <a href="./produto/listarProdutos">Voltar</a>
+                    
                 </div>
             </div>
         </form>

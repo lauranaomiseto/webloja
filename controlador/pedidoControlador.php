@@ -5,6 +5,7 @@ require_once "modelo/produtoModelo.php";
 require_once "modelo/cupomModelo.php";
 require_once "modelo/formaPagamentoModelo.php";
 require_once "modelo/pedidoModelo.php";
+require_once "servico/correiosServico.php";
 
 /** A, C */
 function finalizarPedido() {
@@ -21,7 +22,7 @@ function finalizarPedido() {
         }
         $dados['erros'] = $erros;
     }
-
+    
     $idUsuario = acessoPegarIdDoUsuario();
     $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
     $dados['formasPagamento'] = pegarTodasFormasPagamento();

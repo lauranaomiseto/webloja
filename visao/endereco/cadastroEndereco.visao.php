@@ -1,7 +1,7 @@
 <div id="cadastroEndereco">
     <div id="cadastro">
         <h2>Adicionar Endereço</h2>
-        <?= "<p>" . @$erros['sucesso'] . "</p>" ?>
+        
         <form action="" method="POST">
             <div id="caixaEndereco">
                 <div>
@@ -22,6 +22,7 @@
                     <?= "<label for='cep'>" . @$erros['cep'] . "CEP:</label><br>" ?>
                     <input type="text" class="caixaEntraInfo" name="cep" value="<?= @$endereco['cep'] ?>"><br><br>                
                     <button class="botao">Cadastrar</button>
+                    <?= "<p>" . @$erros['sucesso'] . "</p>" ?>
                 </div>
 
             </div>

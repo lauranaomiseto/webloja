@@ -11,10 +11,10 @@
                     <h3>Quantidade</h3>
                 </div>
                 <div class="outroCampo">
-                    <h3>Valor unitário</h3>
+                    <h3>Unidade</h3>
                 </div>
                 <div class="outroCampo">
-                    <h3>Valor total</h3>
+                    <h3>Total</h3>
                 </div>
             </div>
 
@@ -82,11 +82,12 @@
 
         <div id="resumo">
             <?php
-            $valorTotal=$subTotal+@$freteValor;
+            $valorTotal= $subTotal+@$freteValor;
             ?>
             <h2>Resumo do pedido</h2>
             <p>Subtotal (<?= $contProduto ?> produtos): R$<?php echo str_replace(".", ",", $subTotal) ?></p>
             <p>Frete (prazo de <?=@$prazoEntrega?> dias): R$<?=@$freteValor ?></p>
+            
             <h3>Total: R$ <?php echo str_replace(".", ",", $valorTotal) ?></h3>
 
             <a href="./pedido/finalizarPedido"><button class="botao1">Finalizar Pedido</button></a>
