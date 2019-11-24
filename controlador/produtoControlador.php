@@ -131,16 +131,20 @@ function editarP($id) {
     }
 }
 
-/** anon, C, A */
+/** anon */
 function pesquisaProduto() {
     $pesquisa = $_POST['pesquisa'];
     $dados['produtos'] = pegarProdutoPesquisa($pesquisa);
     exibir("produtos/resultadoPesquisaProduto", $dados);
 }
 
-
-
-
+/** A */
+function listarProdutosCategoria() {
+    $dados['categorias'] = pegarTodasCategorias();
+    $dados['produtos'] = pegarTodosProdutos();
+    
+    exibir("produtos/listarProdutosCategoria", $dados);    
+}
 
 
 

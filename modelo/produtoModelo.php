@@ -67,3 +67,4 @@ function pegarProdutoPesquisa($pesquisa){
     }
     return $produtos;
 }
+

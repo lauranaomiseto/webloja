@@ -1,3 +1,38 @@
+
+
+<h2>Lista de categorias</h2>
+
+<div id="listaCategorias">
+
+    <div id="campos">
+        <div id="campoNomeCategoria">
+            <h3>Categorias</h3>
+        </div>
+        <div id="campoOperacoesCategoria">
+            <h3>Operações</h3>
+        </div>
+    </div>
+<hr size="" width="100%">
+<?php foreach ($categorias as $categoria): ?>
+    <div class="cadaCategoria">
+        <div class="sobreNomeCategoria">
+            <p><?=$categoria['nomeCategoria'] ?></p>
+        </div>
+        <div class="sobreOperacoesCategoria">
+            <a href="./categoria/verCategoriaId/<?=$categoria["idCategoria"]?>"><button class="botao">Detalhar</button></a>
+            <a href="./categoria/editarC/<?=$categoria["idCategoria"]?>"><button class="botao">Editar</button></a>
+            <a href="./categoria/deletarC/<?=$categoria["idCategoria"]?>"><button class="botao">Deletar</button></a>
+        </div>
+    </div>
+    <hr size="" width="100%">
+<?php endforeach; ?>
+</div>
+
+<br><br>
+<a href="categoria/adicionarCategoria"><button class="botao1">Nova Categoria</button></a><br><br>
+<a href="usuario/dashAdm"><button class="botao">Voltar</button></a><br><br>
+
+
 <style>
 #listaCategorias{
 	display: flex;
@@ -38,35 +73,3 @@
         align-items: center;
 }
 </style>
-
-<h2>Lista de categorias</h2>
-
-<div id="listaCategorias">
-
-    <div id="campos">
-        <div id="campoNomeCategoria">
-            <h3>Categorias</h3>
-        </div>
-        <div id="campoOperacoesCategoria">
-            <h3>Operações</h3>
-        </div>
-    </div>
-<hr size="" width="100%">
-<?php foreach ($categorias as $categoria): ?>
-    <div class="cadaCategoria">
-        <div class="sobreNomeCategoria">
-            <p><?=$categoria['nomeCategoria'] ?></p>
-        </div>
-        <div class="sobreOperacoesCategoria">
-            <a href="./categoria/verCategoriaId/<?=$categoria["idCategoria"]?>"><button class="botao">Detalhar</button></a>
-            <a href="./categoria/editarC/<?=$categoria["idCategoria"]?>"><button class="botao">Editar</button></a>
-            <a href="./categoria/deletarC/<?=$categoria["idCategoria"]?>"><button class="botao">Deletar</button></a>
-        </div>
-    </div>
-    <hr size="" width="100%">
-<?php endforeach; ?>
-</div>
-
-<br><br>
-<a href="categoria/adicionarCategoria"><button class="botao1">Nova Categoria</button></a><br><br>
-<a href="usuario/dashAdm"><button class="botao">Voltar</button></a><br><br>

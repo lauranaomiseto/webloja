@@ -47,7 +47,6 @@ p{
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	text-align: right;
 }
 #opcoes div{
 	width: 45%;

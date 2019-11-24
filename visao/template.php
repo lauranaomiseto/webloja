@@ -11,7 +11,9 @@
         <div id="topo">
             <div id="menu">
                 <div id="opcoes">
-                    <a href="#rodape"><h3>sobre nós</h3></a>
+                    <div>
+                        <a href="#rodape"><h3>sobre nós</h3></a>
+                    </div>
                     <?php if (acessoUsuarioAdmin()): ?>
                         <div>
                             <a href="./usuario/dashAdm"><h3>administrador</h3></a>
@@ -22,7 +24,7 @@
                     <a href="./"><img src="./publico/imagens/icones/logoCortado.png"></a>
                 </div>
                 <div id="opcoes1">
-                    <?php if ((acessoUsuarioCliente()) or ( acessoUsuarioAdmin())):?>
+                    <?php if ((acessoUsuarioCliente()) or ( acessoUsuarioAdmin())): ?>
                         <div>
                             <a href="./usuario/minhaConta"><h3>minha conta</h3></a>
                         </div>
@@ -33,7 +35,7 @@
                         <div>
                             <a href="./usuario/cadastroUsuario"><h3>cadastro</h3></a>
                         </div>
-                    <?php endif;?>
+                    <?php endif; ?>
                     <div>
                         <a href="./carrinhoCompra/exibirCarrinho"><h3>carrinho</h3></a>
                     </div>

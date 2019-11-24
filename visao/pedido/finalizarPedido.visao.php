@@ -6,7 +6,7 @@
         
         <hr>
         
-        <h4>Possui algum cupom?</h4>
+        <h2>Possui algum cupom?</h2>
         <form action="pedido/finalizarPedido" method="POST">
             <?="<p>".@$erros['cupom']."</p>"?>
             <input type="text" placeholder="Cupom" class="caixaEntraInfo" name="nomeCupom" value=""><br><br>
@@ -17,7 +17,7 @@
     
     <div>        
         <form action="pedido/salvarPedido" method="POST">
-            <h4>Endereço de entrega:</h4>
+            <h2>Endereço de entrega:</h2>
             <?="<p>".@$erros['endereco']."</p>"?>
             <select class="caixaEntraInfo" name="enderecoEntrega">
                 <option value="verificação">Meus endereços</option>
@@ -29,7 +29,7 @@
             
             <hr>
             
-            <h4>Formas de pagamento:</h4>
+            <h2>Formas de pagamento:</h2>
             <?="<p>".@$erros['formaPagamento']."</p>"?>
             <select class="caixaEntraInfo" name="formaPagamento">
                 <option value="verificação">Formas de pagamento</option>

@@ -12,7 +12,7 @@ function addCategoria($nomeCategoria){
 }
 
 function pegarTodasCategorias(){
-    $comando= "select * from categoria order by nomeCategoria";
+    $comando= "select * from categoria";
     $cnx= conn();
     $resul= mysqli_query($cnx, $comando);
     $categorias = array();
