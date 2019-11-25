@@ -28,7 +28,7 @@ function exibirCarrinho() {
     if (ehPost()) { //calcular frete
         $cep_destino = $_POST['cep'];
         $tipo_do_frete = $_POST['tipoFrete'];
-        $valor = $_POST['valor'];
+        $valor = 0;
         $peso = 1;
         $cep_origem = 18202000;
 

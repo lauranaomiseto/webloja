@@ -15,8 +15,8 @@
     <h4>Gerar relatórios:</h4>
     <div id="listaRelatorios">
         <a href="./produto/listarProdutosCategoria"><button class="botao1">Produtos por categoria</button></a>
-        <a href=""><button class="botao1">Pedidos por intervalo de tempo</button></a>
-        <a href=""><button class="botao1">Pedidos por localização</button></a>
+        <a href="./pedido/listarPedidosTempo"><button class="botao1">Pedidos por intervalo de tempo</button></a>
+        <a href="./pedido/listarPedidosLocalizacao"><button class="botao1">Pedidos por localização</button></a>
         <a href=""><button class="botao1">Faturamento por período</button></a>
     </div>
     <br>

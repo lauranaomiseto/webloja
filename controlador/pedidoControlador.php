@@ -22,7 +22,7 @@ function finalizarPedido() {
         }
         $dados['erros'] = $erros;
     }
-    
+
     $idUsuario = acessoPegarIdDoUsuario();
     $dados['enderecos'] = pegarTodosEnderecosId($idUsuario);
     $dados['formasPagamento'] = pegarTodasFormasPagamento();
@@ -118,4 +118,59 @@ function verPedidoId($id) {
 function deletarP($id) {
     $msg = deletarPedido($id);
     redirecionar("pedido/listarPedidosIdUsuario");
+}
+
+/** A */
+function listarPedidosTempo() {
+    if (ehPost()) {
+        $data1 = $_POST['data1'];
+        $data2 = $_POST['data2'];
+        
+        $dados = array();
+        $erros = array();
+        if ($data1 == null) {
+            $erros['data1'] = "*";
+        }
+        if ($data2 == null) {
+            $erros['data2'] = "*";
+        }
+        if ($data1>$data2) {
+            $erros['datasInvalidas'] = "*Selecione um intervalo de tempo válido.";
+        }
+
+        if (count($erros) == 0) {
+            $dados['pedidos'] = pegarPedidosTempo($data1, $data2);
+            $dados['data1'] = $data1;
+            $dados['data2'] = $data2;
+            exibir("pedido/listarPedidosTempo2", $dados);
+        } else {
+            $dados['erros'] = $erros;
+            exibir("pedido/listarPedidosTempo1", $dados);
+        }
+    }else {
+        exibir("pedido/listarPedidosTempo1");
+    }
+}
+
+function listarPedidosLocalizacao(){
+    if (ehPost()) {
+        $cidade = $_POST['cidade'];
+        
+        $dados = array();
+        $erros = array();
+        if ($cidade == null) {
+            $erros['cidade'] = "*";
+        }
+
+        if (count($erros) == 0) {
+            $dados['pedidos'] = pegarPedidosLocalizacao($cidade);
+            $dados['cidade'] = $cidade;
+            exibir("pedido/listarPedidosLocalizacao2", $dados);
+        } else {
+            $dados['erros'] = $erros;
+            exibir("pedido/listarPedidosLocalizacao1", $dados);
+        }
+    }else {
+        exibir("pedido/listarPedidosLocalizacao1");
+    }
 }

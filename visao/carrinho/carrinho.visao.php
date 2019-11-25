@@ -72,7 +72,6 @@
                 <label for="40010">Sedex</label>
                 <input type="radio" name="tipoFrete" value="41106">
                 <label for="41106">Pac</label>
-                <input type="hidden" name="valor" value="<?= $subTotal ?>">
                 <br><br>
                 <button class="botao">Calcular</button>
             </form>

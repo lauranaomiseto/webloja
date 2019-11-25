@@ -56,3 +56,31 @@ function deletarPedido($id) {
 
     return "Pedido deletado";
 }
+
+function pegarPedidosTempo($data1, $data2) {
+    $comando = "select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao from pedido "
+            . "inner join formaPagamento on pedido.idFormaPagamento=formaPagamento.idFormaPagamento "
+            . "where dataCompra between '$data1' and '$data2'";
+    
+    $cnx = conn();
+    $resul= mysqli_query($cnx, $comando);
+    $pedidos = array();
+    while ($pedido = mysqli_fetch_assoc($resul)){
+        $pedidos[]=$pedido; 
+    }
+    return $pedidos;
+}
+
+function pegarPedidosLocalizacao($cidade) {
+    $comando = "select pedido.idPedido, pedido.dataCompra, endereco.cep from pedido "
+            . "inner join endereco on pedido.idEndereco=endereco.idEndereco "
+            . "where cidade='$cidade'";
+    
+    $cnx = conn();
+    $resul= mysqli_query($cnx, $comando);
+    $pedidos = array();
+    while ($pedido = mysqli_fetch_assoc($resul)){
+        $pedidos[]=$pedido; 
+    }
+    return $pedidos;
+}
