@@ -5,8 +5,8 @@
         <div id="campoNumeroPedido">
             <h3>Pedido</h3>
         </div>        
-        <div id="campoFormaPagamento">
-            <h3>Forma de pagamento</h3>
+        <div id="campoCpfComprador">
+            <h3>Cpf comprador</h3>
         </div>
         <div id="campoDataPedido">
             <h3>Data</h3>
@@ -20,8 +20,8 @@
                 <p><?=$pedido['idPedido'] ?></p>
             </div>
         </div>
-        <div class="sobreFormaPagamento">
-            <p><?= $pedido['descricao'] ?></p>
+        <div class="sobreCpfComprador">
+            <p><?= $pedido['cpf'] ?></p>
         </div>
         <div class="sobreDataPedido">
             <p><?= $pedido['dataCompra'] ?></p>
@@ -47,10 +47,10 @@
 	margin-bottom: 20px;
 }
 #campoNumeroPedido{
-	width: 30%;
+	width: 40%;
 }
-#campoFormaPagamento{
-        width: 40%;
+#campoCpfComprador{
+        width: 30%;
 	text-align: left;
 }
 #campoDataPedido{
@@ -63,12 +63,12 @@
 	width: 100%;
 }
 .sobreNumeroPedido{
-	width: 30%;
+	width: 40%;
 	display: flex;
 	flex-direction: row;
 }
-.sobreFormaPagamento{
-        width: 40%;
+.sobreCpfComprador{
+        width: 30%;
 	text-align: left;
 }
 .sobreDataPedido{

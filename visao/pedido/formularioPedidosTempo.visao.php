@@ -6,6 +6,7 @@
     <input type="date" class="caixaEntraInfo" name="data2"><br><br>
     <button class="botao">Enviar</button>
 </form>
+<a href="usuario/dashAdm"><button class="botao">Voltar</button></a><br><br>
 
 
 

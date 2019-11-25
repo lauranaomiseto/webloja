@@ -58,8 +58,8 @@ function deletarPedido($id) {
 }
 
 function pegarPedidosTempo($data1, $data2) {
-    $comando = "select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao from pedido "
-            . "inner join formaPagamento on pedido.idFormaPagamento=formaPagamento.idFormaPagamento "
+    $comando = "select usuario.cpf, pedido.idPedido, pedido.dataCompra from usuario "
+            . "inner join pedido on usuario.idUsuario=pedido.idUsuario "
             . "where dataCompra between '$data1' and '$data2'";
     
     $cnx = conn();
@@ -72,7 +72,8 @@ function pegarPedidosTempo($data1, $data2) {
 }
 
 function pegarPedidosLocalizacao($cidade) {
-    $comando = "select pedido.idPedido, pedido.dataCompra, endereco.cep from pedido "
+    $comando = "select usuario.cpf, pedido.idPedido, pedido.dataCompra, endereco.cep from usuario "
+            . "inner join pedido on usuario.idUsuario=pedido.idUsuario "
             . "inner join endereco on pedido.idEndereco=endereco.idEndereco "
             . "where cidade='$cidade'";
     

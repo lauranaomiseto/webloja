@@ -4,12 +4,12 @@
     <div id="campos">
         <div id="campoNumeroPedido">
             <h3>Pedido</h3>
-        </div>        
+        </div> 
+        <div id="campoCpfComprador">
+            <h3>Cpf comprador</h3>
+        </div>
         <div id="campoCep">
             <h3>CEP</h3>
-        </div>
-        <div id="campoDataPedido">
-            <h3>Data</h3>
         </div>
     </div>
 <hr size="" width="100%">
@@ -20,11 +20,11 @@
                 <p><?=$pedido['idPedido'] ?></p>
             </div>
         </div>
+        <div class="sobreCpfComprador">
+            <p><?= $pedido['cpf'] ?></p>
+        </div>
         <div class="sobreCep">
             <p><?= $pedido['cep'] ?></p>
-        </div>
-        <div class="sobreDataPedido">
-            <p><?= $pedido['dataCompra'] ?></p>
         </div>
     </div>
     <hr size="" width="100%">
@@ -36,7 +36,7 @@
 #listaPedidos{
 	display: flex;
 	flex-direction: column;
-	width: 40%;
+	width: 50%;
 	margin: auto;
 	font-family: 'Cinzel', serif;
 	color: #6d6b6a;
@@ -47,13 +47,13 @@
 	margin-bottom: 20px;
 }
 #campoNumeroPedido{
-	width: 30%;
+	width: 40%;
 }
-#campoCep{
-        width: 40%;
+#campoCpfComprador{
+        width: 30%;
 	text-align: left;
 }
-#campoDataPedido{
+#campoCep{
         width: 30%;
 	text-align: right;
 }
@@ -63,16 +63,17 @@
 	width: 100%;
 }
 .sobreNumeroPedido{
-	width: 30%;
+	width: 40%;
 	display: flex;
 	flex-direction: row;
 }
-.sobreCep{
-        width: 40%;
+.sobreCpfComprador{
+        width: 30%;
 	text-align: left;
 }
-.sobreDataPedido{
+.sobreCep{
         width: 30%;
 	text-align: right;
 }
+
 </style>

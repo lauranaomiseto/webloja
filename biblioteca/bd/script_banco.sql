@@ -96,7 +96,7 @@ CREATE TRIGGER webloja.tgr_restauraQuantidade
 AFTER DELETE ON webloja.pedido_produto
 FOR EACH ROW
 begin
-    update produto set  quant_estoque = quant_estoque + old.quantidade
+    update produto set quant_estoque = quant_estoque + old.quantidade
     where idProduto=old.idProduto;
 end @@ 
 DELIMITER ; 
@@ -108,7 +108,8 @@ CREATE TRIGGER webloja.tgr_deletarPedidoProduto
 AFTER DELETE ON webloja.pedido
 FOR EACH ROW
 begin
-    delete from pedido_produto where idPedido=old.idPedido;
+    delete from pedido_produto 
+    where idPedido=old.idPedido;
 end @@ 
 DELIMITER ; 
 
@@ -129,8 +130,10 @@ DROP PROCEDURE prc_pegarPedidoIdUsuario @@
 CREATE PROCEDURE prc_pegarPedidoIdUsuario
 (in oIdUsuario int)
 begin
-    select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao from pedido 
-    inner join formaPagamento on pedido.idFormaPagamento=formaPagamento.idFormaPagamento
+    select pedido.idPedido, pedido.dataCompra, formaPagamento.descricao 
+    from pedido 
+    inner join formaPagamento 
+    on pedido.idFormaPagamento=formaPagamento.idFormaPagamento
     where pedido.idUsuario=oIdUsuario;
 end @@ 
 DELIMITER ; 
@@ -142,8 +145,36 @@ CREATE PROCEDURE prc_pegarPedidoId
 (in oIdPedido int)
 begin
     select produto.nomeProduto, produto.descricaoProduto, produto.precoProduto, produto.imagem, pedido_produto.quantidade
-    from pedido_produto inner join produto 
+    from pedido_produto 
+    inner join produto 
     on produto.idProduto=pedido_produto.idProduto 
     where pedido_produto.idPedido=oIdPedido;
+end @@ 
+DELIMITER ; 
+
+/* Seleciona pedido por cidade */
+DELIMITER @@
+DROP PROCEDURE prc_pegarPedidosLocalizacao @@
+CREATE PROCEDURE prc_pegarPedidosLocalizacao
+(in aCidade varchar(60))
+begin
+    select usuario.cpf, pedido.idPedido, pedido.dataCompra, endereco.cep from usuario
+    inner join pedido 
+    on usuario.idUsuario=pedido.idUsuario 
+    inner join endereco 
+    on pedido.idEndereco=endereco.idEndereco 
+    where endereco.cidade='aCidade';
+end @@ 
+DELIMITER ; 
+
+/* Seleciona pedido por intervalo de datas */
+DELIMITER @@
+DROP PROCEDURE prc_pegarPedidosTempo @@
+CREATE PROCEDURE prc_pegarPedidosTempo
+(in dataA date, dataB date)
+begin
+    select usuario.cpf, pedido.idPedido, pedido.dataCompra from usuario
+    inner join pedido on usuario.idUsuario=pedido.idUsuario
+    where pedido.dataCompra between 'dataA' and 'dataB';
 end @@ 
 DELIMITER ; 
