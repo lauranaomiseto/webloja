@@ -193,15 +193,16 @@ function calcularFaturamentoPeriodo(){
         }
 
         if (count($erros) == 0) {
-            $dados['pedidos'] = pegarPedidosTempo($data1, $data2);
+            $dados['pedidos'] = pegarFaturamentoPeriodo($data1, $data2);
             $dados['data1'] = $data1;
             $dados['data2'] = $data2;
-            exibir("pedido/listarPedidosTempo", $dados);
+            exibir("pedido/faturamentoTempo", $dados);
         } else {
             $dados['erros'] = $erros;
-            exibir("pedido/formularioPedidosTempo", $dados);
+            exibir("pedido/formularioFaturamentoTempo", $dados);
         }
     }else {
-        exibir("pedido/formularioPedidosTempo");
+        exibir("pedido/formularioFaturamentoTempo");
     }
 }
+
