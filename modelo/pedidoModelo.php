@@ -79,13 +79,7 @@ function pegarPedidosLocalizacao($cidade) {
 }
 
 function pegarFaturamentoPeriodo($data1, $data2) {
-    $comando = "select pedido.idPedido, pedido.dataCompra, "
-            . "sum(pedido_produto.quantidade*produto.precoProduto) as valorPedido "
-            . "from pedido "
-            . "inner join pedido_produto on pedido.idPedido=pedido_produto.idPedido "
-            . "inner join produto on pedido_produto.idProduto=produto.idProduto "
-            . "group by pedido_produto.idPedido "
-            . "having pedido.dataCompra between '$data1' and '$data2'";
+    $comando = "call prc_pegarFaturamentoPeriodo('$data1', '$data2')";
 
     $cnx = conn();
     $resul = mysqli_query($cnx, $comando);

@@ -79,7 +79,6 @@ update usuario set tipoUsuario="A" where idusuario=1;
 
 /* Tira a quantidade do produto */
 DELIMITER @@
-DROP TRIGGER tgr_grenciaQuantidade @@
 CREATE TRIGGER webloja.tgr_grenciaQuantidade
 AFTER INSERT ON webloja.pedido_produto
 FOR EACH ROW
@@ -91,7 +90,6 @@ DELIMITER ;
 
 /* Restaura a quatidade do producto */
 DELIMITER @@
-DROP TRIGGER tgr_restauraQuantidade @@
 CREATE TRIGGER webloja.tgr_restauraQuantidade
 AFTER DELETE ON webloja.pedido_produto
 FOR EACH ROW
@@ -103,7 +101,6 @@ DELIMITER ;
 
 /* Deleta pedido_produto */
 DELIMITER @@
-DROP TRIGGER tgr_deletarPedidoProduto @@
 CREATE TRIGGER webloja.tgr_deletarPedidoProduto
 AFTER DELETE ON webloja.pedido
 FOR EACH ROW
@@ -115,7 +112,6 @@ DELIMITER ;
 
 /* Adiciona pedido_produto */
 DELIMITER @@
-DROP PROCEDURE prc_adicionarPedidoProduto @@
 CREATE PROCEDURE prc_adicionarPedidoProduto
 (in oIdProduto int, oIdPedido int, aQuantidade int)
 begin
@@ -126,7 +122,6 @@ DELIMITER ;
 
 /* Seleciona pedidos dos usuários */
 DELIMITER @@
-DROP PROCEDURE prc_pegarPedidoIdUsuario @@
 CREATE PROCEDURE prc_pegarPedidoIdUsuario
 (in oIdUsuario int)
 begin
@@ -140,7 +135,6 @@ DELIMITER ;
 
 /* Seleciona pedido por idPedido */
 DELIMITER @@
-DROP PROCEDURE prc_pegarPedidoId @@
 CREATE PROCEDURE prc_pegarPedidoId
 (in oIdPedido int)
 begin
@@ -154,7 +148,6 @@ DELIMITER ;
 
 /* Seleciona pedido por cidade */
 DELIMITER @@
-DROP PROCEDURE prc_pegarPedidosLocalizacao @@
 CREATE PROCEDURE prc_pegarPedidosLocalizacao
 (in aCidade varchar(60))
 begin
@@ -169,7 +162,6 @@ DELIMITER ;
 
 /* Seleciona pedido por intervalo de datas */
 DELIMITER @@
-DROP PROCEDURE prc_pegarPedidosTempo @@
 CREATE PROCEDURE prc_pegarPedidosTempo
 (in dataA date, dataB date)
 begin
@@ -179,4 +171,18 @@ begin
 end @@ 
 DELIMITER ; 
 
+/* Seleciona pedido e valor por pedido */
+DELIMITER @@
+CREATE PROCEDURE prc_pegarFaturamentoPeriodo
+(in dataA date, dataB date)
+begin
+    select pedido.idPedido, pedido.dataCompra, 
+    sum(pedido_produto.quantidade*produto.precoProduto) as valorPedido 
+    from pedido 
+    inner join pedido_produto on pedido.idPedido=pedido_produto.idPedido 
+    inner join produto on pedido_produto.idProduto=produto.idProduto 
+    group by pedido_produto.idPedido 
+    having pedido.dataCompra between dataA and dataB;
+end @@ 
+DELIMITER ; 
 
