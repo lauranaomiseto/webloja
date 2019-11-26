@@ -51,7 +51,7 @@
     #listasAdm{
         background-color: white;
         height: 60%;
-        width: 60%;
+        width: 800px;
         padding: 35px;
     }
     #listasAdm div{

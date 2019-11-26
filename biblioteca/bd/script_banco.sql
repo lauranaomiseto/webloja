@@ -163,7 +163,7 @@ begin
     on usuario.idUsuario=pedido.idUsuario 
     inner join endereco 
     on pedido.idEndereco=endereco.idEndereco 
-    where endereco.cidade='aCidade';
+    where endereco.cidade=aCidade;
 end @@ 
 DELIMITER ; 
 
@@ -175,6 +175,8 @@ CREATE PROCEDURE prc_pegarPedidosTempo
 begin
     select usuario.cpf, pedido.idPedido, pedido.dataCompra from usuario
     inner join pedido on usuario.idUsuario=pedido.idUsuario
-    where pedido.dataCompra between 'dataA' and 'dataB';
+    where pedido.dataCompra between dataA and dataB;
 end @@ 
 DELIMITER ; 
+
+

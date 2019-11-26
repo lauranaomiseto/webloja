@@ -37,7 +37,7 @@ function pegarPedidoIdUsuario($id) {
 function pegarPedidoId($id) {
     $comando = "call prc_pegarPedidoId($id)";
     $cnx = conn();
-    $resul = mysqli_query($cnx, $comando);    
+    $resul = mysqli_query($cnx, $comando);
     $produtos = array();
     while ($produto = mysqli_fetch_assoc($resul)) {
         $produtos[] = $produto;
@@ -59,10 +59,10 @@ function deletarPedido($id) {
 function pegarPedidosTempo($data1, $data2) {
     $comando = "call prc_pegarPedidosTempo('$data1', '$data2')";
     $cnx = conn();
-    $resul= mysqli_query($cnx, $comando);
+    $resul = mysqli_query($cnx, $comando);
     $pedidos = array();
-    while ($pedido = mysqli_fetch_assoc($resul)){
-        $pedidos[]=$pedido; 
+    while ($pedido = mysqli_fetch_assoc($resul)) {
+        $pedidos[] = $pedido;
     }
     return $pedidos;
 }
@@ -70,26 +70,28 @@ function pegarPedidosTempo($data1, $data2) {
 function pegarPedidosLocalizacao($cidade) {
     $comando = "call prc_pegarPedidosLocalizacao('$cidade')";
     $cnx = conn();
-    $resul= mysqli_query($cnx, $comando);
+    $resul = mysqli_query($cnx, $comando);
     $pedidos = array();
-    while ($pedido = mysqli_fetch_assoc($resul)){
-        $pedidos[]=$pedido; 
+    while ($pedido = mysqli_fetch_assoc($resul)) {
+        $pedidos[] = $pedido;
     }
     return $pedidos;
 }
 
-
-function pegarFaturamentoPeriodo($data1, $data2){
-    $comando="select pedido.idPedido, pedido.dataCompra, "
-            . "pedido_produto.quantidade*produto.precoProduto as valorPorProduto "
+function pegarFaturamentoPeriodo($data1, $data2) {
+    $comando = "select pedido.idPedido, pedido.dataCompra, "
+            . "sum(pedido_produto.quantidade*produto.precoProduto) as valorPedido "
             . "from pedido "
             . "inner join pedido_produto on pedido.idPedido=pedido_produto.idPedido "
             . "inner join produto on pedido_produto.idProduto=produto.idProduto "
-            . "where pedido.dataCompra between '$data1' and '$data2'";
-    echo $comando;
-    
-    $cnx=conn();
-    $resul = mysql_query($cnx, $comando);
-    $valor= mysqli_fetch_assoc($resul);
-    return $valor;
+            . "group by pedido_produto.idPedido "
+            . "having pedido.dataCompra between '$data1' and '$data2'";
+
+    $cnx = conn();
+    $resul = mysqli_query($cnx, $comando);
+    $pedidos = array();
+    while ($pedido = mysqli_fetch_assoc($resul)) {
+        $pedidos[] = $pedido;
+    }
+    return $pedidos;
 }
