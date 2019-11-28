@@ -23,9 +23,9 @@
                 <div>
                     <?= "<label for='quant_estoque'>" . @$erros['qntEstoque'] . "Quantidade em estoque:</label><br>" ?>
                     <input type="text" class="caixaEntraInfo" name="quant_estoque" value="<?= @$produto['quant_estoque'] ?>"><br><br>
-                    <label for="estoque_maximo">Estoque máximo:</label><br>
+                     <?= "<label for='estoque_maximo'>" . @$erros['estoqueMax'] . "Estoque máximo:</label><br>" ?>
                     <input type="text"class="caixaEntraInfo" name="estoque_maximo" value="<?= @$produto['estoque_maximo'] ?>"><br><br>
-                    <label for="estoque_minimo">Estoque mínimo:</lbel><br>
+                     <?= "<label for='estoque_minimo'>" . @$erros['estoqueMin'] . "Estoque mínimo:</label><br>" ?>
                     <input type="text" class="caixaEntraInfo" name="estoque_minimo" value="<?= @$produto['estoque_minimo'] ?>"><br><br>
                     <button class="botao">Cadastrar</button><br>
                     <?= "<p>" . @$erros['sucesso'] . "</p>" ?>

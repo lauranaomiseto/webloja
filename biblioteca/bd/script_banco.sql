@@ -47,8 +47,8 @@ idProduto int not null,
 idPedido int not null,
 quantidade int not null,
 primary key (idProduto, idPedido),
-foreign key (idProduto) references pedido (idPedido) on delete cascade on update cascade,
-foreign key (idPedido) references produto (idProduto) on delete cascade on update cascade
+foreign key (idProduto) references produto (idProduto) on delete cascade on update cascade,
+foreign key (idPedido) references pedido (idPedido) on delete cascade on update cascade
 );
 
 create table formaPagamento (
@@ -107,6 +107,15 @@ FOR EACH ROW
 begin
     delete from pedido_produto 
     where idPedido=old.idPedido;
+end @@ 
+DELIMITER ; 
+
+/* deleta pedido */
+DELIMITER @@
+CREATE PROCEDURE webloja.prc_deletarPedido
+(in oIdPedido int)
+begin
+    delete from pedido where idPedido=oIdPedido;
 end @@ 
 DELIMITER ; 
 

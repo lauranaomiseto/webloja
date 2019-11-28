@@ -1,1 +1,1 @@
-sql111.epizy.com;epiz_24452752;KRVpTdOkgrkR;epiz_24452752_webloja
+localhost;id10834145_laura_maju;123456789;id10834145_webloja

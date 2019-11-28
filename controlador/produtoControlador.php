@@ -36,6 +36,12 @@ function adicionar() {
         if (strlen(trim($quant_estoque)) == 0) {
             $erros['qntEstoque'] = "*";
         }
+        if (strlen(trim($estoque_minimo)) == 0) {
+            $erros['estoqueMin'] = "*";
+        }
+        if (strlen(trim($estoque_maximo)) == 0) {
+            $erros['estoqueMax'] = "*";
+        }
 
         if (count($erros) == 0) {
             $erros['sucesso'] = addProduto($nomeProduto, $descricaoProduto, $precoProduto, $idCategoria, $imagem, $quant_estoque, $estoque_minimo, $estoque_maximo);
