@@ -152,6 +152,7 @@ function listarPedidosTempo() {
     }
 }
 
+/** A */
 function listarPedidosLocalizacao(){
     if (ehPost()) {
         $cidade = $_POST['cidade'];
@@ -175,6 +176,7 @@ function listarPedidosLocalizacao(){
     }
 }
 
+/** A */
 function calcularFaturamentoPeriodo(){
     if (ehPost()) {
         $data1 = $_POST['data1'];
