@@ -1,4 +1,4 @@
 # MVCd-pratica
 
-Desenvolvimento de loja virtual para a disciplina Web II.
-O MVCd é um framework "desorientado".
+Desenvolvimento de loja virtual para a disciplina Web II. <br>
+O MVCd é uma versão desorientada da arquitetura MVC.
